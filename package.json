@@ -1,0 +1,35 @@
+{
+  "name": "trip-organizer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "import": "tsx importer/cli.ts",
+    "dev:server": "tsx watch server/main.ts",
+    "dev:web": "vite --config web/vite.config.ts",
+    "build": "npm run import && vite build --config web/vite.config.ts && tsc -p tsconfig.server.json",
+    "start": "node dist/server/server/main.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.8",
+    "better-sqlite3": "^13.0.3",
+    "fast-xml-parser": "^5.11.2",
+    "fastify": "^5.12.8",
+    "fflate": "^0.8.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.6",
+    "preact": "^11.1.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

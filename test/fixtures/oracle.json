@@ -1,0 +1,5162 @@
+[
+ {
+  "rows": 45,
+  "cols": 8,
+  "cells": {
+   "0,0": {
+    "text": null,
+    "fill": "#A689B3"
+   },
+   "0,1": {
+    "text": "                               תכנון טיול ליפן",
+    "fill": "#A789B3"
+   },
+   "0,7": {
+    "text": null,
+    "fill": "#A789B3"
+   },
+   "1,0": {
+    "text": "מחיר בשקלים",
+    "fill": "#F2F2F4"
+   },
+   "1,1": {
+    "text": "תשלום מלון",
+    "fill": "#F2F2F4"
+   },
+   "1,2": {
+    "text": "מיקום",
+    "fill": "#F2F2F4"
+   },
+   "1,3": {
+    "text": "פעילות",
+    "fill": "#F2F2F4"
+   },
+   "1,6": {
+    "text": "יום",
+    "fill": "#F2F2F4"
+   },
+   "1,7": {
+    "text": "תאריך",
+    "fill": "#F2F2F4"
+   },
+   "2,0": {
+    "text": null,
+    "fill": "#F2F2F4"
+   },
+   "2,1": {
+    "text": null,
+    "fill": "#F2F2F4"
+   },
+   "2,2": {
+    "text": "טוקיו",
+    "fill": "#F2F2F4"
+   },
+   "2,3": {
+    "text": "טיסה ליפן נחיתה בבוקר של ה4/11",
+    "fill": "#F2F2F4"
+   },
+   "2,6": {
+    "text": "יום 1",
+    "fill": "#F2F2F4"
+   },
+   "2,7": {
+    "text": "46329",
+    "fill": "#F2F2F4"
+   },
+   "3,0": {
+    "text": "2496",
+    "fill": "#EFBFC1"
+   },
+   "3,1": {
+    "text": "Amanek shinluku kabukicho\nשולם\n",
+    "fill": "#EFBFC1"
+   },
+   "3,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "3,3": {
+    "text": "שינג׳וקו, בערב לomoide yokocho\\kabukicho ",
+    "fill": "#EFBFC1"
+   },
+   "3,6": {
+    "text": "יום 2 ",
+    "fill": "#EFBFC1"
+   },
+   "3,7": {
+    "text": "46330",
+    "fill": "#EFBFC1"
+   },
+   "4,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "4,3": {
+    "text": "בירת הוינטג׳ shimokitazawa, אחהצ ginza, ",
+    "fill": "#EFBFC1"
+   },
+   "4,6": {
+    "text": "יום 3",
+    "fill": "#EFBFC1"
+   },
+   "4,7": {
+    "text": "46331",
+    "fill": "#EFBFC1"
+   },
+   "5,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "5,3": {
+    "text": "קארטינג, שיבויה (אופצייה לתצפית בשיבויה סקיי), וקארטינג  ,Harjuko & cat street",
+    "fill": "#EFBFC1"
+   },
+   "5,6": {
+    "text": "יום 4",
+    "fill": "#EFBFC1"
+   },
+   "5,7": {
+    "text": "46332",
+    "fill": "#EFBFC1"
+   },
+   "6,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "6,3": {
+    "text": "נוסעים לkaishikawa korakuen gardens משם לkusakura ומשם לdome city",
+    "fill": "#EFBFC1"
+   },
+   "6,6": {
+    "text": "יום 5",
+    "fill": "#EFBFC1"
+   },
+   "6,7": {
+    "text": "46333",
+    "fill": "#EFBFC1"
+   },
+   "7,0": {
+    "text": "2575",
+    "fill": "#FFA84D"
+   },
+   "7,1": {
+    "text": "HOTEL MYSTAYS Fuji Onsen Resort שולם\n",
+    "fill": "#FFA84D"
+   },
+   "7,2": {
+    "text": "קוואגוצ׳יקו",
+    "fill": "#FFA94C"
+   },
+   "7,3": {
+    "text": "נסיעה ברכבת ל- ,Fuji Excursion נסיעה למלון, Oishi Park, ומשם לMomiji Kairo\n",
+    "fill": "#FFA94C"
+   },
+   "7,6": {
+    "text": "יום 6",
+    "fill": "#FFA94C"
+   },
+   "7,7": {
+    "text": "46334",
+    "fill": "#FFA94C"
+   },
+   "8,2": {
+    "text": "קוואגוצ׳יקו",
+    "fill": "#FFA94C"
+   },
+   "8,3": {
+    "text": "Oshino Hakkai -טיפוס לתצפית הפגודה + רחוב הרטרו ומשם    וחזרה למלון (אופצייה ללכת מהמלון לאגם קוואגוצ׳יקו)  ",
+    "fill": "#FFA94C"
+   },
+   "8,6": {
+    "text": "יום 7",
+    "fill": "#FFA94C"
+   },
+   "8,7": {
+    "text": "46335",
+    "fill": "#FFA94C"
+   },
+   "9,2": {
+    "text": "קוואגוצ׳יקו",
+    "fill": "#FFA94C"
+   },
+   "9,3": {
+    "text": "טרק יום ב- ,Mount Mitsutoge נסיעה לSaiko lyashi-no Sato Nemba, ולאחר מכן חזרה למלון",
+    "fill": "#FFA94C"
+   },
+   "9,6": {
+    "text": "יום 8",
+    "fill": "#FFA94C"
+   },
+   "9,7": {
+    "text": "46336",
+    "fill": "#FFA94C"
+   },
+   "10,0": {
+    "text": "2015",
+    "fill": "#DCFFC8"
+   },
+   "10,1": {
+    "text": "Agora kyoto shijo\nשולם\n",
+    "fill": "#DCFFC8"
+   },
+   "10,2": {
+    "text": "קיוטו",
+    "fill": "#DDFFC9"
+   },
+   "10,3": {
+    "text": "הגעה מקוואגוצ'יקו לקיוטו, עוברים במפלים shiraito falls ומשם הולכים למלון ואח״כ לשוק נישיקי לצהריים, (אופצייה ללכת ממש קרוב לשם ל(puppy cocoa, הליכה רגלית לאורך kamo river וחצייה אל סמטאות העץ של gion ו pontocho.",
+    "fill": "#DDFFC9"
+   },
+   "10,6": {
+    "text": "יום 9",
+    "fill": "#DDFFC9"
+   },
+   "10,7": {
+    "text": "46337",
+    "fill": "#DDFFC9"
+   },
+   "11,2": {
+    "text": "קיוטו",
+    "fill": "#DDFFC9"
+   },
+   "11,3": {
+    "text": null,
+    "fill": "#DDFFC9"
+   },
+   "11,6": {
+    "text": "יום 10",
+    "fill": "#DDFFC9"
+   },
+   "11,7": {
+    "text": "46338",
+    "fill": "#DDFFC9"
+   },
+   "12,2": {
+    "text": "קיוטו",
+    "fill": "#DDFFC9"
+   },
+   "12,3": {
+    "text": null,
+    "fill": "#DDFFC9"
+   },
+   "12,6": {
+    "text": "יום 11",
+    "fill": "#DDFFC9"
+   },
+   "12,7": {
+    "text": "46339",
+    "fill": "#DDFFC9"
+   },
+   "13,2": {
+    "text": "קיוטו",
+    "fill": "#DDFFC9"
+   },
+   "13,3": {
+    "text": "האכלת צבאים בנארה, ביקור במקדש העץ הענק todai ji (פסל בודהה גדול), צפייה במופע הכנת המוצי המהיר בעולם בחנות nakatanidou- ברחוב הראשי של נארה, לקראת אחהצ חוזרים למלון וסיבוב בגיון.",
+    "fill": "#DDFFC9"
+   },
+   "13,6": {
+    "text": "יום 12",
+    "fill": "#DDFFC9"
+   },
+   "13,7": {
+    "text": "46340",
+    "fill": "#DDFFC9"
+   },
+   "14,0": {
+    "text": "822",
+    "fill": "#FFFCAE"
+   },
+   "14,1": {
+    "text": "Hotel cordia osaka hommachi שולם\n",
+    "fill": "#FFFCAE"
+   },
+   "14,2": {
+    "text": "אוסקה",
+    "fill": "#FFFCAE"
+   },
+   "14,3": {
+    "text": "מעבר מקיוטו לאוסקה, הסתובבות בshinsaibashi- fuji, מקדש ראש האריה + סיבבוב ברובע הרטקו סביב מגדל tsutenkaku, סיבוב בdotonbori ושייט בסירת תעלה וארוחת ערב",
+    "fill": "#FFFCAE"
+   },
+   "14,6": {
+    "text": "יום 13",
+    "fill": "#FFFCAE"
+   },
+   "14,7": {
+    "text": "46341",
+    "fill": "#FFFCAE"
+   },
+   "15,2": {
+    "text": "אוסקה",
+    "fill": "#FFFCAE"
+   },
+   "15,3": {
+    "text": "יוניברסל סטודיו",
+    "fill": "#FFFCAE"
+   },
+   "15,6": {
+    "text": "יום 14",
+    "fill": "#FFFCAE"
+   },
+   "15,7": {
+    "text": "46342",
+    "fill": "#FFFCAE"
+   },
+   "16,2": {
+    "text": "אוסקה",
+    "fill": "#FFFCAE"
+   },
+   "16,3": {
+    "text": "מצודת אוסקה, שווקים (,(orange street & namba parks עלייה לגשר המרחף ולתצפית הגג used sky building בשקיעה-> שליחת מזוודות לטוקיו מהמלון",
+    "fill": "#FFFCAE"
+   },
+   "16,6": {
+    "text": "יום 15",
+    "fill": "#FFFCAE"
+   },
+   "16,7": {
+    "text": "46343",
+    "fill": "#FFFCAE"
+   },
+   "17,0": {
+    "text": "6318",
+    "fill": "#EFBFC0"
+   },
+   "17,1": {
+    "text": "NOGHA HOTEL HAKIHABARA TOKYO          שולם\n",
+    "fill": "#EFBFC0"
+   },
+   "17,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "17,3": {
+    "text": "טיול בשווקים עם ארז וענבל",
+    "fill": "#EFBFC1"
+   },
+   "17,6": {
+    "text": "יום 16",
+    "fill": "#EFBFC1"
+   },
+   "17,7": {
+    "text": "46344",
+    "fill": "#EFBFC1"
+   },
+   "18,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "18,3": {
+    "text": "הגעה למקדש העתיק ((senso ji, רחוב הנישנושים (nakamise) בערב מוזיאון האמנות הדיגיטלי (team lab) התארגנות ליום שלמחרת.",
+    "fill": "#EFBFC1"
+   },
+   "18,6": {
+    "text": "יום 17",
+    "fill": "#EFBFC1"
+   },
+   "18,7": {
+    "text": "46345",
+    "fill": "#EFBFC1"
+   },
+   "19,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "19,3": {
+    "text": "נסיעה לאאוטלט גוטמבה (אאוטלט מותגים ענק!) שעה וחצי ברכבת מטוקיו",
+    "fill": "#EFBFC1"
+   },
+   "19,6": {
+    "text": "יום 18",
+    "fill": "#EFBFC1"
+   },
+   "19,7": {
+    "text": "46346",
+    "fill": "#EFBFC1"
+   },
+   "20,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "20,3": {
+    "text": "שוק רחוב מקומי ueno park ושוק הרחוב ameyoko, akihabara electric town (מתחמי ארקייד וגיימינג)",
+    "fill": "#EFBFC1"
+   },
+   "20,6": {
+    "text": "יום 19",
+    "fill": "#EFBFC1"
+   },
+   "20,7": {
+    "text": "46347",
+    "fill": "#EFBFC1"
+   },
+   "21,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "21,3": {
+    "text": "טיול יום לקמקוקה",
+    "fill": "#EFBFC1"
+   },
+   "21,6": {
+    "text": "יום 20",
+    "fill": "#EFBFC1"
+   },
+   "21,7": {
+    "text": "46348",
+    "fill": "#EFBFC1"
+   },
+   "22,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "22,3": {
+    "text": "טיול לדיסניסי",
+    "fill": "#EFBFC1"
+   },
+   "22,6": {
+    "text": "יום 21",
+    "fill": "#EFBFC1"
+   },
+   "22,7": {
+    "text": "46349",
+    "fill": "#EFBFC1"
+   },
+   "23,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "23,3": {
+    "text": "טיול יום לניקו (nikko)",
+    "fill": "#EFBFC1"
+   },
+   "23,6": {
+    "text": "יום 22",
+    "fill": "#EFBFC1"
+   },
+   "23,7": {
+    "text": "46350",
+    "fill": "#EFBFC1"
+   },
+   "24,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "24,3": {
+    "text": "טיול ב daikanyama & naka, עצירה בסניף סטארבקס, אחהצ טיול בפארק השלכת- shinjuku gyoen national park",
+    "fill": "#EFBFC1"
+   },
+   "24,6": {
+    "text": "יום 23",
+    "fill": "#EFBFC1"
+   },
+   "24,7": {
+    "text": "46351",
+    "fill": "#EFBFC1"
+   },
+   "25,2": {
+    "text": "טוקיו",
+    "fill": "#EFBFC1"
+   },
+   "25,3": {
+    "text": "יום אחרון - שליחת קניות לארץ",
+    "fill": "#EFBFC1"
+   },
+   "25,6": {
+    "text": "יום 24",
+    "fill": "#F1BFC1"
+   },
+   "25,7": {
+    "text": "46352",
+    "fill": "#F1BFC1"
+   },
+   "26,0": {
+    "text": "326",
+    "fill": "#FFFBD8"
+   },
+   "26,1": {
+    "text": "ECHO INN COTTAGE BY AO NANG HELL    שולם ",
+    "fill": "#FFFBD8"
+   },
+   "26,2": {
+    "text": "בנגקוק+קראבי",
+    "fill": "#FFFBD8"
+   },
+   "26,3": {
+    "text": "מעבר לתאילנד, נוחתים בבנגקוק וטיסה לקראבי",
+    "fill": "#FFFBD8"
+   },
+   "26,6": {
+    "text": "יום 25",
+    "fill": "#FFFBD8"
+   },
+   "26,7": {
+    "text": "46353",
+    "fill": "#FFFBD8"
+   },
+   "27,0": {
+    "text": "2642",
+    "fill": "#BEE9EA"
+   },
+   "27,1": {
+    "text": "Panan krabi resort             שולם ",
+    "fill": "#BEE9EA"
+   },
+   "27,2": {
+    "text": "קראבי",
+    "fill": "#BEE9EA"
+   },
+   "27,3": {
+    "text": null,
+    "fill": "#BEE9EA"
+   },
+   "27,6": {
+    "text": "יום 26",
+    "fill": "#BEE9EA"
+   },
+   "27,7": {
+    "text": "46354",
+    "fill": "#BEE9EA"
+   },
+   "28,2": {
+    "text": "קראבי",
+    "fill": "#BEE9EA"
+   },
+   "28,3": {
+    "text": null,
+    "fill": "#BEE9EA"
+   },
+   "28,6": {
+    "text": "יום 27",
+    "fill": "#BEE9EA"
+   },
+   "28,7": {
+    "text": "46355",
+    "fill": "#BEE9EA"
+   },
+   "29,2": {
+    "text": "קראבי",
+    "fill": "#BEE9EA"
+   },
+   "29,3": {
+    "text": null,
+    "fill": "#BEE9EA"
+   },
+   "29,6": {
+    "text": "יום 28",
+    "fill": "#BEE9EA"
+   },
+   "29,7": {
+    "text": "46356",
+    "fill": "#BEE9EA"
+   },
+   "30,2": {
+    "text": "קראבי",
+    "fill": "#BEE9EA"
+   },
+   "30,3": {
+    "text": null,
+    "fill": "#BEE9EA"
+   },
+   "30,6": {
+    "text": "יום 29",
+    "fill": "#BEE9EA"
+   },
+   "30,7": {
+    "text": "46357",
+    "fill": "#BEE9EA"
+   },
+   "31,0": {
+    "text": "1226",
+    "fill": "#DAC0ED"
+   },
+   "31,1": {
+    "text": "PP PRINCESS Resort             שולם ",
+    "fill": "#DAC0ED"
+   },
+   "31,2": {
+    "text": "קופיפי",
+    "fill": "#DAC0ED"
+   },
+   "31,3": {
+    "text": null,
+    "fill": "#DAC0ED"
+   },
+   "31,6": {
+    "text": "יום 30",
+    "fill": "#DAC0ED"
+   },
+   "31,7": {
+    "text": "46358",
+    "fill": "#DAC0ED"
+   },
+   "32,2": {
+    "text": "קופיפי",
+    "fill": "#DAC0ED"
+   },
+   "32,3": {
+    "text": null,
+    "fill": "#DAC0ED"
+   },
+   "32,6": {
+    "text": "יום 31",
+    "fill": "#DAC0ED"
+   },
+   "32,7": {
+    "text": "46359",
+    "fill": "#DAC0ED"
+   },
+   "33,2": {
+    "text": "קופיפי",
+    "fill": "#DAC0ED"
+   },
+   "33,3": {
+    "text": null,
+    "fill": "#DAC0ED"
+   },
+   "33,6": {
+    "text": "יום 32",
+    "fill": "#DAC0ED"
+   },
+   "33,7": {
+    "text": "46360",
+    "fill": "#DAC0ED"
+   },
+   "34,0": {
+    "text": "2793",
+    "fill": "#FF9F73"
+   },
+   "34,1": {
+    "text": "TWIN LOTUS RESORT AND SPA                שולם ",
+    "fill": "#FF9F73"
+   },
+   "34,2": {
+    "text": "קו לאנטה",
+    "fill": "#FF9F73"
+   },
+   "34,3": {
+    "text": null,
+    "fill": "#FF9F73"
+   },
+   "34,6": {
+    "text": "יום 33",
+    "fill": "#FF9F73"
+   },
+   "34,7": {
+    "text": "46361",
+    "fill": "#FF9F73"
+   },
+   "35,2": {
+    "text": "קו לאנטה",
+    "fill": "#FF9F73"
+   },
+   "35,3": {
+    "text": null,
+    "fill": "#FF9F73"
+   },
+   "35,6": {
+    "text": "יום 34",
+    "fill": "#FF9F73"
+   },
+   "35,7": {
+    "text": "46362",
+    "fill": "#FF9F73"
+   },
+   "36,2": {
+    "text": "קו לאנטה",
+    "fill": "#FF9F73"
+   },
+   "36,3": {
+    "text": null,
+    "fill": "#FF9F73"
+   },
+   "36,6": {
+    "text": "יום 35",
+    "fill": "#FF9F73"
+   },
+   "36,7": {
+    "text": "46363",
+    "fill": "#FF9F73"
+   },
+   "37,2": {
+    "text": "קו לאנטה",
+    "fill": "#FF9F73"
+   },
+   "37,3": {
+    "text": null,
+    "fill": "#FF9F73"
+   },
+   "37,6": {
+    "text": "יום 36",
+    "fill": "#FF9F73"
+   },
+   "37,7": {
+    "text": "46364",
+    "fill": "#FF9F73"
+   },
+   "38,2": {
+    "text": "קו לאנטה",
+    "fill": "#FF9F73"
+   },
+   "38,3": {
+    "text": null,
+    "fill": "#FF9F73"
+   },
+   "38,6": {
+    "text": "יום 37",
+    "fill": "#FF9F73"
+   },
+   "38,7": {
+    "text": "46365",
+    "fill": "#FF9F73"
+   },
+   "39,0": {
+    "text": "1550",
+    "fill": "#BEE9EA"
+   },
+   "39,1": {
+    "text": "VARANA HOTEL KRABI               שולם ",
+    "fill": "#BEE9EA"
+   },
+   "39,2": {
+    "text": "קראבי",
+    "fill": "#BEE9EA"
+   },
+   "39,3": {
+    "text": null,
+    "fill": "#BEE9EA"
+   },
+   "39,6": {
+    "text": "יום 38",
+    "fill": "#BEE9EA"
+   },
+   "39,7": {
+    "text": "46366",
+    "fill": "#BEE9EA"
+   },
+   "40,2": {
+    "text": "קראבי",
+    "fill": "#BEE9EA"
+   },
+   "40,3": {
+    "text": null,
+    "fill": "#BEE9EA"
+   },
+   "40,6": {
+    "text": "יום 39",
+    "fill": "#BEE9EA"
+   },
+   "40,7": {
+    "text": "46367",
+    "fill": "#BEE9EA"
+   },
+   "41,0": {
+    "text": "1909",
+    "fill": "#FFFBD8"
+   },
+   "41,1": {
+    "text": "EASTIN GRAND HOTEL PHAYATHAI              שולם ",
+    "fill": "#FFFBD8"
+   },
+   "41,2": {
+    "text": "בנגקוק  ",
+    "fill": "#FFFBD8"
+   },
+   "41,3": {
+    "text": null,
+    "fill": "#FFFBD8"
+   },
+   "41,6": {
+    "text": "יום 40",
+    "fill": "#FFFBD8"
+   },
+   "41,7": {
+    "text": "46368",
+    "fill": "#FFFBD8"
+   },
+   "42,2": {
+    "text": "בנגקוק  ",
+    "fill": "#FFFBD8"
+   },
+   "42,3": {
+    "text": null,
+    "fill": "#FFFBD8"
+   },
+   "42,6": {
+    "text": "יום 41",
+    "fill": "#FFFBD8"
+   },
+   "42,7": {
+    "text": "46369",
+    "fill": "#FFFBD8"
+   },
+   "43,2": {
+    "text": "בנגקוק  ",
+    "fill": "#FFFBD8"
+   },
+   "43,3": {
+    "text": null,
+    "fill": "#FFFBD8"
+   },
+   "43,6": {
+    "text": "יום 42",
+    "fill": "#FFFBD8"
+   },
+   "43,7": {
+    "text": "46370",
+    "fill": "#FFFBD8"
+   },
+   "44,2": {
+    "text": "בנגקוק  ",
+    "fill": "#FFFBD8"
+   },
+   "44,3": {
+    "text": "טיסה חזור",
+    "fill": "#FFFBD8"
+   },
+   "44,6": {
+    "text": "יום 43",
+    "fill": "#FFFBD8"
+   },
+   "44,7": {
+    "text": "46371",
+    "fill": "#FFFBD8"
+   }
+  },
+  "merged": [
+   "A11:A14",
+   "A15:A17",
+   "A18:A26",
+   "A28:A31",
+   "A32:A34",
+   "A35:A39",
+   "A40:A41",
+   "A42:A45",
+   "A4:A7",
+   "A8:A10",
+   "B11:B14",
+   "B15:B17",
+   "B18:B26",
+   "B1:G1",
+   "B28:B31",
+   "B32:B34",
+   "B35:B39",
+   "B40:B41",
+   "B42:B45",
+   "B4:B7",
+   "B8:B10",
+   "D10:F10",
+   "D11:F11",
+   "D12:F12",
+   "D13:F13",
+   "D14:F14",
+   "D15:F15",
+   "D16:F16",
+   "D17:F17",
+   "D18:F18",
+   "D19:F19",
+   "D20:F20",
+   "D21:F21",
+   "D22:F22",
+   "D23:F23",
+   "D24:F24",
+   "D25:F25",
+   "D26:F26",
+   "D27:F27",
+   "D28:F28",
+   "D29:F29",
+   "D2:F2",
+   "D30:F30",
+   "D31:F31",
+   "D32:F32",
+   "D33:F33",
+   "D34:F34",
+   "D35:F35",
+   "D36:F36",
+   "D37:F37",
+   "D38:F38",
+   "D39:F39",
+   "D3:F3",
+   "D40:F40",
+   "D41:F41",
+   "D42:F42",
+   "D43:F43",
+   "D44:F44",
+   "D45:F45",
+   "D4:F4",
+   "D5:F5",
+   "D6:F6",
+   "D7:F7",
+   "D8:F8",
+   "D9:F9"
+  ]
+ },
+ {
+  "rows": 27,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "נסיעות ואטרקציות",
+    "fill": "#4E6E43"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#ABF38E"
+   },
+   "2,0": {
+    "text": "עלות בשקלים",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם האטרקציה",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "1075",
+    "fill": null
+   },
+   "3,1": {
+    "text": "פארק שעשועים 2 כרטיסים",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Universal ",
+    "fill": null
+   },
+   "4,0": {
+    "text": "424",
+    "fill": null
+   },
+   "4,1": {
+    "text": "נקבע 19.11",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Mario Kart",
+    "fill": null
+   },
+   "5,4": {
+    "text": "מספרה",
+    "fill": null
+   },
+   "6,4": {
+    "text": "ריוקן",
+    "fill": null
+   },
+   "7,4": {
+    "text": "דיסני סי?",
+    "fill": null
+   },
+   "8,1": {
+    "text": "פארק בפוגי כניסה מ14",
+    "fill": null
+   },
+   "8,4": {
+    "text": "Fuji-Q Highland",
+    "fill": null
+   },
+   "11,0": {
+    "text": "נסיעות",
+    "fill": "#ABF38E"
+   },
+   "12,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "12,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "12,4": {
+    "text": "סוג תחבורה",
+    "fill": "#B1B2B2"
+   },
+   "13,0": {
+    "text": "710",
+    "fill": null
+   },
+   "13,1": {
+    "text": "מאוסקה לטוקיו 2 כרטיסים",
+    "fill": null
+   },
+   "13,4": {
+    "text": "שינקנסן",
+    "fill": null
+   },
+   "14,0": {
+    "text": "500",
+    "fill": null
+   },
+   "14,1": {
+    "text": "Shinfuji station לקיוטו",
+    "fill": null
+   },
+   "14,4": {
+    "text": "שינקנסן",
+    "fill": null
+   },
+   "15,1": {
+    "text": "להזמין רכבת חודש מראש מפוגי לקווגוצ׳יקו",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Fuji Excursion-רכבת",
+    "fill": null
+   },
+   "16,0": {
+    "text": "מסעדות הזמנה מראש",
+    "fill": "#ABF38E"
+   },
+   "17,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "17,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "17,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "18,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "אודון רחב מפורסם- הזמנת מקום (להירשם בבוקר)",
+    "fill": "#FF5857"
+   },
+   "18,4": {
+    "text": "Godaime Hanayama Udon Ginza",
+    "fill": "#F2F2F2"
+   },
+   "19,0": {
+    "text": "$$-$$$",
+    "fill": null
+   },
+   "19,1": {
+    "text": "הזמנה מראש- נמצאת בנאגנו",
+    "fill": "#FF5857"
+   },
+   "19,4": {
+    "text": "Maguro Mart",
+    "fill": null
+   },
+   "20,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "20,1": {
+    "text": "הוזמן ל19.11",
+    "fill": "#70B27D"
+   },
+   "20,4": {
+    "text": "Gonpachi",
+    "fill": "#F2F2F2"
+   },
+   "21,0": {
+    "text": "$$$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "הוזמן ל6.11",
+    "fill": "#70B27D"
+   },
+   "21,4": {
+    "text": "EBISU SUSHI KENSHIN",
+    "fill": "#F2F2F2"
+   },
+   "22,0": {
+    "text": "טפסים",
+    "fill": "#ABF38E"
+   },
+   "23,0": {
+    "text": "טופס כניסה לתאילנד- לבדוק אם צריך ליפן",
+    "fill": null
+   },
+   "24,0": {
+    "text": "לשמור אישור ליוניברסל ",
+    "fill": null
+   },
+   "25,0": {
+    "text": "לשמור אישור לרכבת- שינקנסין",
+    "fill": null
+   },
+   "26,0": {
+    "text": "חידוש רישיון נהיגה בינלאומי",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A12:E12",
+   "A17:E17",
+   "A1:E1",
+   "A23:E23",
+   "A24:E24",
+   "A25:E25",
+   "A26:E26",
+   "A27:E27",
+   "A2:E2",
+   "B10:D10",
+   "B11:D11",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B18:D18",
+   "B19:D19",
+   "B20:D20",
+   "B21:D21",
+   "B22:D22",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 33,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "שינג׳וקו",
+    "fill": "#9C62B5"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#CEB7F1"
+   },
+   "2,0": {
+    "text": "מרחק מהמלון",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "2 הליכה דקות מהמלון",
+    "fill": null
+   },
+   "3,1": {
+    "text": "איזור הנאונים, מסעדות, מקומות בילוי",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Kabukicho",
+    "fill": null
+   },
+   "4,0": {
+    "text": "4 דק הליכה מהמלון",
+    "fill": null
+   },
+   "4,1": {
+    "text": "פסל גודזילה הענק מעל ",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Godzilla Head",
+    "fill": null
+   },
+   "5,0": {
+    "text": "10 דק הליכה מהמלון",
+    "fill": null
+   },
+   "5,1": {
+    "text": "יותר אווירה ישנה של טוקיו",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Omoide Yokocho",
+    "fill": null
+   },
+   "6,0": {
+    "text": "5 דקות מהמלון",
+    "fill": null
+   },
+   "6,1": {
+    "text": "סמטאות קטנות עם הרבה ברים מיניאטוריים ",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Golden Gai",
+    "fill": null
+   },
+   "7,0": {
+    "text": "15 דק הליכה מהמלון",
+    "fill": null
+   },
+   "7,1": {
+    "text": "פארק וגנים יפניים גדולים",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Shinjuku Gyoen",
+    "fill": null
+   },
+   "8,0": {
+    "text": "קניות",
+    "fill": "#CEB7F1"
+   },
+   "9,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "9,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "בית כולבו גדול, אופנה, ביוטי, מותגים ואוכל",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Isetan Shinjuku",
+    "fill": null
+   },
+   "11,1": {
+    "text": "חנות יד 2- מעצבים",
+    "fill": null
+   },
+   "11,4": {
+    "text": "RAGTAG",
+    "fill": null
+   },
+   "12,1": {
+    "text": "חנות יד שנייה- עדיפות קודם לשימוקיטזוואה",
+    "fill": null
+   },
+   "12,4": {
+    "text": "2nd Street Shinjuku 2",
+    "fill": null
+   },
+   "13,1": {
+    "text": "חנות קוסמטיקה- חטיפים טיפוח וכו",
+    "fill": null
+   },
+   "13,4": {
+    "text": "Don Quijote",
+    "fill": null
+   },
+   "14,1": {
+    "text": "חנות משקפיים",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Jin!",
+    "fill": null
+   },
+   "15,1": {
+    "text": "לקנות אייפון",
+    "fill": null
+   },
+   "15,4": {
+    "text": "APPLE",
+    "fill": null
+   },
+   "16,1": {
+    "text": "סניף של נייק עם התאמות אישיות פאצ׳ים יש גם באוסקה",
+    "fill": null
+   },
+   "16,4": {
+    "text": "Nike ",
+    "fill": null
+   },
+   "17,1": {
+    "text": "נעליים וסניקרס ",
+    "fill": null
+   },
+   "17,4": {
+    "text": "ABC-MART",
+    "fill": null
+   },
+   "18,1": {
+    "text": "בגדים",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Zara",
+    "fill": null
+   },
+   "19,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#CEB6F2"
+   },
+   "20,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "20,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "20,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "21,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "ראמן",
+    "fill": null
+   },
+   "21,4": {
+    "text": "AFURI Shinjuku Lumine",
+    "fill": null
+   },
+   "22,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "22,1": {
+    "text": "ראמן",
+    "fill": null
+   },
+   "22,4": {
+    "text": "Ippudo Lumine Est Shinjuku",
+    "fill": null
+   },
+   "23,0": {
+    "text": "מסעדות לטל",
+    "fill": "#CEB6F2"
+   },
+   "24,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "24,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "24,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "25,0": {
+    "text": "$",
+    "fill": null
+   },
+   "25,1": {
+    "text": "סובה-",
+    "fill": null
+   },
+   "25,4": {
+    "text": "Kameya Shinjuku",
+    "fill": null
+   },
+   "26,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "26,1": {
+    "text": "המבורגר",
+    "fill": null
+   },
+   "26,4": {
+    "text": "Shogun Burger",
+    "fill": null
+   },
+   "27,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "27,1": {
+    "text": "ראמן- ברווז",
+    "fill": null
+   },
+   "27,4": {
+    "text": "Ramen Kamo to Negi",
+    "fill": null
+   },
+   "28,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#CEB6F2"
+   },
+   "29,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "29,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "29,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "30,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "30,1": {
+    "text": "גיוזה+ מנות יפניות (פתוח 24/7)",
+    "fill": null
+   },
+   "30,4": {
+    "text": "Shinjuku Hikeshi Gyoza",
+    "fill": "#F2F2F2"
+   },
+   "31,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "31,1": {
+    "text": "קומת אוכל שיש הכל",
+    "fill": null
+   },
+   "31,4": {
+    "text": "Isetan Depachika",
+    "fill": null
+   },
+   "32,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "32,1": {
+    "text": "ראמן",
+    "fill": null
+   },
+   "32,4": {
+    "text": "AFURI",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:E1",
+   "A20:E20",
+   "A24:E24",
+   "A29:E29",
+   "A2:E2",
+   "A9:E9",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B19:D19",
+   "B21:D21",
+   "B22:D22",
+   "B23:D23",
+   "B25:D25",
+   "B26:D26",
+   "B27:D27",
+   "B28:D28",
+   "B30:D30",
+   "B31:D31",
+   "B32:D32",
+   "B33:D33",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8"
+  ]
+ },
+ {
+  "rows": 22,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "שימוקיטאזווה+נאקאנו",
+    "fill": "#41B7FF"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": null
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "15 דקות ברכבת עולה 170 יין",
+    "fill": null
+   },
+   "3,1": {
+    "text": "רחובות של חנויות יד 2 בעיקר להסתובב לא בהכרח חנות ספציפית",
+    "fill": null
+   },
+   "3,4": {
+    "text": "שימוקיטזאווה",
+    "fill": null
+   },
+   "4,0": {
+    "text": "3 דקות הליכה מהרכבת",
+    "fill": null
+   },
+   "4,1": {
+    "text": "שדרת קניות שכונתית עם וינטג', בתי קפה וחנויות קטנות",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Shimokitazawa Ichibangai",
+    "fill": null
+   },
+   "5,1": {
+    "text": "שדרת קניות מקורה שמתחילה ממש ביציאה מהתחנה חוזרים למלון ובערב מסעדת טונה",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Nakano Sun Mall",
+    "fill": null
+   },
+   "6,1": {
+    "text": "מרכז קניות מפורסם של אנימה, מנגה, פיגרים, אספנות, שעונים ויד שנייה",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Nakano Broadway",
+    "fill": null
+   },
+   "7,0": {
+    "text": "קניות",
+    "fill": null
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "חנות יד 2",
+    "fill": null
+   },
+   "9,4": {
+    "text": "2nd Street Shimokitazawa",
+    "fill": null
+   },
+   "10,1": {
+    "text": "חנות יד 2",
+    "fill": null
+   },
+   "10,4": {
+    "text": "JAM VINTAGE & SELECT Shimokitazawa",
+    "fill": null
+   },
+   "11,1": {
+    "text": "וינטג׳׳ אמריקאי",
+    "fill": null
+   },
+   "11,4": {
+    "text": "Flamingo",
+    "fill": null
+   },
+   "12,1": {
+    "text": "חנות וינטג׳ מאוד מפורסמת",
+    "fill": null
+   },
+   "12,4": {
+    "text": "NEW YORK JOE EXCHANGE",
+    "fill": null
+   },
+   "13,1": {
+    "text": "חנות יד 2",
+    "fill": null
+   },
+   "13,4": {
+    "text": "RAGTAG",
+    "fill": null
+   },
+   "14,0": {
+    "text": "מסעדות עדי",
+    "fill": null
+   },
+   "15,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "15,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "15,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "16,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "16,1": {
+    "text": "סובה",
+    "fill": null
+   },
+   "16,4": {
+    "text": "Vegan Soba Tokyo Ayler",
+    "fill": null
+   },
+   "17,0": {
+    "text": "מסעדות משותפות ",
+    "fill": null
+   },
+   "18,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "18,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "18,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "19,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "19,1": {
+    "text": "חובה!- מעבדת קפה/אפשר להתנסות בסוגי פולים ושיטות הכנה יש מספר קומות כל קומה משהו אחר.",
+    "fill": null
+   },
+   "19,4": {
+    "text": "Ogawa Coffee Laboratory",
+    "fill": "#F2F2F2"
+   },
+   "20,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "20,1": {
+    "text": "בית קפה-פנקייק",
+    "fill": null
+   },
+   "20,4": {
+    "text": "Flipper's",
+    "fill": null
+   },
+   "21,0": {
+    "text": "$$-$$$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "הזמנה מראש- נמצאת בנאגנו",
+    "fill": "#FF5857"
+   },
+   "21,4": {
+    "text": "Maguro Mart",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A15:E15",
+   "A18:E18",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B14:D14",
+   "B16:D16",
+   "B17:D17",
+   "B19:D19",
+   "B20:D20",
+   "B21:D21",
+   "B22:D22",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 17,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "אואנו",
+    "fill": "#F4CA39"
+   },
+   "1,0": {
+    "text": "קניות",
+    "fill": "#EEEF80"
+   },
+   "2,0": {
+    "text": "מרחק הליכה",
+    "fill": "#B1B2B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "2,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "3,0": {
+    "text": "עולים מתחנה kasha station לאוואנו ויורדים בueno okachimachi עלות רכבת 180 יין",
+    "fill": null
+   },
+   "3,1": {
+    "text": "יד שנייה, בגדים, תיקים, משחקים",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Tokyo Dome City",
+    "fill": null
+   },
+   "4,0": {
+    "text": "2 דקות הליכה מהbookoff",
+    "fill": null
+   },
+   "4,1": {
+    "text": "יד שנייה של מותגי יוקרה",
+    "fill": null
+   },
+   "4,4": {
+    "text": "SASUGAYA OUTLET",
+    "fill": null
+   },
+   "5,0": {
+    "text": "5 דקות הליכה",
+    "fill": null
+   },
+   "5,1": {
+    "text": "חנות עד 100 יין",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Daiso",
+    "fill": null
+   },
+   "6,0": {
+    "text": "9 דקות הליכה מdaiso",
+    "fill": null
+   },
+   "6,1": {
+    "text": "יד שנייה זולה יותר",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Tampopo House Ueno-Hirokoji",
+    "fill": null
+   },
+   "7,0": {
+    "text": "8 דק הליכה מtampoo house",
+    "fill": null
+   },
+   "7,1": {
+    "text": "שוק וקניות",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Ameyoko",
+    "fill": null
+   },
+   "8,0": {
+    "text": "מתחת אואנו 15 שעה ברכבת 220 יין",
+    "fill": null
+   },
+   "8,1": {
+    "text": "חזרה למלון",
+    "fill": null
+   },
+   "8,4": {
+    "text": "Amanek hotel",
+    "fill": null
+   },
+   "9,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#EEEE81"
+   },
+   "10,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "10,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "11,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "11,1": {
+    "text": "גיוזה- 100% טבעוני",
+    "fill": null
+   },
+   "11,4": {
+    "text": "VEGAN GYOZA",
+    "fill": null
+   },
+   "12,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#EEEE81"
+   },
+   "13,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "13,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "13,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "14,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "14,1": {
+    "text": "טונה וסושי במחיר נגיש",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Magurobito / Magurobito Okachimachi",
+    "fill": null
+   },
+   "15,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "15,1": {
+    "text": "שוק",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Ameyoko",
+    "fill": null
+   },
+   "16,0": {
+    "text": "$$-$$$",
+    "fill": null
+   },
+   "16,1": {
+    "text": "סושי- איכותי יותר",
+    "fill": null
+   },
+   "16,4": {
+    "text": "Kanazawa Maimon Sushi Ueno",
+    "fill": "#F2F2F2"
+   }
+  },
+  "merged": [
+   "A10:E10",
+   "A13:E13",
+   "A1:E1",
+   "A2:E2",
+   "B11:D11",
+   "B12:D12",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 22,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "אומוטסנדו+הרג׳וקו",
+    "fill": "#FC1F5B"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#F5788B"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "הליכה לShinjuku-sanchome Station\n2 תחנות יורדים בMeiji-jingumae ‘Harajuku’\n",
+    "fill": null
+   },
+   "3,1": {
+    "text": "לשם מגיעים בהתחלה כדי להמשיך את היום",
+    "fill": null
+   },
+   "3,4": {
+    "text": "HARAJUKU STATION",
+    "fill": null
+   },
+   "4,1": {
+    "text": "שדרת קניות צעירה וצבעונית, אופנה, חטיפים וחנויות קטנות",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Takeshita Street",
+    "fill": null
+   },
+   "5,1": {
+    "text": "מוזיאון חינמי של גלאקסי, טעימה לteam lab שיהיה בקיוטו, חוויה אינטרקטיבית ותערוכה",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Galaxy Harajuku",
+    "fill": null
+   },
+   "6,1": {
+    "text": "שדרה רחבה ויפה עם אדריכלות, מותגים ובתי קפה",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Omotesando",
+    "fill": null
+   },
+   "7,1": {
+    "text": "רחוב אופנה ובוטיקים שמחבר יפה לכיוון Shibuya",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Cat Street",
+    "fill": null
+   },
+   "8,0": {
+    "text": "קניות",
+    "fill": "#F5788A"
+   },
+   "9,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "9,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "עם אופצציה לריקמה (רק בהרג׳קו) Levi’s חנות ",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Levi’s Harajuku Store",
+    "fill": null
+   },
+   "11,1": {
+    "text": "חנות מעצבים מגניבה",
+    "fill": null
+   },
+   "11,4": {
+    "text": "BAPE STORE",
+    "fill": null
+   },
+   "12,1": {
+    "text": "חנות מגנים מגניבים לאייפון",
+    "fill": null
+   },
+   "12,4": {
+    "text": "cas:pace",
+    "fill": null
+   },
+   "13,1": {
+    "text": "חנות וינט׳ג",
+    "fill": null
+   },
+   "13,4": {
+    "text": "JAM Harajuku",
+    "fill": null
+   },
+   "14,1": {
+    "text": "החנות הרישמית",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Onitsuka Tiger Omotesando",
+    "fill": null
+   },
+   "15,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#F5788A"
+   },
+   "16,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "16,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "16,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "17,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "17,1": {
+    "text": "ראמן",
+    "fill": null
+   },
+   "17,4": {
+    "text": "Kyushu Jangara Ramen Harajuku",
+    "fill": null
+   },
+   "18,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "מסעדה טבעונית- גיוזות ירקות, סושי טבעוני",
+    "fill": null
+   },
+   "18,4": {
+    "text": "MOMINOKI HOUSE",
+    "fill": "#F2F2F2"
+   },
+   "19,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#F5788A"
+   },
+   "20,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "20,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "20,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "21,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "ראמן- עם אופצייה לטבעוני",
+    "fill": null
+   },
+   "21,4": {
+    "text": "AFURI",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A16:E16",
+   "A1:E1",
+   "A20:E20",
+   "A2:E2",
+   "A9:E9",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B17:D17",
+   "B18:D18",
+   "B19:D19",
+   "B21:D21",
+   "B22:D22",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8"
+  ]
+ },
+ {
+  "rows": 27,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "שיבויה",
+    "fill": "#FC1F5B"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#F5788A"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "15 דקות הליכה מהcat street",
+    "fill": null
+   },
+   "3,1": {
+    "text": "אופנה ומסעדות להסתובב- מעבר החצייה האייקוני",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Shibuya Crossing",
+    "fill": null
+   },
+   "4,1": {
+    "text": "רחוב קניות, אוכל",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Center-gai",
+    "fill": null
+   },
+   "5,1": {
+    "text": "נקודת תצפית על כל שיבויה",
+    "fill": null
+   },
+   "5,4": {
+    "text": "סטארבקס",
+    "fill": null
+   },
+   "6,1": {
+    "text": "נקבע 19.11",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Mario Kart",
+    "fill": null
+   },
+   "7,1": {
+    "text": "תצפית גג - להזמין מראש (למרות שיש כאלה בחינם)",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Shibuya Sky",
+    "fill": null
+   },
+   "8,0": {
+    "text": "קניות",
+    "fill": "#F5788B"
+   },
+   "9,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "9,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "קוסמטיקה- ליד הcenter gai",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Mega Don Quijote",
+    "fill": null
+   },
+   "11,1": {
+    "text": "נעליים",
+    "fill": null
+   },
+   "11,4": {
+    "text": "ABC-MART",
+    "fill": null
+   },
+   "12,1": {
+    "text": "כלי בית, קוסמטיקה",
+    "fill": null
+   },
+   "12,4": {
+    "text": "Shibuya Loft",
+    "fill": null
+   },
+   "13,1": {
+    "text": "אופנה ומסעדות להסתובב",
+    "fill": null
+   },
+   "13,4": {
+    "text": "Shibuya PARCO",
+    "fill": null
+   },
+   "14,1": {
+    "text": "לקחת בחשבון שמפוצץ- נמצא בקומה 6 בparco",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Pokémon Center Shibuya",
+    "fill": null
+   },
+   "15,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#F5788B"
+   },
+   "16,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "16,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "16,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "17,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "17,1": {
+    "text": "ראמן",
+    "fill": null
+   },
+   "17,4": {
+    "text": "Jikasei MENSHO",
+    "fill": null
+   },
+   "18,0": {
+    "text": "מסעדות לטל",
+    "fill": "#F5788B"
+   },
+   "19,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "19,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "19,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "20,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "20,1": {
+    "text": " - הזמנה מראשHamburg steak",
+    "fill": "#FF5857"
+   },
+   "20,4": {
+    "text": "Hikiniku to Come Shibuya",
+    "fill": null
+   },
+   "21,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#F5788B"
+   },
+   "22,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "22,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "22,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "23,0": {
+    "text": "$$–$$$",
+    "fill": null
+   },
+   "23,1": {
+    "text": "נקבע 19.11",
+    "fill": null
+   },
+   "23,4": {
+    "text": "Gonpachi",
+    "fill": "#F2F2F2"
+   },
+   "24,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "24,1": {
+    "text": "ראמן- עם אופצייה טבעונית",
+    "fill": null
+   },
+   "24,4": {
+    "text": "Jikasei MENSHO",
+    "fill": null
+   },
+   "25,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "25,1": {
+    "text": "פיצה",
+    "fill": null
+   },
+   "25,4": {
+    "text": "SHOGUN PIZZA Shibuya",
+    "fill": null
+   },
+   "26,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "26,1": {
+    "text": "בית קפה- מוגש על המים",
+    "fill": null
+   },
+   "26,4": {
+    "text": "RURU SHIBUYA",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A16:E16",
+   "A19:E19",
+   "A1:E1",
+   "A22:E22",
+   "A2:E2",
+   "A9:E9",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B17:D17",
+   "B18:D18",
+   "B20:D20",
+   "B21:D21",
+   "B23:D23",
+   "B24:D24",
+   "B25:D25",
+   "B26:D26",
+   "B27:D27",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8"
+  ]
+ },
+ {
+  "rows": 20,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "אסקוסה",
+    "fill": "#F4C93A"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#EEEF81"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "8 דקות נסעה ברכבת, עולים מתחנת Suehirochō Sta.\n180 יין\n",
+    "fill": null
+   },
+   "3,1": {
+    "text": "מקדש בודהיסטי מפורסם",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Sensō-ji",
+    "fill": null
+   },
+   "4,1": {
+    "text": "רחוב השוק שמוביל למקדש",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Nakamise",
+    "fill": null
+   },
+   "5,1": {
+    "text": "שער הכניסה האדום המפורסם",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Kaminarimon Gate.",
+    "fill": null
+   },
+   "6,0": {
+    "text": "6 דקות הליכה מהשער",
+    "fill": null
+   },
+   "6,1": {
+    "text": "טיילת על הנהר ונוף לכיוון Tokyo Skytree.",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Sumida River",
+    "fill": null
+   },
+   "7,0": {
+    "text": "קניות",
+    "fill": "#EEEF83"
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "כלי בית ומזכרות",
+    "fill": null
+   },
+   "9,4": {
+    "text": "Nakamise",
+    "fill": null
+   },
+   "10,1": {
+    "text": "סכינים וקרמיקה",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Kappabashi",
+    "fill": null
+   },
+   "11,1": {
+    "text": "סניף גדול",
+    "fill": null
+   },
+   "11,4": {
+    "text": "יוניקלו",
+    "fill": null
+   },
+   "12,1": {
+    "text": "חנות עד 100 יין",
+    "fill": null
+   },
+   "12,4": {
+    "text": "Daiso",
+    "fill": null
+   },
+   "13,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#ECEF81"
+   },
+   "14,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "14,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "14,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "15,0": {
+    "text": "$",
+    "fill": null
+   },
+   "15,1": {
+    "text": "סושי",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Kura Sushi Global Flagship Store Asakusa",
+    "fill": null
+   },
+   "16,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "16,1": {
+    "text": "סושי",
+    "fill": null
+   },
+   "16,4": {
+    "text": "Ganso Zushi",
+    "fill": null
+   },
+   "17,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "17,1": {
+    "text": "חובה!- מעבדת קפה/אפשר להתנסות בסוגי פולים ושיטות הכנה יש מספר קומות כל קומה משהו אחר.",
+    "fill": null
+   },
+   "17,4": {
+    "text": "Ogawa Coffee Laboratory",
+    "fill": "#F2F2F2"
+   },
+   "18,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "ראמן- אופצייה לטבעוני",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Yoroiya",
+    "fill": null
+   },
+   "19,0": {
+    "text": "$",
+    "fill": null
+   },
+   "19,1": {
+    "text": "אוכל רחוב וקינוחים",
+    "fill": null
+   },
+   "19,4": {
+    "text": "Nakamise",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A14:E14",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B19:D19",
+   "B20:D20",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 19,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "אקיהברה",
+    "fill": "#83D4F6"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#B4EEEE"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,1": {
+    "text": "הרחוב הראשי של האלקטרוניקה, אנימה וחנויות ענק",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Chuo-dori",
+    "fill": null
+   },
+   "4,1": {
+    "text": "קומות של אנימה, פיגרים, קלפים ואספנות.",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Radio Kaikan",
+    "fill": null
+   },
+   "5,1": {
+    "text": "אלקטרוניקה ענקית + מסעדות",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Yodobashi Akiba",
+    "fill": null
+   },
+   "6,1": {
+    "text": "מקדש יפה במרחק הליכה; שינוי אווירה",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Kanda Myojin",
+    "fill": null
+   },
+   "7,0": {
+    "text": "קניות",
+    "fill": "#B4EEEE"
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "קניית מזוודות במידת הצורך- זול ממש",
+    "fill": null
+   },
+   "9,4": {
+    "text": "AKKY International",
+    "fill": null
+   },
+   "10,1": {
+    "text": "כל החנות 100 יין",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Daiso",
+    "fill": null
+   },
+   "11,1": {
+    "text": "מצלמות",
+    "fill": null
+   },
+   "11,4": {
+    "text": "Yodobashi Camera",
+    "fill": null
+   },
+   "12,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#B4EEEE"
+   },
+   "13,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "13,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "13,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "14,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "14,1": {
+    "text": "Kyushu Jangara Akihabara",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Kyushu Jangara Akihabara",
+    "fill": null
+   },
+   "15,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "15,1": {
+    "text": "ראמן טבעוני",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Vegan Noodle T's Tantan Ecute Akihabara",
+    "fill": null
+   },
+   "16,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#B4EEEE"
+   },
+   "17,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "17,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "17,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "18,0": {
+    "text": "$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "סושי",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Sushiro Akihabara",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A13:E13",
+   "A17:E17",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B18:D18",
+   "B19:D19",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 24,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "גינזה",
+    "fill": "#4E6E43"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#ABF38E"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,1": {
+    "text": "שדרת הקניות המרכזית; בתי כלבו ומותגים",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Ginza Chuo-dori",
+    "fill": null
+   },
+   "4,1": {
+    "text": "קניון יוקרתי עם אופנה, עיצוב, אמנות ואוכל",
+    "fill": null
+   },
+   "4,4": {
+    "text": "GINZA SIX",
+    "fill": null
+   },
+   "5,1": {
+    "text": "תיאטרון קבוקי עם חזית יפנית מרשימה; גם אם לא נכנסים, שווה לראות מבחוץ",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Kabukiza",
+    "fill": null
+   },
+   "6,1": {
+    "text": "קצת נוף ירוק",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Hibiya Park",
+    "fill": null
+   },
+   "7,1": {
+    "text": "?",
+    "fill": null
+   },
+   "7,4": {
+    "text": "מספרה",
+    "fill": null
+   },
+   "11,0": {
+    "text": "קניות",
+    "fill": "#ABF38E"
+   },
+   "12,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "12,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "12,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "13,1": {
+    "text": "חנויות מותגים",
+    "fill": null
+   },
+   "13,4": {
+    "text": "GINZA SIX",
+    "fill": null
+   },
+   "14,1": {
+    "text": "Uniqlo Ginza",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Uniqlo Ginza",
+    "fill": null
+   },
+   "15,1": {
+    "text": "נעליים",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Onitsuka Tiger",
+    "fill": null
+   },
+   "16,0": {
+    "text": "מסעדות לטל",
+    "fill": "#ABF38E"
+   },
+   "17,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "17,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "17,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "18,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "ראמן מפורסם",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Ginza Kagari",
+    "fill": null
+   },
+   "19,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#ABF38E"
+   },
+   "20,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "20,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "20,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "21,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "אודון רחב מפורסם- הזמנת מקום (להירשם בבוקר)",
+    "fill": "#FF5857"
+   },
+   "21,4": {
+    "text": "Godaime Hanayama Udon Ginza",
+    "fill": "#F2F2F2"
+   },
+   "22,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "22,1": {
+    "text": "סושי",
+    "fill": null
+   },
+   "22,4": {
+    "text": "Sushiro Yurakucho",
+    "fill": null
+   },
+   "23,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "23,1": {
+    "text": "קינוח",
+    "fill": null
+   },
+   "23,4": {
+    "text": "Kakuōzan Fruit Daifuku Benzaiten Ginza",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A12:E12",
+   "A17:E17",
+   "A1:E1",
+   "A20:E20",
+   "A2:E2",
+   "B10:D10",
+   "B11:D11",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B18:D18",
+   "B19:D19",
+   "B21:D21",
+   "B22:D22",
+   "B23:D23",
+   "B24:D24",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 12,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "קודוקאן- ג׳ודו",
+    "fill": "#F4CA39"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#EEEE81"
+   },
+   "2,0": {
+    "text": "זמן הליכה",
+    "fill": null
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": null
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": null
+   },
+   "3,0": {
+    "text": "עולים מתחנה Higashi-Shinjuku Station\n\nויורדים בIidabashi Station \n",
+    "fill": null
+   },
+   "3,1": {
+    "text": "גן יפני מסורתי עם אגמים, גשרים, עצים ושלכת- כניסה 300 יין- עדיף להתחיל את היום משם עלות רכב 180 יין.",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Koishikawa Korakuen",
+    "fill": null
+   },
+   "4,0": {
+    "text": "6 דקות מהקודוקן",
+    "fill": null
+   },
+   "4,1": {
+    "text": "המרכז ההיסטורי של הג׳ודו",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Kodokan Judo Institute",
+    "fill": null
+   },
+   "5,0": {
+    "text": "5 דקות הליכה מהקודוקן",
+    "fill": null
+   },
+   "5,1": {
+    "text": "מתחם בילויים ליד הקודוקאן; קניון, מסעדות, מתקנים ואווירה נחמדה. לא חובה להקדיש לו הרבה זמן",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Tokyo Dome City",
+    "fill": null
+   },
+   "6,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#EEEE81"
+   },
+   "7,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "7,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "7,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "8,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "8,1": {
+    "text": "נודלס",
+    "fill": null
+   },
+   "8,4": {
+    "text": "Tsukemen Zuppa",
+    "fill": null
+   },
+   "9,0": {
+    "text": "מסעדות לטל",
+    "fill": "#EEEE81"
+   },
+   "10,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "10,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "11,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "11,1": {
+    "text": "המבורגר",
+    "fill": null
+   },
+   "11,4": {
+    "text": "GENUINE BURGER TOKYO DOME CITY",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A10:E10",
+   "A1:E1",
+   "A2:E2",
+   "A7:E7",
+   "B11:D11",
+   "B12:D12",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 1,
+  "cols": 3,
+  "cells": {
+   "0,0": {
+    "text": "טוקיו חלק 1",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:C1"
+  ]
+ },
+ {
+  "rows": 4,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "16.11",
+    "fill": "#FF7D00"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#FFB63E"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "$$$$$$$$",
+    "fill": null
+   },
+   "3,1": {
+    "text": "חרבו דארבו",
+    "fill": null
+   },
+   "3,4": {
+    "text": "UNIVERSAL STUDIOS JAPAN",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:E1",
+   "A2:E2",
+   "B3:D3",
+   "B4:D4"
+  ]
+ },
+ {
+  "rows": 1,
+  "cols": 3,
+  "cells": {
+   "0,0": {
+    "text": "פוג׳י",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:C1"
+  ]
+ },
+ {
+  "rows": 23,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "קווגוצ׳יקו",
+    "fill": "#F4CA39"
+   },
+   "1,0": {
+    "text": "אטרקציות יום 1",
+    "fill": "#EEEF80"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "3,0": {
+    "text": "80 שקל לכרטיס- להזמין מראש",
+    "fill": "#FF3B23"
+   },
+   "3,1": {
+    "text": "עולים משינג׳וקו ויורדים בתחנה של Fujikyu-Highland Station משם 5 דקות הליכה למלון",
+    "fill": "#FF3B23"
+   },
+   "3,4": {
+    "text": "Fujikyu-Highland Station",
+    "fill": "#FF3B23"
+   },
+   "4,0": {
+    "text": "חינם",
+    "fill": null
+   },
+   "4,1": {
+    "text": "מהמלון הולכים לפארק",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Oishi Park",
+    "fill": null
+   },
+   "5,0": {
+    "text": "חינם",
+    "fill": null
+   },
+   "5,1": {
+    "text": "נקודת עצירה עם עצי המייפל",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Momiji Tunnel",
+    "fill": null
+   },
+   "6,0": {
+    "text": "12 ש״ח לכרטיס אפשר מזומן",
+    "fill": null
+   },
+   "6,1": {
+    "text": "פסטיבל השלכת וחזרה למלון- לוקחים אוטובוס לKawaguchiko Station ומשם הליכה 15 דק למלון.",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Momiji Corridor",
+    "fill": null
+   },
+   "7,0": {
+    "text": "אטרקציות יום 2",
+    "fill": "#EEEE81"
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "9,0": {
+    "text": "חינם",
+    "fill": null
+   },
+   "9,1": {
+    "text": "הליכה של 35 דק מהמלון- חשוב להתחיל מוקדם 8:00, נקודת תצפית עם הרבה מדרגות.",
+    "fill": null
+   },
+   "9,4": {
+    "text": "Kawaguchiko Station.",
+    "fill": null
+   },
+   "10,0": {
+    "text": "חינם",
+    "fill": null
+   },
+   "10,1": {
+    "text": "יורדים מהפגודה לHoncho Street",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Honcho Street",
+    "fill": null
+   },
+   "11,1": {
+    "text": "Honcho Street- הולכים ברגל mt fuji station (רבע שעה), לוקחים אוטובוס לOshino Hakkai עשרים דק נסיעה.",
+    "fill": null
+   },
+   "11,4": {
+    "text": "Oshino Hakkai",
+    "fill": null
+   },
+   "12,0": {
+    "text": "8 שקלים מזומן/suica",
+    "fill": null
+   },
+   "12,1": {
+    "text": "Oshino Hakkai הולכים לתחנה של השאטל לוקחים את השטאל למלון- Fujikko-go (Loop Shuttle Right) → Akasaka",
+    "fill": null
+   },
+   "12,4": {
+    "text": "חזרה למלון",
+    "fill": null
+   },
+   "13,0": {
+    "text": "אטרקציות יום 3",
+    "fill": "#EEEE81"
+   },
+   "14,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "14,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "14,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "15,0": {
+    "text": "כניסה 8 שקלים",
+    "fill": null
+   },
+   "15,1": {
+    "text": "עולים מasakasa על שאטל To Kofu Station Bus Terminal יורדים בתחנה Kawaguchiko-bijutsukan-mae והולכים 7 דקות עד למוזיאון",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Kawaguchiko Music Forest Museum",
+    "fill": "#FFFFFF"
+   },
+   "16,0": {
+    "text": "2500 יין",
+    "fill": "#FFFFFF"
+   },
+   "16,1": {
+    "text": "חוזרים למלון ולוקחים שאטל למלון ומשם אוטובוס לגוטמבה",
+    "fill": "#FFFFFF"
+   },
+   "16,4": {
+    "text": "Gotemba outlet ",
+    "fill": "#FFFFFF"
+   },
+   "17,0": {
+    "text": "אטרקציות יום 4",
+    "fill": "#EEEE81"
+   },
+   "18,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "18,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "18,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "19,0": {
+    "text": "40 שקל לכרטיס באוטובוס",
+    "fill": null
+   },
+   "19,1": {
+    "text": "לוקחים אוטובוס מתחנה akasaka למפלים",
+    "fill": null
+   },
+   "19,4": {
+    "text": "Shiraito Falls",
+    "fill": null
+   },
+   "20,1": {
+    "text": "הליכה של 2 דקות מהמפלים",
+    "fill": null
+   },
+   "20,4": {
+    "text": "Otodome Falls",
+    "fill": null
+   },
+   "21,0": {
+    "text": "אוטובוס יעלה 5 שקלים עד התחנת רכבת",
+    "fill": null
+   },
+   "21,1": {
+    "text": "מהמפלים לוקחים אוטובוס לתחנת רכבת שזה שעה נסיעה לבדוק את השעות כי יש אוטובוס של שעה בדיוק מהמפלים עד הרכבת.",
+    "fill": null
+   },
+   "21,4": {
+    "text": "Shin-Fuji Station.\n",
+    "fill": null
+   },
+   "22,0": {
+    "text": "550 לזוג כרטיסים",
+    "fill": "#FF3B23"
+   },
+   "22,1": {
+    "text": "ואז יורדים בתחנה של קיוטו   Shin-Fuji Station לוקחים שנקנסין מהתחנה \n",
+    "fill": "#FF3B23"
+   },
+   "22,4": {
+    "text": "Kyoto ",
+    "fill": "#FF3B23"
+   }
+  },
+  "merged": [
+   "A14:E14",
+   "A18:E18",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B19:D19",
+   "B20:D20",
+   "B21:D21",
+   "B22:D22",
+   "B23:D23",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 22,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "11.11",
+    "fill": "#83D4F6"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#B4EEEE"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "20 דק הליכה מהמלון",
+    "fill": null
+   },
+   "3,1": {
+    "text": "שדרת קניות מרכזית, רשתות, בתי כלבו וחנויות יפניות.",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Shijo-dori",
+    "fill": null
+   },
+   "4,0": {
+    "text": "11 דקות מShijo-dori",
+    "fill": null
+   },
+   "4,1": {
+    "text": "מרכז העיר, אופנה, נעליים, קוסמטיקה ובתי קפה",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Kawaramachi",
+    "fill": null
+   },
+   "5,1": {
+    "text": "5 דקות מהאזור המרכזי, הליכה נעימה ליד הנהר.",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Kamo River",
+    "fill": null
+   },
+   "6,0": {
+    "text": "20 דק מהמלון בהליכה",
+    "fill": null
+   },
+   "6,1": {
+    "text": "סמטה צרה עם מסעדות ואווירת קיוטו בערב.",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Pontocho Alley",
+    "fill": null
+   },
+   "7,1": {
+    "text": "רק אם יש כוח. לא חובה ביום הזה.",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Gion",
+    "fill": null
+   },
+   "8,1": {
+    "text": "https://maps.app.goo.gl/uNsM3m43mY25JVcw7\nhttps://maps.app.goo.gl/uNsM3m43mY25JVcw7",
+    "fill": null
+   },
+   "9,0": {
+    "text": "מסעדות טל",
+    "fill": "#B4EEEE"
+   },
+   "10,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "10,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "11,0": {
+    "text": "$$$",
+    "fill": null
+   },
+   "11,1": {
+    "text": "וואגיו",
+    "fill": null
+   },
+   "11,4": {
+    "text": "Kyo Kurozakura",
+    "fill": null
+   },
+   "12,0": {
+    "text": "$$$",
+    "fill": null
+   },
+   "12,1": {
+    "text": "וואגיו- 120 עד 160 שקל",
+    "fill": null
+   },
+   "12,4": {
+    "text": "Pontocho Yakiniku Yamakawa",
+    "fill": null
+   },
+   "13,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "13,1": {
+    "text": "ואגיו- נמצא בPontocho, מחיר נגיש יותר",
+    "fill": null
+   },
+   "13,4": {
+    "text": "Yakiniku Marutomi Shijo Kawaramachi",
+    "fill": null
+   },
+   "14,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#B4EEEE"
+   },
+   "15,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "15,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "15,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "16,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "16,1": {
+    "text": "ראמן- נמצא בKawaramachi",
+    "fill": null
+   },
+   "16,4": {
+    "text": "KYOTO ENGINE RAMEN",
+    "fill": null
+   },
+   "17,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "17,1": {
+    "text": "גיוזה- נמצא בKawaramachi, מסעדה מעורבת עם תפריט נפרד לצמחונים או טבעונים",
+    "fill": null
+   },
+   "17,4": {
+    "text": "Chao Chao Gyoza",
+    "fill": null
+   },
+   "18,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#B4EEEE"
+   },
+   "19,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "19,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "19,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "20,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "20,1": {
+    "text": "בית קפה/פנקקיים, נסגר יחסית מוקדם ביום, מתאים לצהריים-בוקר",
+    "fill": null
+   },
+   "20,4": {
+    "text": "Micasadeco & Cafe Kyoto",
+    "fill": null
+   },
+   "21,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "בית קפה בן יותר מ140 שנה- של מאצה",
+    "fill": null
+   },
+   "21,4": {
+    "text": "LE LABO CAFE KYOTO MACHIYA",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A10:E10",
+   "A15:E15",
+   "A19:E19",
+   "A1:E1",
+   "A2:E2",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B14:D14",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B20:D20",
+   "B21:D21",
+   "B22:D22",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 1,
+  "cols": 3,
+  "cells": {
+   "0,0": {
+    "text": "קיוטו",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:C1"
+  ]
+ },
+ {
+  "rows": 23,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "12.11",
+    "fill": "#83D4F6"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#B4EEEE"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "הליכה לאוטבוס- shijo horikawa",
+    "fill": null
+   },
+   "3,1": {
+    "text": "שערים כתומים",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Fushimi Inari",
+    "fill": null
+   },
+   "4,0": {
+    "text": "10 שקלים כניסה למקדש",
+    "fill": null
+   },
+   "4,1": {
+    "text": "עוברים לצד המזרחי של קיוטו ל-Kiyomizu-dera",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Kiyomizu-dera",
+    "fill": null
+   },
+   "5,1": {
+    "text": "רחובות אבן עתיקים",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Sannenzaka + Ninenzaka",
+    "fill": null
+   },
+   "6,1": {
+    "text": "ממשיכים לכיוון Gion",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Gion",
+    "fill": null
+   },
+   "8,0": {
+    "text": "קניות",
+    "fill": "#B4EEEE"
+   },
+   "9,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "9,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "9,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "טבעת עם חרטיה",
+    "fill": null
+   },
+   "10,4": {
+    "text": "glänta Kyoto Ninenzaka",
+    "fill": null
+   },
+   "11,0": {
+    "text": "מסעדות טל",
+    "fill": "#B4EEEE"
+   },
+   "12,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "12,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "12,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "13,0": {
+    "text": "$$$",
+    "fill": null
+   },
+   "13,1": {
+    "text": "וואגיו",
+    "fill": null
+   },
+   "13,4": {
+    "text": "Kyo Kurozakura",
+    "fill": null
+   },
+   "14,0": {
+    "text": "$$$",
+    "fill": null
+   },
+   "14,1": {
+    "text": "וואגיו- 120 עד 160 שקל",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Pontocho Yakiniku Yamakawa",
+    "fill": null
+   },
+   "15,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "15,1": {
+    "text": "ואגיו- נמצא בPontocho, מחיר נגיש יותר",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Yakiniku Marutomi Shijo Kawaramachi",
+    "fill": null
+   },
+   "16,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#B4EEEE"
+   },
+   "17,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "17,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "17,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "18,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "בתוך Tenryu-ji- אוכל בודהיסטי צמחוני",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Shigetsu",
+    "fill": null
+   },
+   "19,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#B4EEEE"
+   },
+   "20,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "20,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "20,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "21,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "21,1": {
+    "text": "ראמן עם אופציות טבעוניות וגם לא",
+    "fill": null
+   },
+   "21,4": {
+    "text": "Kyoto Engine Ramen",
+    "fill": null
+   },
+   "22,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "22,1": {
+    "text": "לבדוק שהציר במנה שבוחרים לא מבוסס על דאשי",
+    "fill": null
+   },
+   "22,4": {
+    "text": "Arashiyama Yoshimura",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A12:E12",
+   "A17:E17",
+   "A1:E1",
+   "A20:E20",
+   "A2:E2",
+   "A9:E9",
+   "B10:D10",
+   "B11:D11",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B18:D18",
+   "B19:D19",
+   "B21:D21",
+   "B22:D22",
+   "B23:D23",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8"
+  ]
+ },
+ {
+  "rows": 18,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "13.11",
+    "fill": "#83D4F6"
+   },
+   "1,0": {
+    "text": "ARASHIYAMA",
+    "fill": "#B4EEEE"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,1": {
+    "text": "מגיעים לקמאוקה- נקודם ההתחלה שבה יוצאת הרכבת לכיוון הסירה",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Kameoka",
+    "fill": null
+   },
+   "4,0": {
+    "text": "40$",
+    "fill": "#FF462B"
+   },
+   "4,1": {
+    "text": "רפטינג של שעתיים, הרפטינג מוריד בתוך ארשיאמה- הזמנה מראש",
+    "fill": "#FF462B"
+   },
+   "4,4": {
+    "text": "HOZUGAWA BOAT",
+    "fill": "#FF462B"
+   },
+   "5,1": {
+    "text": "עצי הבמבוק",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Bamboo Grove",
+    "fill": null
+   },
+   "6,0": {
+    "text": "10 שקלים כניסה למבנים 6 שקלים",
+    "fill": null
+   },
+   "6,1": {
+    "text": "ממשיכים לגן היפני",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Tenryu-ji",
+    "fill": null
+   },
+   "7,1": {
+    "text": "בערך 10 דק הליכה לכיוון הנהר והגשר",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Togetsukyo Bridge",
+    "fill": null
+   },
+   "8,1": {
+    "text": "חזרה למלון, סיבוב קניות אוכל וכל מה שמסביב",
+    "fill": null
+   },
+   "8,4": {
+    "text": "Shijo-dori",
+    "fill": null
+   },
+   "9,4": {
+    "text": "Kawaramachi",
+    "fill": null
+   },
+   "10,1": {
+    "text": "למצוא איזה בר שווה",
+    "fill": null
+   },
+   "10,4": {
+    "text": "Pontocho Alley",
+    "fill": null
+   },
+   "11,0": {
+    "text": "מסעדות כשרות/טבעוניות",
+    "fill": "#B4EEEE"
+   },
+   "12,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "12,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "12,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "13,0": {
+    "text": "$$-$",
+    "fill": null
+   },
+   "13,1": {
+    "text": "בתוך Tenryu-ji- אוכל בודהיסטי צמחוני",
+    "fill": null
+   },
+   "13,4": {
+    "text": "Shigetsu",
+    "fill": null
+   },
+   "14,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#B4EEEE"
+   },
+   "15,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "15,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "15,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "16,1": {
+    "text": "בית קפה ליד הנהר",
+    "fill": null
+   },
+   "16,4": {
+    "text": "ARABICA Kyoto Arashiyama",
+    "fill": null
+   },
+   "17,1": {
+    "text": "לבדוק שהציר במנה שבוחרים לא מבוסס על דאשי",
+    "fill": null
+   },
+   "17,4": {
+    "text": "Arashiyama Yoshimura",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A12:E12",
+   "A15:E15",
+   "A1:E1",
+   "A2:E2",
+   "B10:D10",
+   "B11:D11",
+   "B13:D13",
+   "B14:D14",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 12,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "14.11",
+    "fill": "#83D4F6"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#B4EEEE"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "4 שקלים",
+    "fill": null
+   },
+   "3,1": {
+    "text": "גנים להסתובב",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Eikan-dō",
+    "fill": null
+   },
+   "4,1": {
+    "text": "מקדש מבודד, גנים ואווירה",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Ginkaku-ji — Silver Pavilion",
+    "fill": null
+   },
+   "5,1": {
+    "text": "חובה לצהריים",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Pizzeria da Ciro",
+    "fill": null
+   },
+   "6,1": {
+    "text": "חוזרים לכיוון Kyoto Station",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Kyoto Station",
+    "fill": null
+   },
+   "7,1": {
+    "text": "הזמנה מראש",
+    "fill": null
+   },
+   "7,4": {
+    "text": "TeamLab",
+    "fill": null
+   },
+   "8,4": {
+    "text": "חזרה לאיזור המלון",
+    "fill": null
+   },
+   "9,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#B4EEEE"
+   },
+   "10,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "10,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "10,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "11,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "11,1": {
+    "text": "פיצרייה איטלקית נדירה",
+    "fill": null
+   },
+   "11,4": {
+    "text": "Pizzeria da Ciro\n",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A10:E10",
+   "A1:E1",
+   "A2:E2",
+   "B11:D11",
+   "B12:D12",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 41,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "15.11",
+    "fill": "#83D4F6"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#B4EEEE"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,0": {
+    "text": "4 שקלים",
+    "fill": null
+   },
+   "3,1": {
+    "text": "פותחים בבית קפה",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Le Labo Cafe Kyoto Machiya",
+    "fill": null
+   },
+   "4,1": {
+    "text": "הליכה של 7 דק חנויות, דברים קטנים אססוריז",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Teramachi",
+    "fill": null
+   },
+   "5,1": {
+    "text": "אוכל, תה, כלי מטבח",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Nishiki Market",
+    "fill": null
+   },
+   "6,1": {
+    "text": "אוכל גיוזה",
+    "fill": null
+   },
+   "6,4": {
+    "text": "MOTOI Gyoza",
+    "fill": null
+   },
+   "7,1": {
+    "text": "חנות של חותמות",
+    "fill": null
+   },
+   "7,4": {
+    "text": "Traveler’s Factory Kyoto",
+    "fill": null
+   },
+   "8,1": {
+    "text": "יציאה לאוסקה",
+    "fill": null
+   },
+   "8,4": {
+    "text": "חזרה למלון לעשות צ׳ק אאוט",
+    "fill": null
+   },
+   "9,0": {
+    "text": "אטרקציות",
+    "fill": "#FF7D00"
+   },
+   "10,0": {
+    "text": "מה רואים",
+    "fill": "#B0B3B1"
+   },
+   "10,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B1"
+   },
+   "10,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B1"
+   },
+   "11,0": {
+    "text": "Shinsaibashi-suji -שדרת קניות מקורה ארוכה.\n",
+    "fill": null
+   },
+   "11,1": {
+    "text": "מגיעים למלון- אפשר ללכת ברגל 15-20 דק ל- Shinsaibashi",
+    "fill": null
+   },
+   "11,4": {
+    "text": "Hotel Cordia → Shinsaibashi",
+    "fill": null
+   },
+   "12,0": {
+    "text": "זה אותו מקום; וינטג׳, סטריטוור, חנויות צעירות, גרפיטי ואווירה יותר אלטרנטיבית.",
+    "fill": null
+   },
+   "12,1": {
+    "text": "Shinsaibashi → Amerikamura\nכ־5–8 דקות הליכה.\n",
+    "fill": null
+   },
+   "12,4": {
+    "text": "Amerikamura",
+    "fill": null
+   },
+   "13,0": {
+    "text": "בעיקר מסעדות",
+    "fill": null
+   },
+   "13,1": {
+    "text": "Amerikamura → Dotonbori\nכ־10 דקות הליכה.\n",
+    "fill": null
+   },
+   "13,4": {
+    "text": "Dotonbori",
+    "fill": null
+   },
+   "14,0": {
+    "text": "Hozenji Yokocho — סמטה קטנה ומסורתית ממש מאחורי האזור הרועש של Dotonbori. שווה לעבור, לא צריך להקדיש לה שעה.\n",
+    "fill": null
+   },
+   "14,1": {
+    "text": "Dotonbori → Namba\nכ־5–10 דקות.\n",
+    "fill": null
+   },
+   "14,4": {
+    "text": "Namba",
+    "fill": null
+   },
+   "15,1": {
+    "text": "המשחקייה מהטיקטוק זה ממש בnamba ",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Round1",
+    "fill": null
+   },
+   "16,0": {
+    "text": "קניות",
+    "fill": "#FF7D00"
+   },
+   "17,0": {
+    "text": "מיקום",
+    "fill": "#B0B3B1"
+   },
+   "17,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B1"
+   },
+   "17,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B1"
+   },
+   "18,0": {
+    "text": "Shinsaibashi / Amerikamura",
+    "fill": null
+   },
+   "18,1": {
+    "text": "יד שנייה / וינטג׳",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Second Street",
+    "fill": null
+   },
+   "19,0": {
+    "text": "Shinsaibashi / Amerikamura",
+    "fill": null
+   },
+   "19,1": {
+    "text": "מצלמות וציוד צילום",
+    "fill": null
+   },
+   "19,4": {
+    "text": "Camera Kitamura",
+    "fill": null
+   },
+   "20,0": {
+    "text": "Shinsaibashi / Amerikamura",
+    "fill": null
+   },
+   "20,1": {
+    "text": "חנויות קטנות, אופנה, וינטג׳",
+    "fill": null
+   },
+   "20,4": {
+    "text": "Higashi-Shinsaibashi",
+    "fill": null
+   },
+   "21,0": {
+    "text": "Shinsaibashi / Amerikamura",
+    "fill": null
+   },
+   "21,1": {
+    "text": "רשתות + חנויות יפניות",
+    "fill": null
+   },
+   "21,4": {
+    "text": "Shinsaibashi-suji",
+    "fill": null
+   },
+   "22,0": {
+    "text": "מסעדות עדי",
+    "fill": "#FAA13F"
+   },
+   "23,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "23,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "23,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "24,0": {
+    "text": "$",
+    "fill": null
+   },
+   "24,1": {
+    "text": "סלמון עבה, קערות סלמון ומנות בסגנון סושי.",
+    "fill": null
+   },
+   "24,4": {
+    "text": "-Salmon Kat Namba\n",
+    "fill": null
+   },
+   "25,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "25,1": {
+    "text": "סושי / טונה / איזקאיה",
+    "fill": null
+   },
+   "25,4": {
+    "text": "Sushitori Shoten Dotonbori\n",
+    "fill": null
+   },
+   "26,0": {
+    "text": "מסעדות לטל",
+    "fill": "#FFB63E"
+   },
+   "27,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "27,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "27,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "28,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "28,1": {
+    "text": "המבורגר וואגיו- ממולץ",
+    "fill": null
+   },
+   "28,4": {
+    "text": "SHOGUN BURGER-SHINSAIBASHI\n",
+    "fill": null
+   },
+   "29,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "29,1": {
+    "text": "Rare Wagyu Box — בערך ¥3,080\nKobe Beef premium box — בערך ¥5,280 מחירים טובים לוואגיו omakase בקופסאת אורז בלי להשתגע במחירים.\n",
+    "fill": null
+   },
+   "29,4": {
+    "text": "Wagyu Hokusai-steak bowls- SHINSAIBASHI\n",
+    "fill": null
+   },
+   "30,0": {
+    "text": "$-$$$",
+    "fill": null
+   },
+   "30,1": {
+    "text": "סנדוויצ׳ים בשריים",
+    "fill": null
+   },
+   "30,4": {
+    "text": "Shinsaibashi Sand-SHINSAIBASHI\n",
+    "fill": null
+   },
+   "31,0": {
+    "text": "$$-$$$$",
+    "fill": null
+   },
+   "31,1": {
+    "text": " Wagyu Box- $$ בצהריים / $$$–$$$$ בערב — Wagyu / yakiniku / steak",
+    "fill": null
+   },
+   "31,4": {
+    "text": "Nikuya-Dotonbori\n",
+    "fill": null
+   },
+   "32,0": {
+    "text": "$$-$$$$",
+    "fill": null
+   },
+   "32,1": {
+    "text": "Wagyu / steak / hamburger גם כאן עדיפות בצהריים כי זול יותר",
+    "fill": null
+   },
+   "32,4": {
+    "text": "Kitan Hibiki-DOTONBORI / NAMBA\n",
+    "fill": null
+   },
+   "33,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#FFB63E"
+   },
+   "34,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "34,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "34,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "35,0": {
+    "text": "$",
+    "fill": null
+   },
+   "35,1": {
+    "text": "מיני פחזניות- מומלץ, פתוח 10:00-15:00, מיקום- Shinsaibashi Station",
+    "fill": null
+   },
+   "35,4": {
+    "text": "MooKEN-SHINSAIBASHI\n",
+    "fill": null
+   },
+   "36,0": {
+    "text": "$",
+    "fill": null
+   },
+   "36,1": {
+    "text": "אוניגירי שמן",
+    "fill": null
+   },
+   "36,4": {
+    "text": "Onigiri -Gorichan SHINSAIBASHI\n",
+    "fill": null
+   },
+   "37,0": {
+    "text": "$",
+    "fill": null
+   },
+   "37,1": {
+    "text": "עוגת גבינה יפנית- רק אם אין תור, מיקום- Namba",
+    "fill": null
+   },
+   "37,4": {
+    "text": "Uncle Rikuro Cheesecake-DOTONBORI/NAMBA\n",
+    "fill": null
+   },
+   "38,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "38,1": {
+    "text": "אוקונומיאקי- עם אפשרויות צמחוניות",
+    "fill": null
+   },
+   "38,4": {
+    "text": "Mizuno-DOTONBORI/NAMBA\n",
+    "fill": "#F2F2F2"
+   },
+   "39,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "39,1": {
+    "text": "הקרפ המדובר",
+    "fill": null
+   },
+   "39,4": {
+    "text": "Crepe & Espresso-SHINSAIBASHI\n",
+    "fill": null
+   },
+   "40,0": {
+    "text": "$-$$",
+    "fill": null
+   },
+   "40,1": {
+    "text": "שוקו מקופלת",
+    "fill": null
+   },
+   "40,4": {
+    "text": "MELT-SHINSAIBASHI\n",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A10:E10",
+   "A17:E17",
+   "A1:E1",
+   "A23:E23",
+   "A27:E27",
+   "A2:E2",
+   "A34:E34",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B14:D14",
+   "B15:D15",
+   "B16:D16",
+   "B18:D18",
+   "B19:D19",
+   "B20:D20",
+   "B21:D21",
+   "B22:D22",
+   "B24:D24",
+   "B25:D25",
+   "B26:D26",
+   "B28:D28",
+   "B29:D29",
+   "B30:D30",
+   "B31:D31",
+   "B32:D32",
+   "B33:D33",
+   "B35:D35",
+   "B36:D36",
+   "B37:D37",
+   "B38:D38",
+   "B39:D39",
+   "B3:D3",
+   "B40:D40",
+   "B41:D41",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B8:D8",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 5,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "18.11",
+    "fill": "#FF7C00"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#FAA13F"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,1": {
+    "text": "להסתובב ליד מלון או שוב בדוטונבורי, אפשר ללכת למקדש Namba Yasaka Shrine עם הראש אריה הענק, 6 דק הליכה מתחתנת Namba station- נפתח ב9:00, אחכ הליכה משלם לדוטונבורי סיבבו אחרון ונסיעה לרכבת- להגיע עד 11:45 (יש גם אוכל ברכבת) ",
+    "fill": null
+   },
+   "3,4": {
+    "text": "מלון/דוטונבורי",
+    "fill": null
+   },
+   "4,1": {
+    "text": "נסיעה בשינקנסין 13:15 רכבת, אז יש את הבוקר להסתובב לקחת זמנים של שעה קודם להגיע לפני הרכבת.",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Shin-Osaka",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:E1",
+   "A2:E2",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5"
+  ]
+ },
+ {
+  "rows": 19,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "17.11",
+    "fill": "#FF7D00"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#FFB63E"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,1": {
+    "text": "מה־Hommachi מדובר בערך 20–30 דקות בתחבורה ציבורית.",
+    "fill": null
+   },
+   "3,4": {
+    "text": "Osaka Castle",
+    "fill": null
+   },
+   "4,1": {
+    "text": "רחוב קניות מקורה ארוך עם: חנויות מקומיות, אוכל, בגדים, כלי בית- פחות תיירותי מדוטונבורי",
+    "fill": null
+   },
+   "4,4": {
+    "text": "Tenjinbashisuji",
+    "fill": null
+   },
+   "5,1": {
+    "text": "Grand Green Osaka — פארק עירוני חדש + קניונים + אדריכלות. החלק המודרני של אוסקה\n",
+    "fill": null
+   },
+   "5,4": {
+    "text": "Umeda",
+    "fill": null
+   },
+   "6,1": {
+    "text": "רחוב של משחקים, אווירה, אוכל",
+    "fill": null
+   },
+   "6,4": {
+    "text": "Shinsekai",
+    "fill": null
+   },
+   "7,0": {
+    "text": "מסעדות עדי",
+    "fill": "#FAA13F"
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "9,0": {
+    "text": "$",
+    "fill": null
+   },
+   "9,1": {
+    "text": "ארוחת סושי זולה- נמצא בתוך Whity Umeda",
+    "fill": null
+   },
+   "9,4": {
+    "text": "Sushi Kin- Umeda",
+    "fill": null
+   },
+   "10,0": {
+    "text": "מסעדות לטל",
+    "fill": "#FAA13F"
+   },
+   "11,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "11,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "11,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "12,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "12,1": {
+    "text": "שניצל בקר",
+    "fill": null
+   },
+   "12,4": {
+    "text": "Gyukatsu Motomura- UMEDA\n",
+    "fill": null
+   },
+   "13,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#FAA13F"
+   },
+   "14,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "14,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "14,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "15,0": {
+    "text": "$",
+    "fill": null
+   },
+   "15,1": {
+    "text": "קינוח גלידת מוצ׳י- שווה",
+    "fill": null
+   },
+   "15,4": {
+    "text": "Hitokuchi no Shiawase- Tenjinbashi.\n",
+    "fill": "#F2F2F2"
+   },
+   "16,0": {
+    "text": "$$",
+    "fill": null
+   },
+   "16,1": {
+    "text": "פנקייקים יפניים",
+    "fill": null
+   },
+   "16,4": {
+    "text": "Flipper’s- Umeda\n",
+    "fill": "#F2F2F2"
+   },
+   "17,0": {
+    "text": "$$$- 4,500 יין",
+    "fill": null
+   },
+   "17,1": {
+    "text": "קינוח ערב מעוצב, לעיתים עם אלכוהול ופירות עונתיים, יותר בר",
+    "fill": null
+   },
+   "17,4": {
+    "text": "Parfaits to Sake Ijou Maru- Umeda\n",
+    "fill": "#F2F2F2"
+   },
+   "18,0": {
+    "text": "$",
+    "fill": null
+   },
+   "18,1": {
+    "text": "סושייה",
+    "fill": null
+   },
+   "18,4": {
+    "text": "Naniwa Ebisunishi, Shinsekai\n",
+    "fill": "#F2F2F2"
+   }
+  },
+  "merged": [
+   "A11:E11",
+   "A14:E14",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B12:D12",
+   "B13:D13",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B19:D19",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 1,
+  "cols": 3,
+  "cells": {
+   "0,0": {
+    "text": "טוקיו חלק 2",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:C1"
+  ]
+ },
+ {
+  "rows": 20,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "האקונה",
+    "fill": "#70B27D"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#83E4C5"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,4": {
+    "text": "ריוקן",
+    "fill": null
+   },
+   "4,4": {
+    "text": "מוזאון ",
+    "fill": null
+   },
+   "7,0": {
+    "text": "קניות",
+    "fill": "#82E4C5"
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "13,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#81E5C5"
+   },
+   "14,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "14,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "14,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "17,4": {
+    "text": null,
+    "fill": "#F2F2F2"
+   }
+  },
+  "merged": [
+   "A14:E14",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B19:D19",
+   "B20:D20",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 20,
+  "cols": 5,
+  "cells": {
+   "0,0": {
+    "text": "ניקו",
+    "fill": "#FF5245"
+   },
+   "1,0": {
+    "text": "אטרקציות",
+    "fill": "#FC877C"
+   },
+   "2,0": {
+    "text": "עלות",
+    "fill": "#B0B3B2"
+   },
+   "2,1": {
+    "text": "תיאור",
+    "fill": "#B0B3B2"
+   },
+   "2,4": {
+    "text": "שם המקום",
+    "fill": "#B0B3B2"
+   },
+   "3,4": {
+    "text": "ריוקן",
+    "fill": null
+   },
+   "4,4": {
+    "text": "מוזאון ",
+    "fill": null
+   },
+   "7,0": {
+    "text": "קניות",
+    "fill": "#FC887B"
+   },
+   "8,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "8,1": {
+    "text": "תיאור",
+    "fill": "#B1B2B2"
+   },
+   "8,4": {
+    "text": "שם החנות",
+    "fill": "#B1B2B2"
+   },
+   "13,0": {
+    "text": "מסעדות משותפות ",
+    "fill": "#FC887B"
+   },
+   "14,0": {
+    "text": "עלות",
+    "fill": "#B1B2B2"
+   },
+   "14,1": {
+    "text": "סוג האוכל",
+    "fill": "#B1B2B2"
+   },
+   "14,4": {
+    "text": "שם המקום",
+    "fill": "#B1B2B2"
+   },
+   "17,4": {
+    "text": null,
+    "fill": "#F2F2F2"
+   }
+  },
+  "merged": [
+   "A14:E14",
+   "A1:E1",
+   "A2:E2",
+   "A8:E8",
+   "B10:D10",
+   "B11:D11",
+   "B12:D12",
+   "B13:D13",
+   "B15:D15",
+   "B16:D16",
+   "B17:D17",
+   "B18:D18",
+   "B19:D19",
+   "B20:D20",
+   "B3:D3",
+   "B4:D4",
+   "B5:D5",
+   "B6:D6",
+   "B7:D7",
+   "B9:D9"
+  ]
+ },
+ {
+  "rows": 1,
+  "cols": 3,
+  "cells": {
+   "0,0": {
+    "text": "אוסקה",
+    "fill": null
+   }
+  },
+  "merged": [
+   "A1:C1"
+  ]
+ }
+]

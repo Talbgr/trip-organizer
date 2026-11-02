@@ -1,0 +1,3876 @@
+{
+ "title": "תכנון טיול ליפן",
+ "source": {
+  "file": "trip.numbers",
+  "sha256": "a10585a88e56b42fae509f00fcb8cd33bb7e5a41235640f9667675f71fb3fa24"
+ },
+ "cities": [
+  {
+   "id": "tokyo",
+   "name": "טוקיו",
+   "neighborhoods": [
+    {
+     "id": "t2",
+     "title": "שינג׳וקו",
+     "color": "#9D63B5",
+     "part": "טוקיו חלק 1",
+     "order": 0.13996312995692792,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#CEB7F1",
+       "items": [
+        {
+         "id": "t2:r3",
+         "name": "Kabukicho",
+         "description": "איזור הנאונים, מסעדות, מקומות בילוי",
+         "info": {
+          "label": "מרחק מהמלון",
+          "value": "2 הליכה דקות מהמלון"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r4",
+         "name": "Godzilla Head",
+         "description": "פסל גודזילה הענק מעל",
+         "info": {
+          "label": "מרחק מהמלון",
+          "value": "4 דק הליכה מהמלון"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r5",
+         "name": "Omoide Yokocho",
+         "description": "יותר אווירה ישנה של טוקיו",
+         "info": {
+          "label": "מרחק מהמלון",
+          "value": "10 דק הליכה מהמלון"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r6",
+         "name": "Golden Gai",
+         "description": "סמטאות קטנות עם הרבה ברים מיניאטוריים",
+         "info": {
+          "label": "מרחק מהמלון",
+          "value": "5 דקות מהמלון"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r7",
+         "name": "Shinjuku Gyoen",
+         "description": "פארק וגנים יפניים גדולים",
+         "info": {
+          "label": "מרחק מהמלון",
+          "value": "15 דק הליכה מהמלון"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#CEB7F1",
+       "items": [
+        {
+         "id": "t2:r10",
+         "name": "Isetan Shinjuku",
+         "description": "בית כולבו גדול, אופנה, ביוטי, מותגים ואוכל",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r11",
+         "name": "RAGTAG",
+         "description": "חנות יד 2- מעצבים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r12",
+         "name": "2nd Street Shinjuku 2",
+         "description": "חנות יד שנייה- עדיפות קודם לשימוקיטזוואה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r13",
+         "name": "Don Quijote",
+         "description": "חנות קוסמטיקה- חטיפים טיפוח וכו",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r14",
+         "name": "Jin!",
+         "description": "חנות משקפיים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r15",
+         "name": "APPLE",
+         "description": "לקנות אייפון",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r16",
+         "name": "Nike",
+         "description": "סניף של נייק עם התאמות אישיות פאצ׳ים יש גם באוסקה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r17",
+         "name": "ABC-MART",
+         "description": "נעליים וסניקרס",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r18",
+         "name": "Zara",
+         "description": "בגדים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#CFB6F2",
+       "items": [
+        {
+         "id": "t2:r21",
+         "name": "AFURI Shinjuku Lumine",
+         "description": "ראמן",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r22",
+         "name": "Ippudo Lumine Est Shinjuku",
+         "description": "ראמן",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות לטל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#CFB6F2",
+       "items": [
+        {
+         "id": "t2:r25",
+         "name": "Kameya Shinjuku",
+         "description": "סובה-",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r26",
+         "name": "Shogun Burger",
+         "description": "המבורגר",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r27",
+         "name": "Ramen Kamo to Negi",
+         "description": "ראמן- ברווז",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#CFB6F2",
+       "items": [
+        {
+         "id": "t2:r30",
+         "name": "Shinjuku Hikeshi Gyoza",
+         "description": "גיוזה+ מנות יפניות (פתוח 24/7)",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r31",
+         "name": "Isetan Depachika",
+         "description": "קומת אוכל שיש הכל",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t2:r32",
+         "name": "AFURI",
+         "description": "ראמן",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t10",
+     "title": "קודוקאן- ג׳ודו",
+     "color": "#F4CA3A",
+     "part": "טוקיו חלק 1",
+     "order": 573.9035971402113,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t10:r3",
+         "name": "Koishikawa Korakuen",
+         "description": "גן יפני מסורתי עם אגמים, גשרים, עצים ושלכת- כניסה 300 יין- עדיף להתחיל את היום משם עלות רכב 180 יין.",
+         "info": {
+          "label": "זמן הליכה",
+          "value": "עולים מתחנה Higashi-Shinjuku Station\n\n\n\nויורדים בIidabashi Station"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t10:r4",
+         "name": "Kodokan Judo Institute",
+         "description": "המרכז ההיסטורי של הג׳ודו",
+         "info": {
+          "label": "זמן הליכה",
+          "value": "6 דקות מהקודוקן"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t10:r5",
+         "name": "Tokyo Dome City",
+         "description": "מתחם בילויים ליד הקודוקאן; קניון, מסעדות, מתקנים ואווירה נחמדה. לא חובה להקדיש לו הרבה זמן",
+         "info": {
+          "label": "זמן הליכה",
+          "value": "5 דקות הליכה מהקודוקן"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t10:r8",
+         "name": "Tsukemen Zuppa",
+         "description": "נודלס",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות לטל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t10:r11",
+         "name": "GENUINE BURGER TOKYO DOME CITY",
+         "description": "המבורגר",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t4",
+     "title": "אואנו",
+     "color": "#F4CA3A",
+     "part": "טוקיו חלק 1",
+     "order": 574.0762038257291,
+     "sections": [
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#EEEF81",
+       "items": [
+        {
+         "id": "t4:r3",
+         "name": "Tokyo Dome City",
+         "description": "יד שנייה, בגדים, תיקים, משחקים",
+         "info": {
+          "label": "מרחק הליכה",
+          "value": "עולים מתחנה kasha station לאוואנו ויורדים בueno okachimachi עלות רכבת 180 יין"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r4",
+         "name": "SASUGAYA OUTLET",
+         "description": "יד שנייה של מותגי יוקרה",
+         "info": {
+          "label": "מרחק הליכה",
+          "value": "2 דקות הליכה מהbookoff"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r5",
+         "name": "Daiso",
+         "description": "חנות עד 100 יין",
+         "info": {
+          "label": "מרחק הליכה",
+          "value": "5 דקות הליכה"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r6",
+         "name": "Tampopo House Ueno-Hirokoji",
+         "description": "יד שנייה זולה יותר",
+         "info": {
+          "label": "מרחק הליכה",
+          "value": "9 דקות הליכה מdaiso"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r7",
+         "name": "Ameyoko",
+         "description": "שוק וקניות",
+         "info": {
+          "label": "מרחק הליכה",
+          "value": "8 דק הליכה מtampoo house"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r8",
+         "name": "Amanek hotel",
+         "description": "חזרה למלון",
+         "info": {
+          "label": "מרחק הליכה",
+          "value": "מתחת אואנו 15 שעה ברכבת 220 יין"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t4:r11",
+         "name": "VEGAN GYOZA",
+         "description": "גיוזה- 100% טבעוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t4:r14",
+         "name": "Magurobito / Magurobito Okachimachi",
+         "description": "טונה וסושי במחיר נגיש",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r15",
+         "name": "Ameyoko",
+         "description": "שוק",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t4:r16",
+         "name": "Kanazawa Maimon Sushi Ueno",
+         "description": "סושי- איכותי יותר",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t5",
+     "title": "אומוטסנדו+הרג׳וקו",
+     "color": "#FC205B",
+     "part": "טוקיו חלק 1",
+     "order": 1147.7916149128923,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#F5798B",
+       "items": [
+        {
+         "id": "t5:r3",
+         "name": "HARAJUKU STATION",
+         "description": "לשם מגיעים בהתחלה כדי להמשיך את היום",
+         "info": {
+          "label": "עלות",
+          "value": "הליכה לShinjuku-sanchome Station\n\n2 תחנות יורדים בMeiji-jingumae ‘Harajuku’"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r4",
+         "name": "Takeshita Street",
+         "description": "שדרת קניות צעירה וצבעונית, אופנה, חטיפים וחנויות קטנות",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r5",
+         "name": "Galaxy Harajuku",
+         "description": "מוזיאון חינמי של גלאקסי, טעימה לteam lab שיהיה בקיוטו, חוויה אינטרקטיבית ותערוכה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r6",
+         "name": "Omotesando",
+         "description": "שדרה רחבה ויפה עם אדריכלות, מותגים ובתי קפה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r7",
+         "name": "Cat Street",
+         "description": "רחוב אופנה ובוטיקים שמחבר יפה לכיוון Shibuya",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#F5788A",
+       "items": [
+        {
+         "id": "t5:r10",
+         "name": "Levi’s Harajuku Store",
+         "description": "עם אופצציה לריקמה (רק בהרג׳קו) Levi’s חנות",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r11",
+         "name": "BAPE STORE",
+         "description": "חנות מעצבים מגניבה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r12",
+         "name": "cas:pace",
+         "description": "חנות מגנים מגניבים לאייפון",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r13",
+         "name": "JAM Harajuku",
+         "description": "חנות וינט׳ג",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r14",
+         "name": "Onitsuka Tiger Omotesando",
+         "description": "החנות הרישמית",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#F5788A",
+       "items": [
+        {
+         "id": "t5:r17",
+         "name": "Kyushu Jangara Ramen Harajuku",
+         "description": "ראמן",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t5:r18",
+         "name": "MOMINOKI HOUSE",
+         "description": "מסעדה טבעונית- גיוזות ירקות, סושי טבעוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#F5788A",
+       "items": [
+        {
+         "id": "t5:r21",
+         "name": "AFURI",
+         "description": "ראמן- עם אופצייה לטבעוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t6",
+     "title": "שיבויה",
+     "color": "#FC205B",
+     "part": "טוקיו חלק 1",
+     "order": 1147.8643630938177,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#F5788A",
+       "items": [
+        {
+         "id": "t6:r3",
+         "name": "Shibuya Crossing",
+         "description": "אופנה ומסעדות להסתובב- מעבר החצייה האייקוני",
+         "info": {
+          "label": "עלות",
+          "value": "15 דקות הליכה מהcat street"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r4",
+         "name": "Center-gai",
+         "description": "רחוב קניות, אוכל",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r5",
+         "name": "סטארבקס",
+         "description": "נקודת תצפית על כל שיבויה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r6",
+         "name": "Mario Kart",
+         "description": "נקבע 19.11",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r7",
+         "name": "Shibuya Sky",
+         "description": "תצפית גג - להזמין מראש (למרות שיש כאלה בחינם)",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#F5798B",
+       "items": [
+        {
+         "id": "t6:r10",
+         "name": "Mega Don Quijote",
+         "description": "קוסמטיקה- ליד הcenter gai",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r11",
+         "name": "ABC-MART",
+         "description": "נעליים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r12",
+         "name": "Shibuya Loft",
+         "description": "כלי בית, קוסמטיקה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r13",
+         "name": "Shibuya PARCO",
+         "description": "אופנה ומסעדות להסתובב",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r14",
+         "name": "Pokémon Center Shibuya",
+         "description": "לקחת בחשבון שמפוצץ- נמצא בקומה 6 בparco",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#F5798B",
+       "items": [
+        {
+         "id": "t6:r17",
+         "name": "Jikasei MENSHO",
+         "description": "ראמן",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות לטל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#F5798B",
+       "items": [
+        {
+         "id": "t6:r20",
+         "name": "Hikiniku to Come Shibuya",
+         "description": "- הזמנה מראשHamburg steak",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": "attention",
+         "reminderKey": "hikiniku to come shibuya"
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#F5798B",
+       "items": [
+        {
+         "id": "t6:r23",
+         "name": "Gonpachi",
+         "description": "נקבע 19.11",
+         "info": {
+          "label": "עלות",
+          "value": "$$–$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r24",
+         "name": "Jikasei MENSHO",
+         "description": "ראמן- עם אופצייה טבעונית",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r25",
+         "name": "SHOGUN PIZZA Shibuya",
+         "description": "פיצה",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t6:r26",
+         "name": "RURU SHIBUYA",
+         "description": "בית קפה- מוגש על המים",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t3",
+     "title": "שימוקיטאזווה+נאקאנו",
+     "color": "#2D8DFF",
+     "part": "טוקיו חלק 1",
+     "order": 1756.1185725360324,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#6ACDFF",
+       "items": [
+        {
+         "id": "t3:r3",
+         "name": "שימוקיטזאווה",
+         "description": "רחובות של חנויות יד 2 בעיקר להסתובב לא בהכרח חנות ספציפית",
+         "info": {
+          "label": "עלות",
+          "value": "15 דקות ברכבת עולה 170 יין"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r4",
+         "name": "Shimokitazawa Ichibangai",
+         "description": "שדרת קניות שכונתית עם וינטג', בתי קפה וחנויות קטנות",
+         "info": {
+          "label": "עלות",
+          "value": "3 דקות הליכה מהרכבת"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r5",
+         "name": "Nakano Sun Mall",
+         "description": "שדרת קניות מקורה שמתחילה ממש ביציאה מהתחנה חוזרים למלון ובערב מסעדת טונה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r6",
+         "name": "Nakano Broadway",
+         "description": "מרכז קניות מפורסם של אנימה, מנגה, פיגרים, אספנות, שעונים ויד שנייה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#6BCCFF",
+       "items": [
+        {
+         "id": "t3:r9",
+         "name": "2nd Street Shimokitazawa",
+         "description": "חנות יד 2",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r10",
+         "name": "JAM VINTAGE & SELECT Shimokitazawa",
+         "description": "חנות יד 2",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r11",
+         "name": "Flamingo",
+         "description": "וינטג׳׳ אמריקאי",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r12",
+         "name": "NEW YORK JOE EXCHANGE",
+         "description": "חנות וינטג׳ מאוד מפורסמת",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r13",
+         "name": "RAGTAG",
+         "description": "חנות יד 2",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות עדי",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#6BCCFF",
+       "items": [
+        {
+         "id": "t3:r16",
+         "name": "Vegan Soba Tokyo Ayler",
+         "description": "סובה",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#6BCCFF",
+       "items": [
+        {
+         "id": "t3:r19",
+         "name": "Ogawa Coffee Laboratory",
+         "description": "חובה!- מעבדת קפה/אפשר להתנסות בסוגי פולים ושיטות הכנה יש מספר קומות כל קומה משהו אחר.",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r20",
+         "name": "Flipper's",
+         "description": "בית קפה-פנקייק",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t3:r21",
+         "name": "Maguro Mart",
+         "description": "הזמנה מראש- נמצאת בנאגנו",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$$$"
+         },
+         "links": [],
+         "marking": "attention",
+         "reminderKey": "maguro mart"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t9",
+     "title": "גינזה",
+     "color": "#4F6F43",
+     "part": "טוקיו חלק 2",
+     "order": 3230.947208492517,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#ACF48F",
+       "items": [
+        {
+         "id": "t9:r3",
+         "name": "Ginza Chuo-dori",
+         "description": "שדרת הקניות המרכזית; בתי כלבו ומותגים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r4",
+         "name": "GINZA SIX",
+         "description": "קניון יוקרתי עם אופנה, עיצוב, אמנות ואוכל",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r5",
+         "name": "Kabukiza",
+         "description": "תיאטרון קבוקי עם חזית יפנית מרשימה; גם אם לא נכנסים, שווה לראות מבחוץ",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r6",
+         "name": "Hibiya Park",
+         "description": "קצת נוף ירוק",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r7",
+         "name": "מספרה",
+         "description": "?",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#ACF48F",
+       "items": [
+        {
+         "id": "t9:r13",
+         "name": "GINZA SIX",
+         "description": "חנויות מותגים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r14",
+         "name": "Uniqlo Ginza",
+         "description": "Uniqlo Ginza",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r15",
+         "name": "Onitsuka Tiger",
+         "description": "נעליים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות לטל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#ACF48F",
+       "items": [
+        {
+         "id": "t9:r18",
+         "name": "Ginza Kagari",
+         "description": "ראמן מפורסם",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#ACF48F",
+       "items": [
+        {
+         "id": "t9:r21",
+         "name": "Godaime Hanayama Udon Ginza",
+         "description": "אודון רחב מפורסם- הזמנת מקום (להירשם בבוקר)",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": "attention",
+         "reminderKey": "godaime hanayama udon ginza"
+        },
+        {
+         "id": "t9:r22",
+         "name": "Sushiro Yurakucho",
+         "description": "סושי",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t9:r23",
+         "name": "Kakuōzan Fruit Daifuku Benzaiten Ginza",
+         "description": "קינוח",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t8",
+     "title": "אקיהברה",
+     "color": "#88D4F1",
+     "part": "טוקיו חלק 2",
+     "order": 3869.9465170852504,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t8:r3",
+         "name": "Chuo-dori",
+         "description": "הרחוב הראשי של האלקטרוניקה, אנימה וחנויות ענק",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t8:r4",
+         "name": "Radio Kaikan",
+         "description": "קומות של אנימה, פיגרים, קלפים ואספנות.",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t8:r5",
+         "name": "Yodobashi Akiba",
+         "description": "אלקטרוניקה ענקית + מסעדות",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t8:r6",
+         "name": "Kanda Myojin",
+         "description": "מקדש יפה במרחק הליכה; שינוי אווירה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t8:r9",
+         "name": "AKKY International",
+         "description": "קניית מזוודות במידת הצורך- זול ממש",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t8:r10",
+         "name": "Daiso",
+         "description": "כל החנות 100 יין",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t8:r11",
+         "name": "Yodobashi Camera",
+         "description": "מצלמות",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t8:r14",
+         "name": "Kyushu Jangara Akihabara",
+         "description": "Kyushu Jangara Akihabara",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t8:r15",
+         "name": "Vegan Noodle T's Tantan Ecute Akihabara",
+         "description": "ראמן טבעוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t8:r18",
+         "name": "Sushiro Akihabara",
+         "description": "סושי",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t7",
+     "title": "אסקוסה",
+     "color": "#F4CA3B",
+     "part": "טוקיו חלק 2",
+     "order": 4479.753164427728,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#EEEF82",
+       "items": [
+        {
+         "id": "t7:r3",
+         "name": "Sensō-ji",
+         "description": "מקדש בודהיסטי מפורסם",
+         "info": {
+          "label": "עלות",
+          "value": "8 דקות נסעה ברכבת, עולים מתחנת Suehirochō Sta.\n\n180 יין"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r4",
+         "name": "Nakamise",
+         "description": "רחוב השוק שמוביל למקדש",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r5",
+         "name": "Kaminarimon Gate.",
+         "description": "שער הכניסה האדום המפורסם",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r6",
+         "name": "Sumida River",
+         "description": "טיילת על הנהר ונוף לכיוון Tokyo Skytree.",
+         "info": {
+          "label": "עלות",
+          "value": "6 דקות הליכה מהשער"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#EEEF83",
+       "items": [
+        {
+         "id": "t7:r9",
+         "name": "Nakamise",
+         "description": "כלי בית ומזכרות",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r10",
+         "name": "Kappabashi",
+         "description": "סכינים וקרמיקה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r11",
+         "name": "יוניקלו",
+         "description": "סניף גדול",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r12",
+         "name": "Daiso",
+         "description": "חנות עד 100 יין",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#ECEF82",
+       "items": [
+        {
+         "id": "t7:r15",
+         "name": "Kura Sushi Global Flagship Store Asakusa",
+         "description": "סושי",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r16",
+         "name": "Ganso Zushi",
+         "description": "סושי",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r17",
+         "name": "Ogawa Coffee Laboratory",
+         "description": "חובה!- מעבדת קפה/אפשר להתנסות בסוגי פולים ושיטות הכנה יש מספר קומות כל קומה משהו אחר.",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r18",
+         "name": "Yoroiya",
+         "description": "ראמן- אופצייה לטבעוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t7:r19",
+         "name": "Nakamise",
+         "description": "אוכל רחוב וקינוחים",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t24",
+     "title": "האקונה",
+     "color": "#73B98F",
+     "part": "טוקיו חלק 2",
+     "order": 5090.78636442977,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#83E4C5",
+       "items": [
+        {
+         "id": "t24:r3",
+         "name": "ריוקן",
+         "description": "",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t24:r4",
+         "name": "מוזאון",
+         "description": "",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#82E4C5",
+       "items": []
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#82E5C5",
+       "items": []
+      }
+     ]
+    },
+    {
+     "id": "t25",
+     "title": "ניקו",
+     "color": "#FF5345",
+     "part": "טוקיו חלק 2",
+     "order": 5728.563231505395,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#FC887D",
+       "items": [
+        {
+         "id": "t25:r3",
+         "name": "ריוקן",
+         "description": "",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t25:r4",
+         "name": "מוזאון",
+         "description": "",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#FC887C",
+       "items": []
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#FC887C",
+       "items": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fuji",
+   "name": "פוג׳י",
+   "neighborhoods": [
+    {
+     "id": "t14",
+     "title": "קווגוצ׳יקו",
+     "color": "#F4CA3A",
+     "part": null,
+     "order": 223.87222403356284,
+     "sections": [
+      {
+       "title": "אטרקציות יום 1",
+       "subtitle": "אטרקציות יום 1",
+       "category": "attractions",
+       "color": "#EEEF81",
+       "items": [
+        {
+         "id": "t14:r3",
+         "name": "Fujikyu-Highland Station",
+         "description": "עולים משינג׳וקו ויורדים בתחנה של Fujikyu-Highland Station משם 5 דקות הליכה למלון",
+         "info": {
+          "label": "עלות",
+          "value": "80 שקל לכרטיס- להזמין מראש"
+         },
+         "links": [],
+         "marking": "attention",
+         "reminderKey": "fujikyu-highland station"
+        },
+        {
+         "id": "t14:r4",
+         "name": "Oishi Park",
+         "description": "מהמלון הולכים לפארק",
+         "info": {
+          "label": "עלות",
+          "value": "חינם"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r5",
+         "name": "Momiji Tunnel",
+         "description": "נקודת עצירה עם עצי המייפל",
+         "info": {
+          "label": "עלות",
+          "value": "חינם"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r6",
+         "name": "Momiji Corridor",
+         "description": "פסטיבל השלכת וחזרה למלון- לוקחים אוטובוס לKawaguchiko Station ומשם הליכה 15 דק למלון.",
+         "info": {
+          "label": "עלות",
+          "value": "12 ש״ח לכרטיס אפשר מזומן"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "אטרקציות יום 2",
+       "subtitle": "אטרקציות יום 2",
+       "category": "attractions",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t14:r9",
+         "name": "Kawaguchiko Station.",
+         "description": "הליכה של 35 דק מהמלון- חשוב להתחיל מוקדם 8:00, נקודת תצפית עם הרבה מדרגות.",
+         "info": {
+          "label": "עלות",
+          "value": "חינם"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r10",
+         "name": "Honcho Street",
+         "description": "יורדים מהפגודה לHoncho Street",
+         "info": {
+          "label": "עלות",
+          "value": "חינם"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r11",
+         "name": "Oshino Hakkai",
+         "description": "Honcho Street- הולכים ברגל mt fuji station (רבע שעה), לוקחים אוטובוס לOshino Hakkai עשרים דק נסיעה.",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r12",
+         "name": "חזרה למלון",
+         "description": "Oshino Hakkai הולכים לתחנה של השאטל לוקחים את השטאל למלון- Fujikko-go (Loop Shuttle Right) → Akasaka",
+         "info": {
+          "label": "עלות",
+          "value": "8 שקלים מזומן/suica"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "אטרקציות יום 3",
+       "subtitle": "אטרקציות יום 3",
+       "category": "attractions",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t14:r15",
+         "name": "Kawaguchiko Music Forest Museum",
+         "description": "עולים מasakasa על שאטל To Kofu Station Bus Terminal יורדים בתחנה Kawaguchiko-bijutsukan-mae והולכים 7 דקות עד למוזיאון",
+         "info": {
+          "label": "עלות",
+          "value": "כניסה 8 שקלים"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r16",
+         "name": "Gotemba outlet",
+         "description": "חוזרים למלון ולוקחים שאטל למלון ומשם אוטובוס לגוטמבה",
+         "info": {
+          "label": "עלות",
+          "value": "2500 יין"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "אטרקציות יום 4",
+       "subtitle": "אטרקציות יום 4",
+       "category": "attractions",
+       "color": "#EEEE81",
+       "items": [
+        {
+         "id": "t14:r19",
+         "name": "Shiraito Falls",
+         "description": "לוקחים אוטובוס מתחנה akasaka למפלים",
+         "info": {
+          "label": "עלות",
+          "value": "40 שקל לכרטיס באוטובוס"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r20",
+         "name": "Otodome Falls",
+         "description": "הליכה של 2 דקות מהמפלים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r21",
+         "name": "Shin-Fuji Station.",
+         "description": "מהמפלים לוקחים אוטובוס לתחנת רכבת שזה שעה נסיעה לבדוק את השעות כי יש אוטובוס של שעה בדיוק מהמפלים עד הרכבת.",
+         "info": {
+          "label": "עלות",
+          "value": "אוטובוס יעלה 5 שקלים עד התחנת רכבת"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t14:r22",
+         "name": "Kyoto",
+         "description": "ואז יורדים בתחנה של קיוטו   Shin-Fuji Station לוקחים שנקנסין מהתחנה",
+         "info": {
+          "label": "עלות",
+          "value": "550 לזוג כרטיסים"
+         },
+         "links": [],
+         "marking": "attention",
+         "reminderKey": "kyoto"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kyoto",
+   "name": "קיוטו",
+   "neighborhoods": [
+    {
+     "id": "t15",
+     "title": "11.11",
+     "color": "#88D4F1",
+     "part": null,
+     "order": 1128.809114634428,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t15:r3",
+         "name": "Shijo-dori",
+         "description": "שדרת קניות מרכזית, רשתות, בתי כלבו וחנויות יפניות.",
+         "info": {
+          "label": "עלות",
+          "value": "20 דק הליכה מהמלון"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r4",
+         "name": "Kawaramachi",
+         "description": "מרכז העיר, אופנה, נעליים, קוסמטיקה ובתי קפה",
+         "info": {
+          "label": "עלות",
+          "value": "11 דקות מShijo-dori"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r5",
+         "name": "Kamo River",
+         "description": "5 דקות מהאזור המרכזי, הליכה נעימה ליד הנהר.",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r6",
+         "name": "Pontocho Alley",
+         "description": "סמטה צרה עם מסעדות ואווירת קיוטו בערב.",
+         "info": {
+          "label": "עלות",
+          "value": "20 דק מהמלון בהליכה"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r7",
+         "name": "Gion",
+         "description": "רק אם יש כוח. לא חובה ביום הזה.",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r8",
+         "name": "",
+         "description": "https://maps.app.goo.gl/uNsM3m43mY25JVcw7",
+         "info": null,
+         "links": [
+          "https://maps.app.goo.gl/uNsM3m43mY25JVcw7"
+         ],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות טל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t15:r11",
+         "name": "Kyo Kurozakura",
+         "description": "וואגיו",
+         "info": {
+          "label": "עלות",
+          "value": "$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r12",
+         "name": "Pontocho Yakiniku Yamakawa",
+         "description": "וואגיו- 120 עד 160 שקל",
+         "info": {
+          "label": "עלות",
+          "value": "$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r13",
+         "name": "Yakiniku Marutomi Shijo Kawaramachi",
+         "description": "ואגיו- נמצא בPontocho, מחיר נגיש יותר",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t15:r16",
+         "name": "KYOTO ENGINE RAMEN",
+         "description": "ראמן- נמצא בKawaramachi",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r17",
+         "name": "Chao Chao Gyoza",
+         "description": "גיוזה- נמצא בKawaramachi, מסעדה מעורבת עם תפריט נפרד לצמחונים או טבעונים",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t15:r20",
+         "name": "Micasadeco & Cafe Kyoto",
+         "description": "בית קפה/פנקקיים, נסגר יחסית מוקדם ביום, מתאים לצהריים-בוקר",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t15:r21",
+         "name": "LE LABO CAFE KYOTO MACHIYA",
+         "description": "בית קפה בן יותר מ140 שנה- של מאצה",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t17",
+     "title": "12.11",
+     "color": "#88D4F1",
+     "part": null,
+     "order": 1656.31051962396,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t17:r3",
+         "name": "Fushimi Inari",
+         "description": "שערים כתומים",
+         "info": {
+          "label": "עלות",
+          "value": "הליכה לאוטבוס- shijo horikawa"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t17:r4",
+         "name": "Kiyomizu-dera",
+         "description": "עוברים לצד המזרחי של קיוטו ל-Kiyomizu-dera",
+         "info": {
+          "label": "עלות",
+          "value": "10 שקלים כניסה למקדש"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t17:r5",
+         "name": "Sannenzaka + Ninenzaka",
+         "description": "רחובות אבן עתיקים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t17:r6",
+         "name": "Gion",
+         "description": "ממשיכים לכיוון Gion",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t17:r10",
+         "name": "glänta Kyoto Ninenzaka",
+         "description": "טבעת עם חרטיה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות טל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t17:r13",
+         "name": "Kyo Kurozakura",
+         "description": "וואגיו",
+         "info": {
+          "label": "עלות",
+          "value": "$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t17:r14",
+         "name": "Pontocho Yakiniku Yamakawa",
+         "description": "וואגיו- 120 עד 160 שקל",
+         "info": {
+          "label": "עלות",
+          "value": "$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t17:r15",
+         "name": "Yakiniku Marutomi Shijo Kawaramachi",
+         "description": "ואגיו- נמצא בPontocho, מחיר נגיש יותר",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t17:r18",
+         "name": "Shigetsu",
+         "description": "בתוך Tenryu-ji- אוכל בודהיסטי צמחוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t17:r21",
+         "name": "Kyoto Engine Ramen",
+         "description": "ראמן עם אופציות טבעוניות וגם לא",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t17:r22",
+         "name": "Arashiyama Yoshimura",
+         "description": "לבדוק שהציר במנה שבוחרים לא מבוסס על דאשי",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t18",
+     "title": "13.11",
+     "color": "#88D4F1",
+     "part": null,
+     "order": 2180.463062812231,
+     "sections": [
+      {
+       "title": "ARASHIYAMA",
+       "subtitle": "ARASHIYAMA",
+       "category": "uncategorized",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t18:r3",
+         "name": "Kameoka",
+         "description": "מגיעים לקמאוקה- נקודם ההתחלה שבה יוצאת הרכבת לכיוון הסירה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r4",
+         "name": "HOZUGAWA BOAT",
+         "description": "רפטינג של שעתיים, הרפטינג מוריד בתוך ארשיאמה- הזמנה מראש",
+         "info": {
+          "label": "עלות",
+          "value": "40$"
+         },
+         "links": [],
+         "marking": "attention",
+         "reminderKey": "hozugawa boat"
+        },
+        {
+         "id": "t18:r5",
+         "name": "Bamboo Grove",
+         "description": "עצי הבמבוק",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r6",
+         "name": "Tenryu-ji",
+         "description": "ממשיכים לגן היפני",
+         "info": {
+          "label": "עלות",
+          "value": "10 שקלים כניסה למבנים 6 שקלים"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r7",
+         "name": "Togetsukyo Bridge",
+         "description": "בערך 10 דק הליכה לכיוון הנהר והגשר",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r8",
+         "name": "Shijo-dori",
+         "description": "חזרה למלון, סיבוב קניות אוכל וכל מה שמסביב",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r9",
+         "name": "Kawaramachi",
+         "description": "",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r10",
+         "name": "Pontocho Alley",
+         "description": "למצוא איזה בר שווה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות כשרות/טבעוניות",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t18:r13",
+         "name": "Shigetsu",
+         "description": "בתוך Tenryu-ji- אוכל בודהיסטי צמחוני",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t18:r16",
+         "name": "ARABICA Kyoto Arashiyama",
+         "description": "בית קפה ליד הנהר",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t18:r17",
+         "name": "Arashiyama Yoshimura",
+         "description": "לבדוק שהציר במנה שבוחרים לא מבוסס על דאשי",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t19",
+     "title": "14.11",
+     "color": "#88D4F1",
+     "part": null,
+     "order": 2837.1348263153695,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t19:r3",
+         "name": "Eikan-dō",
+         "description": "גנים להסתובב",
+         "info": {
+          "label": "עלות",
+          "value": "4 שקלים"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t19:r4",
+         "name": "Ginkaku-ji — Silver Pavilion",
+         "description": "מקדש מבודד, גנים ואווירה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t19:r5",
+         "name": "Pizzeria da Ciro",
+         "description": "חובה לצהריים",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t19:r6",
+         "name": "Kyoto Station",
+         "description": "חוזרים לכיוון Kyoto Station",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t19:r7",
+         "name": "TeamLab",
+         "description": "הזמנה מראש",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t19:r8",
+         "name": "חזרה לאיזור המלון",
+         "description": "",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t19:r11",
+         "name": "Pizzeria da Ciro",
+         "description": "פיצרייה איטלקית נדירה",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t20",
+     "title": "15.11",
+     "color": "#88D4F1",
+     "part": null,
+     "order": 3592.204546382861,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#B4EEEE",
+       "items": [
+        {
+         "id": "t20:r3",
+         "name": "Le Labo Cafe Kyoto Machiya",
+         "description": "פותחים בבית קפה",
+         "info": {
+          "label": "עלות",
+          "value": "4 שקלים"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r4",
+         "name": "Teramachi",
+         "description": "הליכה של 7 דק חנויות, דברים קטנים אססוריז",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r5",
+         "name": "Nishiki Market",
+         "description": "אוכל, תה, כלי מטבח",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r6",
+         "name": "MOTOI Gyoza",
+         "description": "אוכל גיוזה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r7",
+         "name": "Traveler’s Factory Kyoto",
+         "description": "חנות של חותמות",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r8",
+         "name": "חזרה למלון לעשות צ׳ק אאוט",
+         "description": "יציאה לאוסקה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "osaka",
+   "name": "אוסקה",
+   "neighborhoods": [
+    {
+     "id": "t20-osaka",
+     "title": "15.11",
+     "color": "#FF7D00",
+     "part": null,
+     "order": 3592.204546382861,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#FF7D00",
+       "items": [
+        {
+         "id": "t20:r11",
+         "name": "Hotel Cordia → Shinsaibashi",
+         "description": "מגיעים למלון- אפשר ללכת ברגל 15-20 דק ל- Shinsaibashi",
+         "info": {
+          "label": "מה רואים",
+          "value": "Shinsaibashi-suji -שדרת קניות מקורה ארוכה."
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r12",
+         "name": "Amerikamura",
+         "description": "Shinsaibashi → Amerikamura\n\nכ־5–8 דקות הליכה.",
+         "info": {
+          "label": "מה רואים",
+          "value": "זה אותו מקום; וינטג׳, סטריטוור, חנויות צעירות, גרפיטי ואווירה יותר אלטרנטיבית."
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r13",
+         "name": "Dotonbori",
+         "description": "Amerikamura → Dotonbori\n\nכ־10 דקות הליכה.",
+         "info": {
+          "label": "מה רואים",
+          "value": "בעיקר מסעדות"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r14",
+         "name": "Namba",
+         "description": "Dotonbori → Namba\n\nכ־5–10 דקות.",
+         "info": {
+          "label": "מה רואים",
+          "value": "Hozenji Yokocho — סמטה קטנה ומסורתית ממש מאחורי האזור הרועש של Dotonbori. שווה לעבור, לא צריך להקדיש לה שעה."
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r15",
+         "name": "Round1",
+         "description": "המשחקייה מהטיקטוק זה ממש בnamba",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "קניות",
+       "subtitle": null,
+       "category": "shopping",
+       "color": "#FF7D00",
+       "items": [
+        {
+         "id": "t20:r18",
+         "name": "Second Street",
+         "description": "יד שנייה / וינטג׳",
+         "info": {
+          "label": "מיקום",
+          "value": "Shinsaibashi / Amerikamura"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r19",
+         "name": "Camera Kitamura",
+         "description": "מצלמות וציוד צילום",
+         "info": {
+          "label": "מיקום",
+          "value": "Shinsaibashi / Amerikamura"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r20",
+         "name": "Higashi-Shinsaibashi",
+         "description": "חנויות קטנות, אופנה, וינטג׳",
+         "info": {
+          "label": "מיקום",
+          "value": "Shinsaibashi / Amerikamura"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r21",
+         "name": "Shinsaibashi-suji",
+         "description": "רשתות + חנויות יפניות",
+         "info": {
+          "label": "מיקום",
+          "value": "Shinsaibashi / Amerikamura"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות עדי",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#FAA13F",
+       "items": [
+        {
+         "id": "t20:r24",
+         "name": "-Salmon Kat Namba",
+         "description": "סלמון עבה, קערות סלמון ומנות בסגנון סושי.",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r25",
+         "name": "Sushitori Shoten Dotonbori",
+         "description": "סושי / טונה / איזקאיה",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות לטל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#FFB63E",
+       "items": [
+        {
+         "id": "t20:r28",
+         "name": "SHOGUN BURGER-SHINSAIBASHI",
+         "description": "המבורגר וואגיו- ממולץ",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r29",
+         "name": "Wagyu Hokusai-steak bowls- SHINSAIBASHI",
+         "description": "Rare Wagyu Box — בערך ¥3,080\n\nKobe Beef premium box — בערך ¥5,280 מחירים טובים לוואגיו omakase בקופסאת אורז בלי להשתגע במחירים.",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r30",
+         "name": "Shinsaibashi Sand-SHINSAIBASHI",
+         "description": "סנדוויצ׳ים בשריים",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r31",
+         "name": "Nikuya-Dotonbori",
+         "description": "Wagyu Box- $$ בצהריים / $$$–$$$$ בערב — Wagyu / yakiniku / steak",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r32",
+         "name": "Kitan Hibiki-DOTONBORI / NAMBA",
+         "description": "Wagyu / steak / hamburger גם כאן עדיפות בצהריים כי זול יותר",
+         "info": {
+          "label": "עלות",
+          "value": "$$-$$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#FFB63E",
+       "items": [
+        {
+         "id": "t20:r35",
+         "name": "MooKEN-SHINSAIBASHI",
+         "description": "מיני פחזניות- מומלץ, פתוח 10:00-15:00, מיקום- Shinsaibashi Station",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r36",
+         "name": "Onigiri -Gorichan SHINSAIBASHI",
+         "description": "אוניגירי שמן",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r37",
+         "name": "Uncle Rikuro Cheesecake-DOTONBORI/NAMBA",
+         "description": "עוגת גבינה יפנית- רק אם אין תור, מיקום- Namba",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r38",
+         "name": "Mizuno-DOTONBORI/NAMBA",
+         "description": "אוקונומיאקי- עם אפשרויות צמחוניות",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r39",
+         "name": "Crepe & Espresso-SHINSAIBASHI",
+         "description": "הקרפ המדובר",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t20:r40",
+         "name": "MELT-SHINSAIBASHI",
+         "description": "שוקו מקופלת",
+         "info": {
+          "label": "עלות",
+          "value": "$-$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t12",
+     "title": "16.11",
+     "color": "#FF7D00",
+     "part": null,
+     "order": 4281.942382014331,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#FFB63E",
+       "items": [
+        {
+         "id": "t12:r3",
+         "name": "UNIVERSAL STUDIOS JAPAN",
+         "description": "חרבו דארבו",
+         "info": {
+          "label": "עלות",
+          "value": "$$$$$$$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t22",
+     "title": "17.11",
+     "color": "#FF7D00",
+     "part": null,
+     "order": 4899.041305003645,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#FFB63E",
+       "items": [
+        {
+         "id": "t22:r3",
+         "name": "Osaka Castle",
+         "description": "מה־Hommachi מדובר בערך 20–30 דקות בתחבורה ציבורית.",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t22:r4",
+         "name": "Tenjinbashisuji",
+         "description": "רחוב קניות מקורה ארוך עם: חנויות מקומיות, אוכל, בגדים, כלי בית- פחות תיירותי מדוטונבורי",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t22:r5",
+         "name": "Umeda",
+         "description": "Grand Green Osaka — פארק עירוני חדש + קניונים + אדריכלות. החלק המודרני של אוסקה",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t22:r6",
+         "name": "Shinsekai",
+         "description": "רחוב של משחקים, אווירה, אוכל",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות עדי",
+       "subtitle": null,
+       "category": "rest_adi",
+       "color": "#FAA13F",
+       "items": [
+        {
+         "id": "t22:r9",
+         "name": "Sushi Kin- Umeda",
+         "description": "ארוחת סושי זולה- נמצא בתוך Whity Umeda",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות לטל",
+       "subtitle": null,
+       "category": "rest_tal",
+       "color": "#FAA13F",
+       "items": [
+        {
+         "id": "t22:r12",
+         "name": "Gyukatsu Motomura- UMEDA",
+         "description": "שניצל בקר",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      },
+      {
+       "title": "מסעדות משותפות",
+       "subtitle": null,
+       "category": "rest_both",
+       "color": "#FAA13F",
+       "items": [
+        {
+         "id": "t22:r15",
+         "name": "Hitokuchi no Shiawase- Tenjinbashi.",
+         "description": "קינוח גלידת מוצ׳י- שווה",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t22:r16",
+         "name": "Flipper’s- Umeda",
+         "description": "פנקייקים יפניים",
+         "info": {
+          "label": "עלות",
+          "value": "$$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t22:r17",
+         "name": "Parfaits to Sake Ijou Maru- Umeda",
+         "description": "קינוח ערב מעוצב, לעיתים עם אלכוהול ופירות עונתיים, יותר בר",
+         "info": {
+          "label": "עלות",
+          "value": "$$$- 4,500 יין"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t22:r18",
+         "name": "Naniwa Ebisunishi, Shinsekai",
+         "description": "סושייה",
+         "info": {
+          "label": "עלות",
+          "value": "$"
+         },
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "t21",
+     "title": "18.11",
+     "color": "#FF7C00",
+     "part": null,
+     "order": 5481.750166116348,
+     "sections": [
+      {
+       "title": "אטרקציות",
+       "subtitle": null,
+       "category": "attractions",
+       "color": "#FAA240",
+       "items": [
+        {
+         "id": "t21:r3",
+         "name": "מלון/דוטונבורי",
+         "description": "להסתובב ליד מלון או שוב בדוטונבורי, אפשר ללכת למקדש Namba Yasaka Shrine עם הראש אריה הענק, 6 דק הליכה מתחתנת Namba station- נפתח ב9:00, אחכ הליכה משלם לדוטונבורי סיבבו אחרון ונסיעה לרכבת- להגיע עד 11:45 (יש גם אוכל ברכבת)",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        },
+        {
+         "id": "t21:r4",
+         "name": "Shin-Osaka",
+         "description": "נסיעה בשינקנסין 13:15 רכבת, אז יש את הבוקר להסתובב לקחת זמנים של שעה קודם להגיע לפני הרכבת.",
+         "info": null,
+         "links": [],
+         "marking": null,
+         "reminderKey": null
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "itinerary": {
+  "title": "תכנון טיול ליפן",
+  "headers": {
+   "date": "תאריך",
+   "day": "יום",
+   "activity": "פעילות",
+   "location": "מיקום",
+   "hotel": "תשלום מלון",
+   "price": "מחיר בשקלים"
+  },
+  "days": [
+   {
+    "date": "2026-11-03",
+    "day": "יום 1",
+    "location": "טוקיו",
+    "activity": "טיסה ליפן נחיתה בבוקר של ה4/11",
+    "links": [],
+    "color": "#F2F2F4",
+    "stay": null
+   },
+   {
+    "date": "2026-11-04",
+    "day": "יום 2",
+    "location": "טוקיו",
+    "activity": "שינג׳וקו, בערב לomoide yokocho\\kabukicho",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 0
+   },
+   {
+    "date": "2026-11-05",
+    "day": "יום 3",
+    "location": "טוקיו",
+    "activity": "בירת הוינטג׳ shimokitazawa, אחהצ ginza,",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 0
+   },
+   {
+    "date": "2026-11-06",
+    "day": "יום 4",
+    "location": "טוקיו",
+    "activity": "קארטינג, שיבויה (אופצייה לתצפית בשיבויה סקיי), וקארטינג  ,Harjuko & cat street",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 0
+   },
+   {
+    "date": "2026-11-07",
+    "day": "יום 5",
+    "location": "טוקיו",
+    "activity": "נוסעים לkaishikawa korakuen gardens משם לkusakura ומשם לdome city",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 0
+   },
+   {
+    "date": "2026-11-08",
+    "day": "יום 6",
+    "location": "קוואגוצ׳יקו",
+    "activity": "נסיעה ברכבת ל- ,Fuji Excursion נסיעה למלון, Oishi Park, ומשם לMomiji Kairo",
+    "links": [
+     "https://maps.google.com/?cid=11686369390762469636"
+    ],
+    "color": "#FFA94D",
+    "stay": 1
+   },
+   {
+    "date": "2026-11-09",
+    "day": "יום 7",
+    "location": "קוואגוצ׳יקו",
+    "activity": "Oshino Hakkai -טיפוס לתצפית הפגודה + רחוב הרטרו ומשם    וחזרה למלון (אופצייה ללכת מהמלון לאגם קוואגוצ׳יקו)",
+    "links": [],
+    "color": "#FFA94D",
+    "stay": 1
+   },
+   {
+    "date": "2026-11-10",
+    "day": "יום 8",
+    "location": "קוואגוצ׳יקו",
+    "activity": "טרק יום ב- ,Mount Mitsutoge נסיעה לSaiko lyashi-no Sato Nemba, ולאחר מכן חזרה למלון",
+    "links": [],
+    "color": "#FFA94D",
+    "stay": 1
+   },
+   {
+    "date": "2026-11-11",
+    "day": "יום 9",
+    "location": "קיוטו",
+    "activity": "הגעה מקוואגוצ'יקו לקיוטו, עוברים במפלים shiraito falls ומשם הולכים למלון ואח״כ לשוק נישיקי לצהריים, (אופצייה ללכת ממש קרוב לשם ל(puppy cocoa, הליכה רגלית לאורך kamo river וחצייה אל סמטאות העץ של gion ו pontocho.",
+    "links": [],
+    "color": "#DDFFC9",
+    "stay": 2
+   },
+   {
+    "date": "2026-11-12",
+    "day": "יום 10",
+    "location": "קיוטו",
+    "activity": "",
+    "links": [],
+    "color": "#DDFFC9",
+    "stay": 2
+   },
+   {
+    "date": "2026-11-13",
+    "day": "יום 11",
+    "location": "קיוטו",
+    "activity": "",
+    "links": [],
+    "color": "#DDFFC9",
+    "stay": 2
+   },
+   {
+    "date": "2026-11-14",
+    "day": "יום 12",
+    "location": "קיוטו",
+    "activity": "האכלת צבאים בנארה, ביקור במקדש העץ הענק todai ji (פסל בודהה גדול), צפייה במופע הכנת המוצי המהיר בעולם בחנות nakatanidou- ברחוב הראשי של נארה, לקראת אחהצ חוזרים למלון וסיבוב בגיון.",
+    "links": [],
+    "color": "#DDFFC9",
+    "stay": 2
+   },
+   {
+    "date": "2026-11-15",
+    "day": "יום 13",
+    "location": "אוסקה",
+    "activity": "מעבר מקיוטו לאוסקה, הסתובבות בshinsaibashi- fuji, מקדש ראש האריה + סיבבוב ברובע הרטקו סביב מגדל tsutenkaku, סיבוב בdotonbori ושייט בסירת תעלה וארוחת ערב",
+    "links": [],
+    "color": "#FFFCAF",
+    "stay": 3
+   },
+   {
+    "date": "2026-11-16",
+    "day": "יום 14",
+    "location": "אוסקה",
+    "activity": "יוניברסל סטודיו",
+    "links": [],
+    "color": "#FFFCAF",
+    "stay": 3
+   },
+   {
+    "date": "2026-11-17",
+    "day": "יום 15",
+    "location": "אוסקה",
+    "activity": "מצודת אוסקה, שווקים (,(orange street & namba parks עלייה לגשר המרחף ולתצפית הגג used sky building בשקיעה-> שליחת מזוודות לטוקיו מהמלון",
+    "links": [],
+    "color": "#FFFCAF",
+    "stay": 3
+   },
+   {
+    "date": "2026-11-18",
+    "day": "יום 16",
+    "location": "טוקיו",
+    "activity": "טיול בשווקים עם ארז וענבל",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-19",
+    "day": "יום 17",
+    "location": "טוקיו",
+    "activity": "הגעה למקדש העתיק ((senso ji, רחוב הנישנושים (nakamise) בערב מוזיאון האמנות הדיגיטלי (team lab) התארגנות ליום שלמחרת.",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-20",
+    "day": "יום 18",
+    "location": "טוקיו",
+    "activity": "נסיעה לאאוטלט גוטמבה (אאוטלט מותגים ענק!) שעה וחצי ברכבת מטוקיו",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-21",
+    "day": "יום 19",
+    "location": "טוקיו",
+    "activity": "שוק רחוב מקומי ueno park ושוק הרחוב ameyoko, akihabara electric town (מתחמי ארקייד וגיימינג)",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-22",
+    "day": "יום 20",
+    "location": "טוקיו",
+    "activity": "טיול יום לקמקוקה",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-23",
+    "day": "יום 21",
+    "location": "טוקיו",
+    "activity": "טיול לדיסניסי",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-24",
+    "day": "יום 22",
+    "location": "טוקיו",
+    "activity": "טיול יום לניקו (nikko)",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-25",
+    "day": "יום 23",
+    "location": "טוקיו",
+    "activity": "טיול ב daikanyama & naka, עצירה בסניף סטארבקס, אחהצ טיול בפארק השלכת- shinjuku gyoen national park",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-26",
+    "day": "יום 24",
+    "location": "טוקיו",
+    "activity": "יום אחרון - שליחת קניות לארץ",
+    "links": [],
+    "color": "#EFBFC1",
+    "stay": 4
+   },
+   {
+    "date": "2026-11-27",
+    "day": "יום 25",
+    "location": "בנגקוק+קראבי",
+    "activity": "מעבר לתאילנד, נוחתים בבנגקוק וטיסה לקראבי",
+    "links": [],
+    "color": "#FFFBD9",
+    "stay": 5
+   },
+   {
+    "date": "2026-11-28",
+    "day": "יום 26",
+    "location": "קראבי",
+    "activity": "",
+    "links": [],
+    "color": "#BEE9EB",
+    "stay": 6
+   },
+   {
+    "date": "2026-11-29",
+    "day": "יום 27",
+    "location": "קראבי",
+    "activity": "",
+    "links": [],
+    "color": "#BEE9EB",
+    "stay": 6
+   },
+   {
+    "date": "2026-11-30",
+    "day": "יום 28",
+    "location": "קראבי",
+    "activity": "",
+    "links": [],
+    "color": "#BEE9EB",
+    "stay": 6
+   },
+   {
+    "date": "2026-12-01",
+    "day": "יום 29",
+    "location": "קראבי",
+    "activity": "",
+    "links": [],
+    "color": "#BEE9EB",
+    "stay": 6
+   },
+   {
+    "date": "2026-12-02",
+    "day": "יום 30",
+    "location": "קופיפי",
+    "activity": "",
+    "links": [],
+    "color": "#DAC0ED",
+    "stay": 7
+   },
+   {
+    "date": "2026-12-03",
+    "day": "יום 31",
+    "location": "קופיפי",
+    "activity": "",
+    "links": [],
+    "color": "#DAC0ED",
+    "stay": 7
+   },
+   {
+    "date": "2026-12-04",
+    "day": "יום 32",
+    "location": "קופיפי",
+    "activity": "",
+    "links": [],
+    "color": "#DAC0ED",
+    "stay": 7
+   },
+   {
+    "date": "2026-12-05",
+    "day": "יום 33",
+    "location": "קו לאנטה",
+    "activity": "",
+    "links": [],
+    "color": "#FFA073",
+    "stay": 8
+   },
+   {
+    "date": "2026-12-06",
+    "day": "יום 34",
+    "location": "קו לאנטה",
+    "activity": "",
+    "links": [],
+    "color": "#FFA073",
+    "stay": 8
+   },
+   {
+    "date": "2026-12-07",
+    "day": "יום 35",
+    "location": "קו לאנטה",
+    "activity": "",
+    "links": [],
+    "color": "#FFA073",
+    "stay": 8
+   },
+   {
+    "date": "2026-12-08",
+    "day": "יום 36",
+    "location": "קו לאנטה",
+    "activity": "",
+    "links": [],
+    "color": "#FFA073",
+    "stay": 8
+   },
+   {
+    "date": "2026-12-09",
+    "day": "יום 37",
+    "location": "קו לאנטה",
+    "activity": "",
+    "links": [],
+    "color": "#FFA073",
+    "stay": 8
+   },
+   {
+    "date": "2026-12-10",
+    "day": "יום 38",
+    "location": "קראבי",
+    "activity": "",
+    "links": [],
+    "color": "#BEE9EB",
+    "stay": 9
+   },
+   {
+    "date": "2026-12-11",
+    "day": "יום 39",
+    "location": "קראבי",
+    "activity": "",
+    "links": [],
+    "color": "#BEE9EB",
+    "stay": 9
+   },
+   {
+    "date": "2026-12-12",
+    "day": "יום 40",
+    "location": "בנגקוק",
+    "activity": "",
+    "links": [],
+    "color": "#FFFBD9",
+    "stay": 10
+   },
+   {
+    "date": "2026-12-13",
+    "day": "יום 41",
+    "location": "בנגקוק",
+    "activity": "",
+    "links": [],
+    "color": "#FFFBD9",
+    "stay": 10
+   },
+   {
+    "date": "2026-12-14",
+    "day": "יום 42",
+    "location": "בנגקוק",
+    "activity": "",
+    "links": [],
+    "color": "#FFFBD9",
+    "stay": 10
+   },
+   {
+    "date": "2026-12-15",
+    "day": "יום 43",
+    "location": "בנגקוק",
+    "activity": "טיסה חזור",
+    "links": [],
+    "color": "#FFFBD9",
+    "stay": 10
+   }
+  ],
+  "stays": [
+   {
+    "hotel": "Amanek shinluku kabukicho\n\nשולם",
+    "price": "2496",
+    "color": "#EFBFC1"
+   },
+   {
+    "hotel": "HOTEL MYSTAYS Fuji Onsen Resort שולם",
+    "price": "2575",
+    "color": "#FFA94E"
+   },
+   {
+    "hotel": "Agora kyoto shijo\n\nשולם",
+    "price": "2015",
+    "color": "#DDFFC8"
+   },
+   {
+    "hotel": "Hotel cordia osaka hommachi שולם",
+    "price": "822",
+    "color": "#FFFCAF"
+   },
+   {
+    "hotel": "NOGHA HOTEL HAKIHABARA TOKYO          שולם",
+    "price": "6318",
+    "color": "#EFBFC0"
+   },
+   {
+    "hotel": "ECHO INN COTTAGE BY AO NANG HELL    שולם",
+    "price": "326",
+    "color": "#FFFBD9"
+   },
+   {
+    "hotel": "Panan krabi resort             שולם",
+    "price": "2642",
+    "color": "#BEE9EB"
+   },
+   {
+    "hotel": "PP PRINCESS Resort             שולם",
+    "price": "1226",
+    "color": "#DAC0ED"
+   },
+   {
+    "hotel": "TWIN LOTUS RESORT AND SPA                שולם",
+    "price": "2793",
+    "color": "#FFA073"
+   },
+   {
+    "hotel": "VARANA HOTEL KRABI               שולם",
+    "price": "1550",
+    "color": "#BEE9EB"
+   },
+   {
+    "hotel": "EASTIN GRAND HOTEL PHAYATHAI              שולם",
+    "price": "1909",
+    "color": "#FFFBD9"
+   }
+  ]
+ },
+ "general": {
+  "title": "נסיעות ואטרקציות",
+  "color": "#4F6F43",
+  "sections": [
+   {
+    "title": "אטרקציות",
+    "color": "#ACF48F",
+    "columns": [
+     "עלות בשקלים",
+     "תיאור",
+     "שם האטרקציה"
+    ],
+    "rows": [
+     {
+      "id": "t1:r3",
+      "name": "Universal",
+      "description": "פארק שעשועים 2 כרטיסים",
+      "info": {
+       "label": "עלות בשקלים",
+       "value": "1075"
+      },
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r4",
+      "name": "Mario Kart",
+      "description": "נקבע 19.11",
+      "info": {
+       "label": "עלות בשקלים",
+       "value": "424"
+      },
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r5",
+      "name": "מספרה",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r6",
+      "name": "ריוקן",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r7",
+      "name": "דיסני סי?",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r8",
+      "name": "Fuji-Q Highland",
+      "description": "פארק בפוגי כניסה מ14",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     }
+    ]
+   },
+   {
+    "title": "נסיעות",
+    "color": "#ACF48F",
+    "columns": [
+     "עלות",
+     "תיאור",
+     "סוג תחבורה"
+    ],
+    "rows": [
+     {
+      "id": "t1:r13",
+      "name": "שינקנסן",
+      "description": "מאוסקה לטוקיו 2 כרטיסים",
+      "info": {
+       "label": "עלות",
+       "value": "710"
+      },
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r14",
+      "name": "שינקנסן",
+      "description": "Shinfuji station לקיוטו",
+      "info": {
+       "label": "עלות",
+       "value": "500"
+      },
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r15",
+      "name": "Fuji Excursion-רכבת",
+      "description": "להזמין רכבת חודש מראש מפוגי לקווגוצ׳יקו",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     }
+    ]
+   },
+   {
+    "title": "מסעדות הזמנה מראש",
+    "color": "#ACF48F",
+    "columns": [
+     "עלות",
+     "סוג האוכל",
+     "שם המקום"
+    ],
+    "rows": [
+     {
+      "id": "t1:r18",
+      "name": "Godaime Hanayama Udon Ginza",
+      "description": "אודון רחב מפורסם- הזמנת מקום (להירשם בבוקר)",
+      "info": {
+       "label": "עלות",
+       "value": "$-$$"
+      },
+      "links": [],
+      "marking": "attention",
+      "reminderKey": "godaime hanayama udon ginza"
+     },
+     {
+      "id": "t1:r19",
+      "name": "Maguro Mart",
+      "description": "הזמנה מראש- נמצאת בנאגנו",
+      "info": {
+       "label": "עלות",
+       "value": "$$-$$$"
+      },
+      "links": [],
+      "marking": "attention",
+      "reminderKey": "maguro mart"
+     },
+     {
+      "id": "t1:r20",
+      "name": "Gonpachi",
+      "description": "הוזמן ל19.11",
+      "info": {
+       "label": "עלות",
+       "value": "$-$$"
+      },
+      "links": [],
+      "marking": "booked",
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r21",
+      "name": "EBISU SUSHI KENSHIN",
+      "description": "הוזמן ל6.11",
+      "info": {
+       "label": "עלות",
+       "value": "$$$"
+      },
+      "links": [],
+      "marking": "booked",
+      "reminderKey": null
+     }
+    ]
+   },
+   {
+    "title": "טפסים",
+    "color": "#ACF48F",
+    "columns": [],
+    "rows": [
+     {
+      "id": "t1:r23",
+      "name": "טופס כניסה לתאילנד- לבדוק אם צריך ליפן",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r24",
+      "name": "לשמור אישור ליוניברסל",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r25",
+      "name": "לשמור אישור לרכבת- שינקנסין",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     },
+     {
+      "id": "t1:r26",
+      "name": "חידוש רישיון נהיגה בינלאומי",
+      "description": "",
+      "info": null,
+      "links": [],
+      "marking": null,
+      "reminderKey": null
+     }
+    ]
+   }
+  ]
+ },
+ "reminders": [
+  {
+   "key": "hikiniku to come shibuya",
+   "name": "Hikiniku to Come Shibuya",
+   "places": [
+    {
+     "city": "טוקיו",
+     "neighborhood": "שיבויה",
+     "cityId": "tokyo",
+     "neighborhoodId": "t6",
+     "note": "- הזמנה מראשHamburg steak",
+     "info": "$$"
+    }
+   ]
+  },
+  {
+   "key": "maguro mart",
+   "name": "Maguro Mart",
+   "places": [
+    {
+     "city": "טוקיו",
+     "neighborhood": "שימוקיטאזווה+נאקאנו",
+     "cityId": "tokyo",
+     "neighborhoodId": "t3",
+     "note": "הזמנה מראש- נמצאת בנאגנו",
+     "info": "$$-$$$"
+    },
+    {
+     "city": "נסיעות ואטרקציות",
+     "neighborhood": "מסעדות הזמנה מראש",
+     "cityId": null,
+     "neighborhoodId": null,
+     "note": "הזמנה מראש- נמצאת בנאגנו",
+     "info": "$$-$$$"
+    }
+   ]
+  },
+  {
+   "key": "godaime hanayama udon ginza",
+   "name": "Godaime Hanayama Udon Ginza",
+   "places": [
+    {
+     "city": "טוקיו",
+     "neighborhood": "גינזה",
+     "cityId": "tokyo",
+     "neighborhoodId": "t9",
+     "note": "אודון רחב מפורסם- הזמנת מקום (להירשם בבוקר)",
+     "info": "$-$$"
+    },
+    {
+     "city": "נסיעות ואטרקציות",
+     "neighborhood": "מסעדות הזמנה מראש",
+     "cityId": null,
+     "neighborhoodId": null,
+     "note": "אודון רחב מפורסם- הזמנת מקום (להירשם בבוקר)",
+     "info": "$-$$"
+    }
+   ]
+  },
+  {
+   "key": "fujikyu-highland station",
+   "name": "Fujikyu-Highland Station",
+   "places": [
+    {
+     "city": "פוג׳י",
+     "neighborhood": "קווגוצ׳יקו",
+     "cityId": "fuji",
+     "neighborhoodId": "t14",
+     "note": "עולים משינג׳וקו ויורדים בתחנה של Fujikyu-Highland Station משם 5 דקות הליכה למלון",
+     "info": "80 שקל לכרטיס- להזמין מראש"
+    }
+   ]
+  },
+  {
+   "key": "kyoto",
+   "name": "Kyoto",
+   "places": [
+    {
+     "city": "פוג׳י",
+     "neighborhood": "קווגוצ׳יקו",
+     "cityId": "fuji",
+     "neighborhoodId": "t14",
+     "note": "ואז יורדים בתחנה של קיוטו   Shin-Fuji Station לוקחים שנקנסין מהתחנה",
+     "info": "550 לזוג כרטיסים"
+    }
+   ]
+  },
+  {
+   "key": "hozugawa boat",
+   "name": "HOZUGAWA BOAT",
+   "places": [
+    {
+     "city": "קיוטו",
+     "neighborhood": "13.11",
+     "cityId": "kyoto",
+     "neighborhoodId": "t18",
+     "note": "רפטינג של שעתיים, הרפטינג מוריד בתוך ארשיאמה- הזמנה מראש",
+     "info": "40$"
+    }
+   ]
+  }
+ ]
+}
