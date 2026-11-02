@@ -4,6 +4,10 @@ ARG NODE_IMAGE=node:22-bookworm-slim
 # ---- build: install, verify data + tests, build the front end ----
 FROM ${NODE_IMAGE} AS build
 WORKDIR /app
+# Toolchain for native modules (better-sqlite3) when no prebuilt binary can be downloaded.
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends python3 make g++ \
+ && rm -rf /var/lib/apt/lists/*
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
