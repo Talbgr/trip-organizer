@@ -14,9 +14,11 @@ reminder pop-up when the app opens. "Booked" / "Paid" marks are shared between b
 
 1. railway.com → **New Project → Deploy from GitHub repo** → pick `Talbgr/trip-organizer`
    (branch `main`). Railway finds the `Dockerfile` and `railway.json` on its own.
-2. In the service: **Settings → Volumes → Add volume**, mount path **`/data`**
-   (keeps the Booked/Paid marks across deploys). Nothing else to configure:
-   `DB_PATH=/data/state.db` is already set in the image.
+2. Keep the Booked/Paid marks across deploys with Railway's Postgres:
+   **+ New → Database → PostgreSQL**, then in the app service → **Variables** add
+   `DATABASE_URL` = `${{Postgres.DATABASE_URL}}` (a reference to the database's own variable;
+   never paste the password itself). Without `DATABASE_URL` the app falls back to a SQLite file
+   at `DB_PATH` (default `/data/state.db`), which only survives deploys on a mounted volume.
 3. **Settings → Networking → Generate domain**. Open it on both phones and
    "Add to Home Screen" so it works like an app (and offline).
 

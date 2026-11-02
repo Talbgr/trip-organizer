@@ -22,7 +22,10 @@ export function buildApp({ trip, store, webRoot, logger = false }: AppOptions): 
   const tripEtag = `"${createHash('sha1').update(tripJson).digest('hex')}"`;
   const reminderKeys = new Set(trip.reminders.map((r) => r.key));
 
-  app.get('/healthz', async () => ({ ok: store.ping() }));
+  app.get('/healthz', async (_req, reply) => {
+    const ok = await store.ping();
+    return reply.code(ok ? 200 : 503).send({ ok });
+  });
 
   app.get('/api/trip', async (req, reply) => {
     reply.header('etag', tripEtag).header('cache-control', 'no-cache').type('application/json');
@@ -62,7 +65,7 @@ export function buildApp({ trip, store, webRoot, logger = false }: AppOptions): 
     },
     async (req, reply) => {
       if (!reminderKeys.has(req.params.key)) return reply.code(404).send({ error: 'unknown reminder' });
-      store.clear(req.params.key, req.query.by);
+      await store.clear(req.params.key, req.query.by);
       return reply.code(204).send();
     },
   );

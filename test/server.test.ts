@@ -3,23 +3,39 @@ import { resolve } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import type { Trip } from '../shared/types.ts';
 import { buildApp } from '../server/app.ts';
-import { StatusStore } from '../server/store.ts';
+import pg from 'pg';
+import { PgStatusStore, SqliteStatusStore, type StatusStore } from '../server/store.ts';
 
 const trip = JSON.parse(readFileSync(resolve(__dirname, '../data/trip.json'), 'utf8')) as Trip;
 const key = trip.reminders[0]!.key;
 
-let store: StatusStore;
-let app: ReturnType<typeof buildApp>;
-beforeEach(() => {
-  store = new StatusStore(':memory:');
-  app = buildApp({ trip, store });
-});
-afterEach(async () => {
-  await app.close();
-  store.close();
-});
+// The Postgres run needs a disposable database: TEST_DATABASE_URL=postgres://... npm test
+const pgUrl = process.env.TEST_DATABASE_URL;
+const backends: Array<[string, () => Promise<StatusStore>]> = [['sqlite', async () => new SqliteStatusStore(':memory:')]];
+if (pgUrl)
+  backends.push([
+    'postgres',
+    async () => {
+      const c = new pg.Client({ connectionString: pgUrl });
+      await c.connect();
+      await c.query('DROP TABLE IF EXISTS status; DROP TABLE IF EXISTS status_log;');
+      await c.end();
+      return new PgStatusStore(pgUrl);
+    },
+  ]);
 
-describe('api', () => {
+describe.each(backends)('api with %s store', (_name, open) => {
+  let store: StatusStore;
+  let app: ReturnType<typeof buildApp>;
+  beforeEach(async () => {
+    store = await open();
+    app = buildApp({ trip, store });
+  });
+  afterEach(async () => {
+    await app.close();
+    await store.close();
+  });
+
   it('serves the trip with an etag', async () => {
     const res = await app.inject('/api/trip');
     expect(res.statusCode).toBe(200);
@@ -47,5 +63,18 @@ describe('api', () => {
 
   it('reports health', async () => {
     expect((await app.inject('/healthz')).json()).toEqual({ ok: true });
+  });
+});
+
+describe('store selection', () => {
+  it('uses Postgres only when DATABASE_URL is set', async () => {
+    const { openStore } = await import('../server/store.ts');
+    const a = openStore({}, ':memory:');
+    expect(a.kind).toBe('sqlite');
+    await a.store.close();
+    const b = openStore({ DATABASE_URL: 'postgres://user:pw@127.0.0.1:1/none' }, ':memory:');
+    expect(b.kind).toBe('postgres');
+    expect(await b.store.ping()).toBe(false); // unreachable → health check fails instead of crashing
+    await b.store.close();
   });
 });
