@@ -62,7 +62,8 @@ describe.each(backends)('api with %s store', (_name, open) => {
   });
 
   it('reports health', async () => {
-    expect((await app.inject('/healthz')).json()).toEqual({ ok: true });
+    const health = (await app.inject('/healthz')).json();
+    expect(health).toMatchObject({ ok: true, store: { ok: true } });
   });
 });
 
@@ -74,7 +75,13 @@ describe('store selection', () => {
     await a.store.close();
     const b = openStore({ DATABASE_URL: 'postgres://user:pw@127.0.0.1:1/none' }, ':memory:');
     expect(b.kind).toBe('postgres');
-    expect(await b.store.ping()).toBe(false); // unreachable → health check fails instead of crashing
+    const ping = await b.store.ping(); // unreachable → reported, not thrown
+    expect(ping.ok).toBe(false);
+    expect(ping.error).toMatch(/ECONNREFUSED/);
     await b.store.close();
+    const c = openStore({ DATABASE_URL: '${{Postgres.DATABASE_URL}}' }, ':memory:');
+    expect(c.kind).toBe('sqlite');
+    expect(c.warning).toMatch(/unresolved Railway reference/);
+    await c.store.close();
   });
 });

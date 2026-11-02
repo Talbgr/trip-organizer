@@ -8,6 +8,8 @@ import type { StatusStore } from './store.ts';
 export interface AppOptions {
   trip: Trip;
   store: StatusStore;
+  /** Shown on /healthz to make storage problems visible without reading logs. */
+  storeInfo?: { kind: string; warning?: string };
   /** Built front-end directory; omitted in tests and in dev (Vite serves it). */
   webRoot?: string;
   logger?: boolean;
@@ -16,15 +18,17 @@ export interface AppOptions {
 const STATES: readonly HandledState[] = ['booked', 'paid'];
 const PEOPLE: readonly Person[] = ['טל', 'עדי'];
 
-export function buildApp({ trip, store, webRoot, logger = false }: AppOptions): FastifyInstance {
+export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: AppOptions): FastifyInstance {
   const app = Fastify({ logger, bodyLimit: 4 * 1024 });
   const tripJson = JSON.stringify(trip);
   const tripEtag = `"${createHash('sha1').update(tripJson).digest('hex')}"`;
   const reminderKeys = new Set(trip.reminders.map((r) => r.key));
 
-  app.get('/healthz', async (_req, reply) => {
-    const ok = await store.ping();
-    return reply.code(ok ? 200 : 503).send({ ok });
+  // The server is healthy as long as it can serve the trip, so deploys are not blocked by
+  // a database problem; the store's own state is reported alongside for diagnosis.
+  app.get('/healthz', async () => {
+    const s = await store.ping();
+    return { ok: true, store: { ...storeInfo, ok: s.ok, ...(s.error ? { error: s.error } : {}) } };
   });
 
   app.get('/api/trip', async (req, reply) => {

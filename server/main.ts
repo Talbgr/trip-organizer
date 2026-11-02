@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Trip } from '../shared/types.ts';
@@ -13,10 +13,10 @@ const dbPath = resolve(process.env.DB_PATH ?? resolve(root, 'data/state.db'));
 const tripPath = resolve(process.env.TRIP_PATH ?? resolve(root, 'data/trip.json'));
 const webRoot = resolve(root, 'dist/web');
 
-if (!process.env.DATABASE_URL) mkdirSync(dirname(dbPath), { recursive: true });
 const trip = JSON.parse(readFileSync(tripPath, 'utf8')) as Trip;
-const { store, kind } = openStore(process.env, dbPath);
-const app = buildApp({ trip, store, webRoot, logger: true });
+const { store, kind, warning } = openStore(process.env, dbPath);
+const app = buildApp({ trip, store, storeInfo: { kind, warning }, webRoot, logger: true });
+if (warning) app.log.warn(warning + ' — using the SQLite file instead');
 
 const shutdown = async () => {
   await app.close();
@@ -27,5 +27,6 @@ process.on('SIGTERM', shutdown);
 process.on('SIGINT', shutdown);
 
 await app.listen({ port, host: '0.0.0.0' });
-if (!(await store.ping())) app.log.error({ store: kind }, 'status store is not reachable');
+const health = await store.ping();
+if (!health.ok) app.log.error({ store: kind, error: health.error }, 'status store is not reachable (will retry on each request)');
 app.log.info({ store: kind, ...(kind === 'sqlite' ? { dbPath } : {}), tripPath }, 'trip organizer ready');

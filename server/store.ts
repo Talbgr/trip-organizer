@@ -6,6 +6,8 @@
 //  - PostgreSQL when DATABASE_URL is set (Railway's Postgres survives redeploys);
 //  - a local SQLite file otherwise (development, or a server with a persistent disk).
 
+import { mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 import Database from 'better-sqlite3';
 import pg from 'pg';
 import type { HandledState, Person, StatusEntry, StatusMap } from '../shared/types.ts';
@@ -14,7 +16,8 @@ export interface StatusStore {
   all(): Promise<StatusMap>;
   set(key: string, state: HandledState, by: Person, now?: Date): Promise<StatusEntry>;
   clear(key: string, by: Person, now?: Date): Promise<void>;
-  ping(): Promise<boolean>;
+  /** Whether the store answers, with the driver's error message when it does not (never contains secrets). */
+  ping(): Promise<{ ok: boolean; error?: string }>;
   close(): Promise<void>;
 }
 
@@ -25,6 +28,7 @@ export class SqliteStatusStore implements StatusStore {
   private db: Database.Database;
 
   constructor(path: string) {
+    if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true });
     this.db = new Database(path);
     this.db.pragma('journal_mode = WAL');
     this.db.pragma('busy_timeout = 5000');
@@ -69,8 +73,12 @@ export class SqliteStatusStore implements StatusStore {
     })();
   }
 
-  async ping(): Promise<boolean> {
-    return (this.db.prepare('SELECT 1 AS ok').get() as { ok: number }).ok === 1;
+  async ping(): Promise<{ ok: boolean; error?: string }> {
+    try {
+      return { ok: (this.db.prepare('SELECT 1 AS ok').get() as { ok: number }).ok === 1 };
+    } catch (err) {
+      return { ok: false, error: err instanceof Error ? err.message : String(err) };
+    }
   }
 
   async close(): Promise<void> {
@@ -83,7 +91,7 @@ export class PgStatusStore implements StatusStore {
   private migrated: Promise<void> | null = null;
 
   constructor(connectionString: string) {
-    this.pool = new pg.Pool({ connectionString, max: 4 });
+    this.pool = new pg.Pool({ connectionString, max: 4, connectionTimeoutMillis: 5000 });
     // An idle connection dropping (e.g. a database restart) must not crash the server.
     this.pool.on('error', () => {});
   }
@@ -156,13 +164,14 @@ export class PgStatusStore implements StatusStore {
     });
   }
 
-  async ping(): Promise<boolean> {
+  async ping(): Promise<{ ok: boolean; error?: string }> {
     try {
       await this.ready;
       const { rows } = await this.pool.query<{ ok: number }>('SELECT 1 AS ok');
-      return rows[0]?.ok === 1;
-    } catch {
-      return false;
+      return { ok: rows[0]?.ok === 1 };
+    } catch (err) {
+      const e = err as { message?: string; code?: string };
+      return { ok: false, error: [e.code, e.message].filter(Boolean).join(': ') || String(err) };
     }
   }
 
@@ -171,8 +180,21 @@ export class PgStatusStore implements StatusStore {
   }
 }
 
-/** Postgres when DATABASE_URL is set, otherwise the SQLite file at `sqlitePath`. */
-export function openStore(env: { DATABASE_URL?: string }, sqlitePath: string): { store: StatusStore; kind: 'postgres' | 'sqlite' } {
-  if (env.DATABASE_URL) return { store: new PgStatusStore(env.DATABASE_URL), kind: 'postgres' };
-  return { store: new SqliteStatusStore(sqlitePath), kind: 'sqlite' };
+export interface OpenedStore {
+  store: StatusStore;
+  kind: 'postgres' | 'sqlite';
+  /** Set when DATABASE_URL was present but unusable, so the SQLite fallback is in use. */
+  warning?: string;
+}
+
+/** Postgres when DATABASE_URL is a postgres URL, otherwise the SQLite file at `sqlitePath`. */
+export function openStore(env: { DATABASE_URL?: string }, sqlitePath: string): OpenedStore {
+  const url = env.DATABASE_URL?.trim();
+  if (url && /^postgres(ql)?:\/\//.test(url)) return { store: new PgStatusStore(url), kind: 'postgres' };
+  const warning = url
+    ? url.includes('${{')
+      ? 'DATABASE_URL contains an unresolved Railway reference (check the service name inside ${{...}})'
+      : 'DATABASE_URL is set but is not a postgres:// URL'
+    : undefined;
+  return { store: new SqliteStatusStore(sqlitePath), kind: 'sqlite', warning };
 }
