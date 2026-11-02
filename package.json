@@ -8,10 +8,10 @@
   },
   "scripts": {
     "import": "tsx importer/cli.ts",
-    "dev:server": "tsx watch server/main.ts",
+    "dev:server": "node --watch server/main.ts",
     "dev:web": "vite --config web/vite.config.ts",
-    "build": "npm run import && vite build --config web/vite.config.ts && tsc -p tsconfig.server.json",
-    "start": "node dist/server/server/main.js",
+    "build": "vite build --config web/vite.config.ts",
+    "start": "node server/main.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
   },
