@@ -6,6 +6,7 @@ import { useApp } from '../state.tsx';
 import { formatWhen } from '../ui.ts';
 import { UnpaidHotels } from './Hotels.tsx';
 import { ReminderControls } from './ItemCard.tsx';
+import { NavButton } from './NavButton.tsx';
 
 function ReminderRow({ r }: { r: Reminder }) {
   const { status } = useApp();
@@ -39,6 +40,9 @@ function ReminderRow({ r }: { r: Reminder }) {
           </span>
         )}
         <ReminderControls reminderKey={r.key} />
+      </div>
+      <div class="item__links">
+        <NavButton name={r.name} cityId={r.places.find((p) => p.cityId)?.cityId ?? null} />
       </div>
     </article>
   );

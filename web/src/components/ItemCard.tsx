@@ -1,7 +1,8 @@
 import type { Item } from '../../../shared/types.ts';
 import { STATE_LABELS } from '../../../shared/labels.ts';
 import { useApp } from '../state.tsx';
-import { formatWhen, mapsSearchUrl } from '../ui.ts';
+import { formatWhen } from '../ui.ts';
+import { NavButton } from './NavButton.tsx';
 
 export function ItemCard({ item, cityId }: { item: Item; cityId: string | null }) {
   const { status } = useApp();
@@ -44,11 +45,7 @@ export function ItemCard({ item, cityId }: { item: Item; cityId: string | null }
             🔗
           </a>
         ))}
-        {item.name && (
-          <a class="icon-btn" href={mapsSearchUrl(item.name, cityId)} target="_blank" rel="noopener noreferrer" aria-label="מפה">
-            🗺️
-          </a>
-        )}
+        <NavButton name={item.name} cityId={cityId} />
       </div>
     </article>
   );

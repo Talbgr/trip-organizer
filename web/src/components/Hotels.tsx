@@ -3,6 +3,7 @@ import { checkHotel, hotelDates, type Place } from '../../../shared/places.ts';
 import type { HotelEntry } from '../../../shared/types.ts';
 import { useApp } from '../state.tsx';
 import { formatDate, formatRange, formatWhen } from '../ui.ts';
+import { NavButton } from './NavButton.tsx';
 import { Linkified, Sheet } from './Sheet.tsx';
 
 export function placeLabel(p: Place): string {
@@ -51,13 +52,14 @@ export function HotelCard({ hotel, place, onEdit }: { hotel: HotelEntry; place: 
           </span>
         </div>
       </div>
-      {onEdit && (
-        <div class="item__links">
+      <div class="item__links">
+        <NavButton name={hotel.name} cityId={place?.cityId} location={place?.location} />
+        {onEdit && (
           <button class="icon-btn" onClick={onEdit} aria-label="עריכה">
             ✎
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </article>
   );
 }
@@ -75,7 +77,7 @@ export function UnpaidHotels() {
 }
 
 /** A hotel from the workbook's itinerary: shown as written, not editable. */
-function WorkbookHotel({ index }: { index: number }) {
+function WorkbookHotel({ index, place }: { index: number; place: Place }) {
   const { trip } = useApp();
   const stay = trip.itinerary.stays[index];
   if (!stay) return null;
@@ -87,6 +89,9 @@ function WorkbookHotel({ index }: { index: number }) {
         </h3>
         {stay.price && <p class="item__info">₪{stay.price}</p>}
         <p class="muted small">מהקובץ</p>
+      </div>
+      <div class="item__links">
+        <NavButton name={stay.hotel} cityId={place.cityId} location={place.location} />
       </div>
     </article>
   );
@@ -101,7 +106,7 @@ export function PlaceHotels({ place, title = true }: { place: Place; title?: boo
     <section class="place-hotels">
       {title && <h2 class="section__title">{placeLabel(place)}</h2>}
       {place.stays.map((i) => (
-        <WorkbookHotel index={i} />
+        <WorkbookHotel index={i} place={place} />
       ))}
       {mine.map((h) => (
         <HotelCard hotel={h} place={place} onEdit={() => setEditing(h)} />

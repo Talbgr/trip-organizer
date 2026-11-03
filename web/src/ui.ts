@@ -18,19 +18,6 @@ export function textOn(hex: string | null): string {
   return L > 0.45 ? '#111' : '#fff';
 }
 
-// Used only to build a Google Maps search query; never shown as data.
-const CITY_QUERY: Record<string, string> = {
-  tokyo: 'Tokyo',
-  fuji: 'Fujikawaguchiko',
-  kyoto: 'Kyoto',
-  osaka: 'Osaka',
-};
-
-export function mapsSearchUrl(name: string, cityId: string | null): string {
-  const q = [name, cityId ? CITY_QUERY[cityId] : 'Japan'].filter(Boolean).join(' ');
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
-}
-
 export function formatWhen(iso: string): string {
   const d = new Date(iso);
   return `${d.getDate()}.${d.getMonth() + 1} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
