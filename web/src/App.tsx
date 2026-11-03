@@ -1,5 +1,6 @@
 import type { Person } from '../../shared/types.ts';
 import { CityView } from './components/CityView.tsx';
+import { HotelsView } from './components/Hotels.tsx';
 import { NeighborhoodView } from './components/NeighborhoodView.tsx';
 import { GeneralView, PlanView } from './components/PlanView.tsx';
 import { ReminderPopup, TodoView } from './components/Reminders.tsx';
@@ -33,6 +34,8 @@ function Page({ route }: { route: Route }) {
       return <TodoView />;
     case 'plan':
       return <PlanView />;
+    case 'hotels':
+      return <HotelsView />;
     case 'general':
       return <GeneralView />;
     case 'neighborhood': {
@@ -58,7 +61,8 @@ function NotFound() {
 }
 
 function BottomNav({ route }: { route: Route }) {
-  const { pending, person, setPerson } = useApp();
+  const { pending, unpaidHotels, person, setPerson } = useApp();
+  const todo = pending.length + unpaidHotels.length;
   const on = (names: Route['name'][]) => (names.includes(route.name) ? 'tab tab--on' : 'tab');
   return (
     <nav class="bottom-nav" aria-label="ניווט">
@@ -68,13 +72,17 @@ function BottomNav({ route }: { route: Route }) {
       </a>
       <a class={on(['todo'])} href={href.todo()}>
         <span class="tab__icon">
-          🔔{pending.length > 0 && <span class="tab__badge">{pending.length}</span>}
+          🔔{todo > 0 && <span class="tab__badge">{todo}</span>}
         </span>
         <span>להזמין/לשלם</span>
       </a>
       <a class={on(['plan'])} href={href.plan()}>
         <span class="tab__icon">📅</span>
         <span>לו״ז</span>
+      </a>
+      <a class={on(['hotels'])} href={href.hotels()}>
+        <span class="tab__icon">🏨</span>
+        <span>מלונות</span>
       </a>
       <a class={on(['general'])} href={href.general()}>
         <span class="tab__icon">🚄</span>

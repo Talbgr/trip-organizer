@@ -1,11 +1,12 @@
-import type { HandledState, Person, StatusEntry, StatusMap, Trip } from '../../shared/types.ts';
+import type { HotelInput, ScheduleInput } from '../../shared/places.ts';
+import type { HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, Trip, UserState } from '../../shared/types.ts';
 
-// The service worker keeps the last good copies of /api/trip and /api/status, so
-// these calls keep working offline. localStorage is a second fallback for browsers
-// where the service worker is not active yet (first visit, private mode).
+// The service worker keeps the last good copies of /api/trip and /api/state, so the app
+// keeps showing everything offline. localStorage is a second fallback for browsers where
+// the service worker is not active yet (first visit, private mode).
 
 const TRIP_CACHE = 'trip-cache-v1';
-const STATUS_CACHE = 'status-cache-v1';
+const STATE_CACHE = 'state-cache-v2';
 
 function readLocal<T>(key: string): T | null {
   try {
@@ -37,33 +38,60 @@ export async function loadTrip(): Promise<Trip> {
   }
 }
 
-export async function loadStatus(): Promise<{ status: StatusMap; fresh: boolean }> {
+const EMPTY: UserState = { status: {}, schedule: [], hotels: [] };
+
+export async function loadState(): Promise<{ state: UserState; fresh: boolean }> {
   try {
-    const res = await fetch('/api/status', { cache: 'no-store' });
-    if (!res.ok) throw new Error(`status ${res.status}`);
-    const status = (await res.json()) as StatusMap;
-    writeLocal(STATUS_CACHE, status);
-    return { status, fresh: true };
+    const res = await fetch('/api/state', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`state ${res.status}`);
+    const state = (await res.json()) as UserState;
+    writeLocal(STATE_CACHE, state);
+    return { state, fresh: true };
   } catch {
-    return { status: readLocal<StatusMap>(STATUS_CACHE) ?? {}, fresh: false };
+    return { state: readLocal<UserState>(STATE_CACHE) ?? EMPTY, fresh: false };
   }
 }
 
-export async function setStatus(key: string, state: HandledState, by: Person): Promise<StatusEntry> {
-  const res = await fetch(`/api/status/${encodeURIComponent(key)}`, {
-    method: 'PUT',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ state, by }),
-  });
-  if (!res.ok) throw new Error(`save failed (${res.status})`);
-  return (await res.json()) as StatusEntry;
+export function rememberState(state: UserState) {
+  writeLocal(STATE_CACHE, state);
 }
 
-export async function clearStatus(key: string, by: Person): Promise<void> {
-  const res = await fetch(`/api/status/${encodeURIComponent(key)}?by=${encodeURIComponent(by)}`, { method: 'DELETE' });
-  if (!res.ok) throw new Error(`undo failed (${res.status})`);
+/** Error with the server's (Hebrew) message when it sent one. */
+export class ApiError extends Error {}
+
+async function send<T>(method: string, url: string, body?: unknown): Promise<T> {
+  let res: Response;
+  try {
+    res = await fetch(url, {
+      method,
+      headers: body === undefined ? undefined : { 'content-type': 'application/json' },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+  } catch {
+    throw new ApiError('אין חיבור לשרת — לא נשמר. נסו שוב כשיש אינטרנט.');
+  }
+  if (!res.ok) {
+    const msg = await res
+      .json()
+      .then((j: { error?: string }) => j.error)
+      .catch(() => null);
+    throw new ApiError(msg && /[א-ת]/.test(msg) ? msg : `לא נשמר (שגיאה ${res.status})`);
+  }
+  return (res.status === 204 ? undefined : await res.json()) as T;
 }
 
-export function rememberStatus(status: StatusMap) {
-  writeLocal(STATUS_CACHE, status);
-}
+const q = (by: Person) => `?by=${encodeURIComponent(by)}`;
+
+export const api = {
+  setStatus: (key: string, state: HandledState, by: Person) =>
+    send<StatusEntry>('PUT', `/api/status/${encodeURIComponent(key)}`, { state, by }),
+  clearStatus: (key: string, by: Person) => send<void>('DELETE', `/api/status/${encodeURIComponent(key)}${q(by)}`),
+
+  addSchedule: (input: ScheduleInput, by: Person) => send<ScheduleEntry>('POST', '/api/schedule', { ...input, by }),
+  updateSchedule: (id: string, input: ScheduleInput, by: Person) => send<ScheduleEntry>('PUT', `/api/schedule/${id}`, { ...input, by }),
+  deleteSchedule: (id: string, by: Person) => send<void>('DELETE', `/api/schedule/${id}${q(by)}`),
+
+  addHotel: (input: HotelInput, by: Person) => send<HotelEntry>('POST', '/api/hotels', { ...input, by }),
+  updateHotel: (id: string, input: HotelInput, by: Person) => send<HotelEntry>('PUT', `/api/hotels/${id}`, { ...input, by }),
+  deleteHotel: (id: string, by: Person) => send<void>('DELETE', `/api/hotels/${id}${q(by)}`),
+};

@@ -573,3 +573,175 @@ body::before {
 .section__title {
   text-align: right;
 }
+
+/* ---- forms (add / edit sheets) ---- */
+body.no-scroll {
+  overflow: hidden;
+}
+.form {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 4px;
+}
+.field {
+  display: grid;
+  gap: 6px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.field > span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.field--inline {
+  flex: 1;
+}
+.field input:not([type='radio']):not([type='checkbox']),
+.field select,
+.field textarea {
+  font: inherit;
+  font-size: 16px; /* 16px+ stops iOS from zooming into the field */
+  color: var(--fg);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 100%;
+  min-height: 44px;
+}
+.field textarea {
+  resize: vertical;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  font-size: 1rem;
+}
+.choice input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--brand);
+}
+.form__error {
+  margin: 0;
+  color: var(--attention);
+  font-weight: 600;
+}
+.form__actions {
+  display: flex;
+  gap: 10px;
+}
+.form__actions .btn {
+  flex: 1;
+  min-height: 46px;
+}
+.btn--danger {
+  background: transparent !important;
+  color: var(--attention) !important;
+  border: 1px solid var(--attention);
+}
+
+/* ---- itinerary additions ---- */
+.entry {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  text-align: right;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  border-inline-start: 4px solid var(--accent, var(--line));
+  background: var(--bg);
+  cursor: pointer;
+}
+.entry__time {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+.entry__text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.entry__by {
+  flex: none;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.add-link {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.add-link:disabled {
+  opacity: 0.4;
+}
+.added-hotel {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.added-hotel .badge {
+  margin-top: 0;
+}
+
+/* ---- hotels ---- */
+.place-hotels {
+  margin-bottom: 18px;
+}
+.item--workbook {
+  background: var(--bg);
+  border-style: dashed;
+}
+.add-btn {
+  width: 100%;
+  min-height: 44px;
+}
+.city-hotels {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 4px 14px;
+  margin-bottom: 8px;
+}
+.city-hotels > summary {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 0;
+  list-style-position: inside;
+}
+.city-hotels[open] > summary {
+  margin-bottom: 4px;
+}
+.city-hotels .section__title {
+  margin-top: 8px;
+}
+.dot--inline {
+  display: inline-grid;
+  margin-inline-start: 8px;
+  vertical-align: middle;
+}

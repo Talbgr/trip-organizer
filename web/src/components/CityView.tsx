@@ -2,6 +2,7 @@ import { CATEGORY_ORDER, type City, type Neighborhood } from '../../../shared/ty
 import { href } from '../router.ts';
 import { useApp } from '../state.tsx';
 import { CATEGORY_TABS, textOn } from '../ui.ts';
+import { CityHotels } from './Hotels.tsx';
 
 export function CityTabs({ current }: { current: string }) {
   const { trip } = useApp();
@@ -27,6 +28,7 @@ export function CityView({ city }: { city: City }) {
   return (
     <>
       <CityTabs current={city.id} />
+      <CityHotels cityId={city.id} />
       {groups.map((g) => (
         <section class="group">
           {g.part && <h2 class="group__title">{g.part}</h2>}

@@ -10,6 +10,15 @@ Also included: the day-by-day itinerary (לו״ז), the general "נסיעות ו
 (כללי), and a **To book / To pay** list built from the red cells in the workbook, with a
 reminder pop-up when the app opens. "Booked" / "Paid" marks are shared between both phones.
 
+Added in the app (shared between both phones, stored in the database, never written back
+to the workbook):
+- **Schedule entries** — "+ הוסף" under any day in לו״ז: free text with an optional time.
+  Either of us can edit or delete them.
+- **Hotels** — per place (each continuous stay in the itinerary, so Tokyo has two), from the
+  🏨 מלונות tab or the top of a city page: name, whole stay or check-in day + nights, note/link,
+  paid. Unpaid hotels show in להזמין/לשלם and in the opening pop-up; added hotels also
+  appear on their nights in לו״ז. The workbook's own hotels are shown read-only.
+
 ## Deploy on Railway (≈5 minutes)
 
 1. railway.com → **New Project → Deploy from GitHub repo** → pick `Talbgr/trip-organizer`

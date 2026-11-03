@@ -3,13 +3,14 @@ import { useEffect, useState } from 'preact/hooks';
 // Hash routes so the app works as a static bundle and offline:
 //   #/city/<cityId>            neighborhoods of a city
 //   #/n/<neighborhoodId>/<cat> one neighborhood, one category
-//   #/todo   #/plan   #/general
+//   #/todo   #/plan   #/hotels   #/general
 
 export type Route =
   | { name: 'city'; cityId: string | null }
   | { name: 'neighborhood'; id: string; category: string | null }
   | { name: 'todo' }
   | { name: 'plan' }
+  | { name: 'hotels' }
   | { name: 'general' };
 
 export function parseRoute(hash: string): Route {
@@ -21,6 +22,8 @@ export function parseRoute(hash: string): Route {
       return { name: 'todo' };
     case 'plan':
       return { name: 'plan' };
+    case 'hotels':
+      return { name: 'hotels' };
     case 'general':
       return { name: 'general' };
     case 'city':
@@ -35,6 +38,7 @@ export const href = {
   neighborhood: (id: string, category?: string) => `#/n/${encodeURIComponent(id)}${category ? `/${category}` : ''}`,
   todo: () => '#/todo',
   plan: () => '#/plan',
+  hotels: () => '#/hotels',
   general: () => '#/general',
 };
 

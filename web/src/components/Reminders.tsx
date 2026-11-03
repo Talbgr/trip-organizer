@@ -4,6 +4,7 @@ import { STATE_LABELS } from '../../../shared/labels.ts';
 import { href } from '../router.ts';
 import { useApp } from '../state.tsx';
 import { formatWhen } from '../ui.ts';
+import { UnpaidHotels } from './Hotels.tsx';
 import { ReminderControls } from './ItemCard.tsx';
 
 function ReminderRow({ r }: { r: Reminder }) {
@@ -44,15 +45,16 @@ function ReminderRow({ r }: { r: Reminder }) {
 }
 
 export function TodoView() {
-  const { pending, handled } = useApp();
+  const { pending, handled, unpaidHotels } = useApp();
   const [showDone, setShowDone] = useState(false);
   return (
     <>
       <h1 class="page-title">להזמין / לשלם</h1>
-      {pending.length === 0 && <p class="empty">הכל טופל 🎉</p>}
+      {pending.length + unpaidHotels.length === 0 && <p class="empty">הכל טופל 🎉</p>}
       {pending.map((r) => (
         <ReminderRow r={r} />
       ))}
+      <UnpaidHotels />
       {handled.length > 0 && (
         <section class="section">
           <button class="btn btn--ghost wide" onClick={() => setShowDone(!showDone)}>
@@ -69,7 +71,7 @@ const DISMISS_KEY = 'reminders-dismissed';
 
 /** Shown when the app is opened while red items are still pending; closing it lasts for this visit only. */
 export function ReminderPopup() {
-  const { pending } = useApp();
+  const { pending, unpaidHotels } = useApp();
   const [dismissed, setDismissed] = useState(() => {
     try {
       return sessionStorage.getItem(DISMISS_KEY) === '1';
@@ -77,7 +79,8 @@ export function ReminderPopup() {
       return false;
     }
   });
-  if (dismissed || pending.length === 0) return null;
+  const total = pending.length + unpaidHotels.length;
+  if (dismissed || total === 0) return null;
   const close = () => {
     setDismissed(true);
     try {
@@ -90,7 +93,7 @@ export function ReminderPopup() {
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="reminders-title" onClick={(e) => e.target === e.currentTarget && close()}>
       <div class="modal__box">
         <div class="modal__head">
-          <h2 id="reminders-title">🔔 לטיפול ({pending.length})</h2>
+          <h2 id="reminders-title">🔔 לטיפול ({total})</h2>
           <button class="icon-btn" onClick={close} aria-label="סגור">
             ✕
           </button>
@@ -99,6 +102,7 @@ export function ReminderPopup() {
           {pending.map((r) => (
             <ReminderRow r={r} />
           ))}
+          <UnpaidHotels />
         </div>
         <button class="btn wide" onClick={close}>
           סגור

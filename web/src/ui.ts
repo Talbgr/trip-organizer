@@ -41,3 +41,18 @@ export function formatDate(iso: string | null): string {
   const [, m, d] = iso.split('-');
   return `${Number(d)}.${Number(m)}`;
 }
+
+/** "4.11–7.11" for a run of ISO dates (or a single "4.11"). */
+export function formatRange(dates: string[]): string {
+  if (!dates.length) return '';
+  const first = formatDate(dates[0]!);
+  const last = formatDate(dates[dates.length - 1]!);
+  // Isolate as left-to-right, or the Hebrew layout shows "14.11–11.11".
+  return first === last ? first : `\u2066${first}–${last}\u2069`;
+}
+
+/** Today's date on this phone's clock (not UTC), as yyyy-mm-dd. */
+export function localToday(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
