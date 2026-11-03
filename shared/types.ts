@@ -117,3 +117,40 @@ export interface StatusEntry {
 }
 
 export type StatusMap = Record<string, StatusEntry>;
+
+// ---- Things the two of us add in the app (stored on the server, not in the workbook) ----
+
+export interface ScheduleEntry {
+  id: string;
+  /** ISO date of an itinerary day. */
+  date: string;
+  /** "HH:MM", or null when no time was given. */
+  time: string | null;
+  text: string;
+  createdBy: Person;
+  createdAt: string;
+  updatedBy: Person;
+  updatedAt: string;
+}
+
+export type HotelStay = { kind: 'full' } | { kind: 'nights'; checkIn: string; nights: number };
+
+export interface HotelEntry {
+  id: string;
+  /** Id of a place (one continuous stay in the itinerary), see shared/places.ts. */
+  place: string;
+  name: string;
+  stay: HotelStay;
+  note: string;
+  paid: boolean;
+  createdBy: Person;
+  createdAt: string;
+  updatedBy: Person;
+  updatedAt: string;
+}
+
+export interface UserState {
+  status: StatusMap;
+  schedule: ScheduleEntry[];
+  hotels: HotelEntry[];
+}

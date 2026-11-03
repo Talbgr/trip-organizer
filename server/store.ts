@@ -1,92 +1,125 @@
-// Shared "handled" state for reminders (Booked / Paid), so both phones see the same
-// thing. Every change is also appended to `status_log`, so a mistaken tap can be
-// traced; `status` holds the current state per reminder.
+// Everything the two of us change in the app, stored on the server so both phones see it:
+//  - Booked/Paid marks for the workbook's red items (`status`, history in `status_log`);
+//  - things added to the itinerary (`schedule`);
+//  - hotels added per place (`hotels`).
+// Every add/edit/delete of schedule entries and hotels is also written to `change_log`
+// with the row as it was after the change (or before a delete), so nothing is lost silently.
 //
-// Two backends with the same tables:
+// The SQL is written once (with `?` placeholders) on top of a tiny adapter per database:
 //  - PostgreSQL when DATABASE_URL is set (Railway's Postgres survives redeploys);
 //  - a local SQLite file otherwise (development, or a server with a persistent disk).
 
+import { randomUUID } from 'node:crypto';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import Database from 'better-sqlite3';
 import pg from 'pg';
-import type { HandledState, Person, StatusEntry, StatusMap } from '../shared/types.ts';
+import type { HotelInput, ScheduleInput } from '../shared/places.ts';
+import type { HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, StatusMap, UserState } from '../shared/types.ts';
 
-export interface StatusStore {
-  all(): Promise<StatusMap>;
-  set(key: string, state: HandledState, by: Person, now?: Date): Promise<StatusEntry>;
-  clear(key: string, by: Person, now?: Date): Promise<void>;
-  /** Whether the store answers, with the driver's error message when it does not (never contains secrets). */
-  ping(): Promise<{ ok: boolean; error?: string }>;
+type Params = Array<string | number | null>;
+
+interface Db {
+  all<T>(sql: string, params?: Params): Promise<T[]>;
+  run(sql: string, params?: Params): Promise<void>;
+  /** Runs `fn` atomically; statements inside must go through the `db` it is given. */
+  tx(fn: (db: Db) => Promise<void>): Promise<void>;
   close(): Promise<void>;
 }
 
-type Row = StatusEntry & { key: string };
-const toMap = (rows: Row[]): StatusMap => Object.fromEntries(rows.map(({ key, state, by, at }) => [key, { state, by, at }]));
+const schema = (autoId: string) => `
+  CREATE TABLE IF NOT EXISTS status (
+    key   TEXT PRIMARY KEY,
+    state TEXT NOT NULL CHECK (state IN ('booked', 'paid')),
+    by    TEXT NOT NULL,
+    at    TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS status_log (
+    id    ${autoId},
+    key   TEXT NOT NULL,
+    state TEXT,            -- NULL = undone
+    by    TEXT NOT NULL,
+    at    TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS schedule (
+    id         TEXT PRIMARY KEY,
+    date       TEXT NOT NULL,
+    time       TEXT,
+    text       TEXT NOT NULL,
+    created_by TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_by TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS hotels (
+    id         TEXT PRIMARY KEY,
+    place      TEXT NOT NULL,
+    name       TEXT NOT NULL,
+    stay_kind  TEXT NOT NULL CHECK (stay_kind IN ('full', 'nights')),
+    check_in   TEXT,
+    nights     INTEGER,
+    note       TEXT NOT NULL,
+    paid       INTEGER NOT NULL,
+    created_by TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    updated_by TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS change_log (
+    id        ${autoId},
+    entity    TEXT NOT NULL,
+    entity_id TEXT NOT NULL,
+    action    TEXT NOT NULL,
+    data      TEXT NOT NULL,
+    by        TEXT NOT NULL,
+    at        TEXT NOT NULL
+  );
+`;
 
-export class SqliteStatusStore implements StatusStore {
+class SqliteDb implements Db {
   private db: Database.Database;
+  private lock: Promise<unknown> = Promise.resolve();
 
   constructor(path: string) {
     if (path !== ':memory:') mkdirSync(dirname(path), { recursive: true });
     this.db = new Database(path);
     this.db.pragma('journal_mode = WAL');
     this.db.pragma('busy_timeout = 5000');
-    this.db.exec(`
-      CREATE TABLE IF NOT EXISTS status (
-        key   TEXT PRIMARY KEY,
-        state TEXT NOT NULL CHECK (state IN ('booked', 'paid')),
-        by    TEXT NOT NULL,
-        at    TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS status_log (
-        id    INTEGER PRIMARY KEY AUTOINCREMENT,
-        key   TEXT NOT NULL,
-        state TEXT,            -- NULL = undone
-        by    TEXT NOT NULL,
-        at    TEXT NOT NULL
-      );
-    `);
+    this.db.exec(schema('INTEGER PRIMARY KEY AUTOINCREMENT'));
   }
-
-  async all(): Promise<StatusMap> {
-    return toMap(this.db.prepare('SELECT key, state, by, at FROM status').all() as Row[]);
+  async all<T>(sql: string, params: Params = []): Promise<T[]> {
+    return this.db.prepare(sql).all(...params) as T[];
   }
-
-  async set(key: string, state: HandledState, by: Person, now = new Date()): Promise<StatusEntry> {
-    const at = now.toISOString();
-    this.db.transaction(() => {
-      this.db
-        .prepare(
-          'INSERT INTO status (key, state, by, at) VALUES (?, ?, ?, ?) ON CONFLICT(key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at',
-        )
-        .run(key, state, by, at);
-      this.db.prepare('INSERT INTO status_log (key, state, by, at) VALUES (?, ?, ?, ?)').run(key, state, by, at);
-    })();
-    return { state, by, at };
+  async run(sql: string, params: Params = []): Promise<void> {
+    this.db.prepare(sql).run(...params);
   }
-
-  async clear(key: string, by: Person, now = new Date()): Promise<void> {
-    this.db.transaction(() => {
-      this.db.prepare('DELETE FROM status WHERE key = ?').run(key);
-      this.db.prepare('INSERT INTO status_log (key, state, by, at) VALUES (?, NULL, ?, ?)').run(key, by, now.toISOString());
-    })();
+  tx(fn: (db: Db) => Promise<void>): Promise<void> {
+    // One connection: serialize transactions so requests cannot interleave inside one.
+    const next = this.lock.then(async () => {
+      this.db.exec('BEGIN');
+      try {
+        await fn(this);
+        this.db.exec('COMMIT');
+      } catch (err) {
+        this.db.exec('ROLLBACK');
+        throw err;
+      }
+    });
+    this.lock = next.catch(() => {});
+    return next;
   }
-
-  async ping(): Promise<{ ok: boolean; error?: string }> {
-    try {
-      return { ok: (this.db.prepare('SELECT 1 AS ok').get() as { ok: number }).ok === 1 };
-    } catch (err) {
-      return { ok: false, error: err instanceof Error ? err.message : String(err) };
-    }
-  }
-
   async close(): Promise<void> {
     this.db.close();
   }
 }
 
-export class PgStatusStore implements StatusStore {
+/** `?` placeholders → `$1, $2, ...` */
+const toPg = (sql: string) => {
+  let i = 0;
+  return sql.replace(/\?/g, () => `$${++i}`);
+};
+
+class PgDb implements Db {
   private pool: pg.Pool;
   private migrated: Promise<void> | null = null;
 
@@ -95,41 +128,39 @@ export class PgStatusStore implements StatusStore {
     // An idle connection dropping (e.g. a database restart) must not crash the server.
     this.pool.on('error', () => {});
   }
-
   /** Creates the tables on first use; retried on the next call if the database was not up yet. */
-  private get ready(): Promise<void> {
-    this.migrated ??= this.migrate().catch((err: unknown) => {
-      this.migrated = null;
-      throw err;
-    });
+  private ready(): Promise<void> {
+    this.migrated ??= this.pool
+      .query(schema('BIGSERIAL PRIMARY KEY'))
+      .then(() => undefined)
+      .catch((err: unknown) => {
+        this.migrated = null;
+        throw err;
+      });
     return this.migrated;
   }
-
-  private async migrate(): Promise<void> {
-    await this.pool.query(`
-      CREATE TABLE IF NOT EXISTS status (
-        key   TEXT PRIMARY KEY,
-        state TEXT NOT NULL CHECK (state IN ('booked', 'paid')),
-        by    TEXT NOT NULL,
-        at    TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS status_log (
-        id    BIGSERIAL PRIMARY KEY,
-        key   TEXT NOT NULL,
-        state TEXT,
-        by    TEXT NOT NULL,
-        at    TEXT NOT NULL
-      );
-    `);
+  async all<T>(sql: string, params: Params = []): Promise<T[]> {
+    await this.ready();
+    return (await this.pool.query(toPg(sql), params)).rows as T[];
   }
-
-  /** Runs `fn` in one transaction on a single connection. */
-  private async tx(fn: (c: pg.PoolClient) => Promise<void>): Promise<void> {
-    await this.ready;
+  async run(sql: string, params: Params = []): Promise<void> {
+    await this.ready();
+    await this.pool.query(toPg(sql), params);
+  }
+  async tx(fn: (db: Db) => Promise<void>): Promise<void> {
+    await this.ready();
     const client = await this.pool.connect();
+    const scoped: Db = {
+      all: async <T,>(sql: string, params: Params = []) => (await client.query(toPg(sql), params)).rows as T[],
+      run: async (sql, params = []) => {
+        await client.query(toPg(sql), params);
+      },
+      tx: (inner) => inner(scoped),
+      close: async () => {},
+    };
     try {
       await client.query('BEGIN');
-      await fn(client);
+      await fn(scoped);
       await client.query('COMMIT');
     } catch (err) {
       await client.query('ROLLBACK');
@@ -138,50 +169,266 @@ export class PgStatusStore implements StatusStore {
       client.release();
     }
   }
+  async close(): Promise<void> {
+    await this.pool.end();
+  }
+}
 
-  async all(): Promise<StatusMap> {
-    await this.ready;
-    const { rows } = await this.pool.query<Row>('SELECT key, state, by, at FROM status');
-    return toMap(rows);
+interface ScheduleRow {
+  id: string;
+  date: string;
+  time: string | null;
+  text: string;
+  created_by: Person;
+  created_at: string;
+  updated_by: Person;
+  updated_at: string;
+}
+interface HotelRow {
+  id: string;
+  place: string;
+  name: string;
+  stay_kind: 'full' | 'nights';
+  check_in: string | null;
+  nights: number | null;
+  note: string;
+  paid: number;
+  created_by: Person;
+  created_at: string;
+  updated_by: Person;
+  updated_at: string;
+}
+
+const scheduleFromRow = (r: ScheduleRow): ScheduleEntry => ({
+  id: r.id,
+  date: r.date,
+  time: r.time,
+  text: r.text,
+  createdBy: r.created_by,
+  createdAt: r.created_at,
+  updatedBy: r.updated_by,
+  updatedAt: r.updated_at,
+});
+const hotelFromRow = (r: HotelRow): HotelEntry => ({
+  id: r.id,
+  place: r.place,
+  name: r.name,
+  stay: r.stay_kind === 'full' ? { kind: 'full' } : { kind: 'nights', checkIn: r.check_in ?? '', nights: Number(r.nights) },
+  note: r.note,
+  paid: Number(r.paid) === 1,
+  createdBy: r.created_by,
+  createdAt: r.created_at,
+  updatedBy: r.updated_by,
+  updatedAt: r.updated_at,
+});
+
+export class TripStore {
+  private db: Db;
+  readonly kind: 'postgres' | 'sqlite';
+
+  constructor(db: Db, kind: 'postgres' | 'sqlite') {
+    this.db = db;
+    this.kind = kind;
   }
 
-  async set(key: string, state: HandledState, by: Person, now = new Date()): Promise<StatusEntry> {
+  static sqlite(path: string): TripStore {
+    return new TripStore(new SqliteDb(path), 'sqlite');
+  }
+  static postgres(url: string): TripStore {
+    return new TripStore(new PgDb(url), 'postgres');
+  }
+
+  // ---- Booked / Paid marks -----------------------------------------------------------
+
+  async statusAll(): Promise<StatusMap> {
+    const rows = await this.db.all<StatusEntry & { key: string }>('SELECT key, state, by, at FROM status');
+    return Object.fromEntries(rows.map(({ key, state, by, at }) => [key, { state, by, at }]));
+  }
+
+  async setStatus(key: string, state: HandledState, by: Person, now = new Date()): Promise<StatusEntry> {
     const at = now.toISOString();
-    await this.tx(async (c) => {
-      await c.query(
-        'INSERT INTO status (key, state, by, at) VALUES ($1, $2, $3, $4) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at',
+    await this.db.tx(async (db) => {
+      await db.run(
+        'INSERT INTO status (key, state, by, at) VALUES (?, ?, ?, ?) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at',
         [key, state, by, at],
       );
-      await c.query('INSERT INTO status_log (key, state, by, at) VALUES ($1, $2, $3, $4)', [key, state, by, at]);
+      await db.run('INSERT INTO status_log (key, state, by, at) VALUES (?, ?, ?, ?)', [key, state, by, at]);
     });
     return { state, by, at };
   }
 
-  async clear(key: string, by: Person, now = new Date()): Promise<void> {
-    await this.tx(async (c) => {
-      await c.query('DELETE FROM status WHERE key = $1', [key]);
-      await c.query('INSERT INTO status_log (key, state, by, at) VALUES ($1, NULL, $2, $3)', [key, by, now.toISOString()]);
+  async clearStatus(key: string, by: Person, now = new Date()): Promise<void> {
+    await this.db.tx(async (db) => {
+      await db.run('DELETE FROM status WHERE key = ?', [key]);
+      await db.run('INSERT INTO status_log (key, state, by, at) VALUES (?, NULL, ?, ?)', [key, by, now.toISOString()]);
     });
   }
 
+  // ---- Schedule ------------------------------------------------------------------------
+
+  async listSchedule(): Promise<ScheduleEntry[]> {
+    const rows = await this.db.all<ScheduleRow>('SELECT * FROM schedule ORDER BY date, time, created_at');
+    return rows.map(scheduleFromRow);
+  }
+
+  async addSchedule(input: ScheduleInput, by: Person, now = new Date()): Promise<ScheduleEntry> {
+    const at = now.toISOString();
+    const entry: ScheduleEntry = {
+      id: randomUUID(),
+      date: input.date,
+      time: input.time,
+      text: input.text.trim(),
+      createdBy: by,
+      createdAt: at,
+      updatedBy: by,
+      updatedAt: at,
+    };
+    await this.db.tx(async (db) => {
+      await db.run(
+        'INSERT INTO schedule (id, date, time, text, created_by, created_at, updated_by, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        [entry.id, entry.date, entry.time, entry.text, by, at, by, at],
+      );
+      await this.log(db, 'schedule', entry.id, 'add', entry, by, at);
+    });
+    return entry;
+  }
+
+  async updateSchedule(id: string, input: ScheduleInput, by: Person, now = new Date()): Promise<ScheduleEntry | null> {
+    const at = now.toISOString();
+    let result: ScheduleEntry | null = null;
+    await this.db.tx(async (db) => {
+      const [row] = await db.all<ScheduleRow>('SELECT * FROM schedule WHERE id = ?', [id]);
+      if (!row) return;
+      result = { ...scheduleFromRow(row), date: input.date, time: input.time, text: input.text.trim(), updatedBy: by, updatedAt: at };
+      await db.run('UPDATE schedule SET date = ?, time = ?, text = ?, updated_by = ?, updated_at = ? WHERE id = ?', [
+        input.date,
+        input.time,
+        result.text,
+        by,
+        at,
+        id,
+      ]);
+      await this.log(db, 'schedule', id, 'update', result, by, at);
+    });
+    return result;
+  }
+
+  async deleteSchedule(id: string, by: Person, now = new Date()): Promise<boolean> {
+    return this.deleteRow('schedule', id, by, now, (r: ScheduleRow) => scheduleFromRow(r));
+  }
+
+  // ---- Hotels --------------------------------------------------------------------------
+
+  async listHotels(): Promise<HotelEntry[]> {
+    const rows = await this.db.all<HotelRow>('SELECT * FROM hotels ORDER BY created_at');
+    return rows.map(hotelFromRow);
+  }
+
+  async addHotel(input: HotelInput, by: Person, now = new Date()): Promise<HotelEntry> {
+    const at = now.toISOString();
+    const entry: HotelEntry = {
+      id: randomUUID(),
+      place: input.place,
+      name: input.name.trim(),
+      stay: input.stay,
+      note: input.note.trim(),
+      paid: input.paid,
+      createdBy: by,
+      createdAt: at,
+      updatedBy: by,
+      updatedAt: at,
+    };
+    await this.db.tx(async (db) => {
+      await db.run(
+        'INSERT INTO hotels (id, place, name, stay_kind, check_in, nights, note, paid, created_by, created_at, updated_by, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [entry.id, entry.place, entry.name, ...stayColumns(entry.stay), entry.note, entry.paid ? 1 : 0, by, at, by, at],
+      );
+      await this.log(db, 'hotel', entry.id, 'add', entry, by, at);
+    });
+    return entry;
+  }
+
+  async updateHotel(id: string, input: HotelInput, by: Person, now = new Date()): Promise<HotelEntry | null> {
+    const at = now.toISOString();
+    let result: HotelEntry | null = null;
+    await this.db.tx(async (db) => {
+      const [row] = await db.all<HotelRow>('SELECT * FROM hotels WHERE id = ?', [id]);
+      if (!row) return;
+      result = {
+        ...hotelFromRow(row),
+        place: input.place,
+        name: input.name.trim(),
+        stay: input.stay,
+        note: input.note.trim(),
+        paid: input.paid,
+        updatedBy: by,
+        updatedAt: at,
+      };
+      await db.run(
+        'UPDATE hotels SET place = ?, name = ?, stay_kind = ?, check_in = ?, nights = ?, note = ?, paid = ?, updated_by = ?, updated_at = ? WHERE id = ?',
+        [result.place, result.name, ...stayColumns(result.stay), result.note, result.paid ? 1 : 0, by, at, id],
+      );
+      await this.log(db, 'hotel', id, 'update', result, by, at);
+    });
+    return result;
+  }
+
+  async deleteHotel(id: string, by: Person, now = new Date()): Promise<boolean> {
+    return this.deleteRow('hotels', id, by, now, (r: HotelRow) => hotelFromRow(r));
+  }
+
+  // ---- Shared --------------------------------------------------------------------------
+
+  async state(): Promise<UserState> {
+    const [status, schedule, hotels] = await Promise.all([this.statusAll(), this.listSchedule(), this.listHotels()]);
+    return { status, schedule, hotels };
+  }
+
+  /** Whether the store answers, with the driver's error message when it does not (never contains secrets). */
   async ping(): Promise<{ ok: boolean; error?: string }> {
     try {
-      await this.ready;
-      const { rows } = await this.pool.query<{ ok: number }>('SELECT 1 AS ok');
-      return { ok: rows[0]?.ok === 1 };
+      const [row] = await this.db.all<{ ok: number }>('SELECT 1 AS ok');
+      return { ok: Number(row?.ok) === 1 };
     } catch (err) {
       const e = err as { message?: string; code?: string };
       return { ok: false, error: [e.code, e.message].filter(Boolean).join(': ') || String(err) };
     }
   }
 
-  async close(): Promise<void> {
-    await this.pool.end();
+  close(): Promise<void> {
+    return this.db.close();
+  }
+
+  private async deleteRow<R>(table: 'schedule' | 'hotels', id: string, by: Person, now: Date, toEntry: (r: R) => unknown): Promise<boolean> {
+    let found = false;
+    await this.db.tx(async (db) => {
+      const [row] = await db.all<R>(`SELECT * FROM ${table} WHERE id = ?`, [id]);
+      if (!row) return;
+      found = true;
+      await db.run(`DELETE FROM ${table} WHERE id = ?`, [id]);
+      await this.log(db, table === 'hotels' ? 'hotel' : 'schedule', id, 'delete', toEntry(row), by, now.toISOString());
+    });
+    return found;
+  }
+
+  private log(db: Db, entity: string, id: string, action: string, data: unknown, by: Person, at: string): Promise<void> {
+    return db.run('INSERT INTO change_log (entity, entity_id, action, data, by, at) VALUES (?, ?, ?, ?, ?, ?)', [
+      entity,
+      id,
+      action,
+      JSON.stringify(data),
+      by,
+      at,
+    ]);
   }
 }
 
+function stayColumns(stay: HotelEntry['stay']): [string, string | null, number | null] {
+  return stay.kind === 'full' ? ['full', null, null] : ['nights', stay.checkIn, stay.nights];
+}
+
 export interface OpenedStore {
-  store: StatusStore;
+  store: TripStore;
   kind: 'postgres' | 'sqlite';
   /** Set when DATABASE_URL was present but unusable, so the SQLite fallback is in use. */
   warning?: string;
@@ -190,11 +437,11 @@ export interface OpenedStore {
 /** Postgres when DATABASE_URL is a postgres URL, otherwise the SQLite file at `sqlitePath`. */
 export function openStore(env: { DATABASE_URL?: string }, sqlitePath: string): OpenedStore {
   const url = env.DATABASE_URL?.trim();
-  if (url && /^postgres(ql)?:\/\//.test(url)) return { store: new PgStatusStore(url), kind: 'postgres' };
+  if (url && /^postgres(ql)?:\/\//.test(url)) return { store: TripStore.postgres(url), kind: 'postgres' };
   const warning = url
     ? url.includes('${{')
       ? 'DATABASE_URL contains an unresolved Railway reference (check the service name inside ${{...}})'
       : 'DATABASE_URL is set but is not a postgres:// URL'
     : undefined;
-  return { store: new SqliteStatusStore(sqlitePath), kind: 'sqlite', warning };
+  return { store: TripStore.sqlite(sqlitePath), kind: 'sqlite', warning };
 }
