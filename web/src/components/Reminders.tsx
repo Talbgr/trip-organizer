@@ -48,12 +48,44 @@ function ReminderRow({ r }: { r: Reminder }) {
   );
 }
 
+const POPUP_KEY = 'reminders-popup';
+
+/** Whether the "things left open" pop-up shows when the app opens. Off unless turned on, per phone. */
+function readPopupSetting(): boolean {
+  try {
+    return localStorage.getItem(POPUP_KEY) === 'on';
+  } catch {
+    return false;
+  }
+}
+
 export function TodoView() {
   const { pending, handled, unpaidHotels } = useApp();
   const [showDone, setShowDone] = useState(false);
+  const [popupOn, setPopupOn] = useState(readPopupSetting);
+  const togglePopup = () => {
+    const next = !popupOn;
+    setPopupOn(next);
+    try {
+      localStorage.setItem(POPUP_KEY, next ? 'on' : 'off');
+    } catch {
+      /* ignore */
+    }
+  };
   return (
     <>
-      <h1 class="page-title">להזמין / לשלם</h1>
+      <div class="page-head">
+        <h1 class="page-title">להזמין / לשלם</h1>
+        <button
+          class={`icon-btn ${popupOn ? 'icon-btn--on' : ''}`}
+          aria-pressed={popupOn}
+          aria-label={popupOn ? 'תזכורת בפתיחת האפליקציה: פועלת' : 'תזכורת בפתיחת האפליקציה: כבויה'}
+          title={popupOn ? 'תזכורת בפתיחה: פועלת' : 'תזכורת בפתיחה: כבויה'}
+          onClick={togglePopup}
+        >
+          {popupOn ? '🔔' : '🔕'}
+        </button>
+      </div>
       {pending.length + unpaidHotels.length === 0 && <p class="empty">הכל טופל 🎉</p>}
       {pending.map((r) => (
         <ReminderRow r={r} />
@@ -73,9 +105,13 @@ export function TodoView() {
 
 const DISMISS_KEY = 'reminders-dismissed';
 
-/** Shown when the app is opened while red items are still pending; closing it lasts for this visit only. */
+/**
+ * Shown when the app is opened while items are still open — only if turned on with 🔔 on the
+ * To book / To pay page. Closing it lasts for this visit only.
+ */
 export function ReminderPopup() {
   const { pending, unpaidHotels } = useApp();
+  const [enabled] = useState(readPopupSetting);
   const [dismissed, setDismissed] = useState(() => {
     try {
       return sessionStorage.getItem(DISMISS_KEY) === '1';
@@ -84,7 +120,7 @@ export function ReminderPopup() {
     }
   });
   const total = pending.length + unpaidHotels.length;
-  if (dismissed || total === 0) return null;
+  if (!enabled || dismissed || total === 0) return null;
   const close = () => {
     setDismissed(true);
     try {

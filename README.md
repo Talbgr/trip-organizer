@@ -7,8 +7,8 @@ its names, notes, links and colors as they are, organized as
 **City → Neighborhood → Category** (🎡 attractions, 🛍️ shopping, 🍴 Adi / 🍴 Tal / 🍴 both).
 
 Also included: the day-by-day itinerary (לו״ז), the general "נסיעות ואטרקציות" table
-(כללי), and a **To book / To pay** list built from the red cells in the workbook, with a
-reminder pop-up when the app opens. "Booked" / "Paid" marks are shared between both phones.
+(כללי), and a **To book / To pay** list built from the red cells in the workbook, with an
+optional reminder pop-up on opening (off by default; 🔕/🔔 on that page). "Booked" / "Paid" marks are shared between both phones.
 
 Added in the app (shared between both phones, stored in the database, never written back
 to the workbook):
