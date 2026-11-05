@@ -149,8 +149,19 @@ export interface HotelEntry {
   updatedAt: string;
 }
 
+/** A change to the workbook's own text for a day. The workbook itself is never modified. */
+export interface DayOverride {
+  date: string;
+  /** Replacement text, or null when the day's workbook text was removed. */
+  text: string | null;
+  by: Person;
+  at: string;
+}
+
 export interface UserState {
   status: StatusMap;
   schedule: ScheduleEntry[];
   hotels: HotelEntry[];
+  /** Keyed by ISO date. */
+  days: Record<string, DayOverride>;
 }

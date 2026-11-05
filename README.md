@@ -12,8 +12,10 @@ reminder pop-up when the app opens. "Booked" / "Paid" marks are shared between b
 
 Added in the app (shared between both phones, stored in the database, never written back
 to the workbook):
-- **Schedule entries** — "+ הוסף" under any day in לו״ז: free text with an optional time.
-  Either of us can edit or delete them.
+- **Schedule** — the ✎ button at the top of לו״ז turns on edit mode: + adds an entry to a day
+  (free text, optional time), ✎ / 🗑 edit or delete entries, and the workbook's own text for a
+  day can be edited (✎), removed (🗑) and restored (↺). Workbook edits are stored as overrides;
+  the workbook file is never changed. Either of us can change anything.
 - **Hotels** — per place (each continuous stay in the itinerary, so Tokyo has two), from the
   🏨 מלונות tab or the top of a city page: name, whole stay or check-in day + nights, note/link,
   paid. Unpaid hotels show in להזמין/לשלם and in the opening pop-up; added hotels also

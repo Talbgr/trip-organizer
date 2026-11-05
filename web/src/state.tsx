@@ -1,8 +1,8 @@
 import { createContext, type ComponentChildren } from 'preact';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'preact/hooks';
 import { placesOf, type HotelInput, type Place, type ScheduleInput } from '../../shared/places.ts';
-import type { HandledState, HotelEntry, Person, Reminder, ScheduleEntry, StatusMap, Trip, UserState } from '../../shared/types.ts';
-import { api, ApiError, loadState, rememberState } from './api.ts';
+import type { DayOverride, HandledState, HotelEntry, Person, Reminder, ScheduleEntry, StatusMap, Trip, UserState } from '../../shared/types.ts';
+import { api, ApiError, EMPTY_STATE, loadState, rememberState } from './api.ts';
 
 const PERSON_KEY = 'trip-person';
 const POLL_MS = 30_000;
@@ -13,6 +13,8 @@ export interface AppState {
   status: StatusMap;
   schedule: ScheduleEntry[];
   hotels: HotelEntry[];
+  /** Edits to the workbook's day text, keyed by ISO date. */
+  days: Record<string, DayOverride>;
   online: boolean;
   person: Person | null;
   setPerson(p: Person): void;
@@ -28,6 +30,9 @@ export interface AppState {
   saveHotel(id: string | null, input: HotelInput): Promise<boolean>;
   deleteHotel(id: string): Promise<void>;
   setHotelPaid(h: HotelEntry, paid: boolean): Promise<void>;
+  /** Replace (text) or remove (null) the workbook's text for a day. */
+  saveDayText(date: string, text: string | null): Promise<boolean>;
+  restoreDay(date: string): Promise<void>;
   /** Key of the thing being saved right now (reminder key or entry id), to disable its buttons. */
   busy: string | null;
   error: string | null;
@@ -52,7 +57,7 @@ function readPerson(): Person | null {
 }
 
 export function AppProvider({ trip, children }: { trip: Trip; children: ComponentChildren }) {
-  const [user, setUser] = useState<UserState>({ status: {}, schedule: [], hotels: [] });
+  const [user, setUser] = useState<UserState>(EMPTY_STATE);
   const [online, setOnline] = useState(navigator.onLine);
   const [person, setPersonState] = useState<Person | null>(readPerson);
   const [busy, setBusy] = useState<string | null>(null);
@@ -124,6 +129,7 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
       status: user.status,
       schedule: user.schedule,
       hotels: user.hotels,
+      days: user.days,
       online,
       person,
       setPerson,
@@ -172,6 +178,21 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
         await run(h.id, async (by) => {
           const entry = await api.updateHotel(h.id, { place: h.place, name: h.name, stay: h.stay, note: h.note, paid }, by);
           return (u) => ({ ...u, hotels: replace(u.hotels, entry) });
+        });
+      },
+      saveDayText: (date, text) =>
+        run(`day-${date}`, async (by) => {
+          const entry = await api.setDayText(date, text, by);
+          return (u) => ({ ...u, days: { ...u.days, [date]: entry } });
+        }),
+      restoreDay: async (date) => {
+        await run(`day-${date}`, async (by) => {
+          await api.restoreDay(date, by);
+          return (u) => {
+            const days = { ...u.days };
+            delete days[date];
+            return { ...u, days };
+          };
         });
       },
       busy,

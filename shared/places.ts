@@ -52,7 +52,7 @@ export function hotelDates(stay: HotelStay, place: Place): string[] {
 }
 
 export const TIME_RE = /^([01]\d|2[0-3]):[0-5]\d$/;
-export const LIMITS = { text: 500, hotelName: 200, note: 1000 } as const;
+export const LIMITS = { text: 500, hotelName: 200, note: 1000, dayText: 3000 } as const;
 
 export type ScheduleInput = Pick<ScheduleEntry, 'date' | 'time' | 'text'>;
 export type HotelInput = Pick<HotelEntry, 'place' | 'name' | 'stay' | 'note' | 'paid'>;
@@ -82,5 +82,16 @@ export function checkHotel(input: HotelInput, places: Place[]): string | null {
     if (!Number.isInteger(nights) || nights < 1) return 'מספר לילות לא תקין';
     if (start + nights > place.dates.length) return `יש רק ${place.dates.length - start} לילות מהתאריך הזה במקום`;
   }
+  return null;
+}
+
+/** Edited workbook text for a day: the day must exist and have workbook text; null removes it. */
+export function checkDayText(date: string, text: string | null, itinerary: Itinerary): string | null {
+  const day = itinerary.days.find((d) => d.date === date);
+  if (!day) return 'היום הזה לא קיים בלו״ז';
+  if (!day.activity) return 'אין ביום הזה טקסט מהקובץ';
+  if (text === null) return null;
+  if (!text.trim()) return 'הטקסט ריק — למחיקה יש כפתור נפרד';
+  if (text.length > LIMITS.dayText) return `עד ${LIMITS.dayText} תווים`;
   return null;
 }

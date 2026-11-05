@@ -15,7 +15,7 @@ import { dirname } from 'node:path';
 import Database from 'better-sqlite3';
 import pg from 'pg';
 import type { HotelInput, ScheduleInput } from '../shared/places.ts';
-import type { HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, StatusMap, UserState } from '../shared/types.ts';
+import type { DayOverride, HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, StatusMap, UserState } from '../shared/types.ts';
 
 type Params = Array<string | number | null>;
 
@@ -64,6 +64,12 @@ const schema = (autoId: string) => `
     created_at TEXT NOT NULL,
     updated_by TEXT NOT NULL,
     updated_at TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS day_overrides (
+    date TEXT PRIMARY KEY,
+    text TEXT,             -- NULL = the day's workbook text was removed
+    by   TEXT NOT NULL,
+    at   TEXT NOT NULL
   );
   CREATE TABLE IF NOT EXISTS change_log (
     id        ${autoId},
@@ -377,11 +383,49 @@ export class TripStore {
     return this.deleteRow('hotels', id, by, now, (r: HotelRow) => hotelFromRow(r));
   }
 
+  // ---- Edits to the workbook's day text ------------------------------------------------
+
+  async listDayOverrides(): Promise<Record<string, DayOverride>> {
+    const rows = await this.db.all<DayOverride>('SELECT date, text, by, at FROM day_overrides');
+    return Object.fromEntries(rows.map((r) => [r.date, { date: r.date, text: r.text, by: r.by, at: r.at }]));
+  }
+
+  /** Replaces the day's workbook text (`text`), or removes it (`null`). */
+  async setDayOverride(date: string, text: string | null, by: Person, now = new Date()): Promise<DayOverride> {
+    const entry: DayOverride = { date, text: text === null ? null : text.trim(), by, at: now.toISOString() };
+    await this.db.tx(async (db) => {
+      await db.run(
+        'INSERT INTO day_overrides (date, text, by, at) VALUES (?, ?, ?, ?) ON CONFLICT (date) DO UPDATE SET text = excluded.text, by = excluded.by, at = excluded.at',
+        [date, entry.text, by, entry.at],
+      );
+      await this.log(db, 'day', date, text === null ? 'remove' : 'edit', entry, by, entry.at);
+    });
+    return entry;
+  }
+
+  /** Brings back the workbook's original text for the day. */
+  async clearDayOverride(date: string, by: Person, now = new Date()): Promise<boolean> {
+    let found = false;
+    await this.db.tx(async (db) => {
+      const [row] = await db.all<DayOverride>('SELECT date, text, by, at FROM day_overrides WHERE date = ?', [date]);
+      if (!row) return;
+      found = true;
+      await db.run('DELETE FROM day_overrides WHERE date = ?', [date]);
+      await this.log(db, 'day', date, 'restore', row, by, now.toISOString());
+    });
+    return found;
+  }
+
   // ---- Shared --------------------------------------------------------------------------
 
   async state(): Promise<UserState> {
-    const [status, schedule, hotels] = await Promise.all([this.statusAll(), this.listSchedule(), this.listHotels()]);
-    return { status, schedule, hotels };
+    const [status, schedule, hotels, days] = await Promise.all([
+      this.statusAll(),
+      this.listSchedule(),
+      this.listHotels(),
+      this.listDayOverrides(),
+    ]);
+    return { status, schedule, hotels, days };
   }
 
   /** Whether the store answers, with the driver's error message when it does not (never contains secrets). */

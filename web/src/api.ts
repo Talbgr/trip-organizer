@@ -1,5 +1,5 @@
 import type { HotelInput, ScheduleInput } from '../../shared/places.ts';
-import type { HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, Trip, UserState } from '../../shared/types.ts';
+import type { DayOverride, HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, Trip, UserState } from '../../shared/types.ts';
 
 // The service worker keeps the last good copies of /api/trip and /api/state, so the app
 // keeps showing everything offline. localStorage is a second fallback for browsers where
@@ -38,17 +38,19 @@ export async function loadTrip(): Promise<Trip> {
   }
 }
 
-const EMPTY: UserState = { status: {}, schedule: [], hotels: [] };
+export const EMPTY_STATE: UserState = { status: {}, schedule: [], hotels: [], days: {} };
+/** Fills fields that older servers / older cached copies do not have. */
+const complete = (s: Partial<UserState> | null): UserState => ({ ...EMPTY_STATE, ...(s ?? {}) });
 
 export async function loadState(): Promise<{ state: UserState; fresh: boolean }> {
   try {
     const res = await fetch('/api/state', { cache: 'no-store' });
     if (!res.ok) throw new Error(`state ${res.status}`);
-    const state = (await res.json()) as UserState;
+    const state = complete((await res.json()) as Partial<UserState>);
     writeLocal(STATE_CACHE, state);
     return { state, fresh: true };
   } catch {
-    return { state: readLocal<UserState>(STATE_CACHE) ?? EMPTY, fresh: false };
+    return { state: complete(readLocal<Partial<UserState>>(STATE_CACHE)), fresh: false };
   }
 }
 
@@ -94,4 +96,7 @@ export const api = {
   addHotel: (input: HotelInput, by: Person) => send<HotelEntry>('POST', '/api/hotels', { ...input, by }),
   updateHotel: (id: string, input: HotelInput, by: Person) => send<HotelEntry>('PUT', `/api/hotels/${id}`, { ...input, by }),
   deleteHotel: (id: string, by: Person) => send<void>('DELETE', `/api/hotels/${id}${q(by)}`),
+
+  setDayText: (date: string, text: string | null, by: Person) => send<DayOverride>('PUT', `/api/days/${date}`, { text, by }),
+  restoreDay: (date: string, by: Person) => send<void>('DELETE', `/api/days/${date}${q(by)}`),
 };

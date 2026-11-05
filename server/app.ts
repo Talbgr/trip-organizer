@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import Fastify, { type FastifyInstance } from 'fastify';
 import fastifyStatic from '@fastify/static';
-import { checkHotel, checkSchedule, placesOf, type HotelInput, type ScheduleInput } from '../shared/places.ts';
+import { checkDayText, checkHotel, checkSchedule, placesOf, type HotelInput, type ScheduleInput } from '../shared/places.ts';
 import type { HandledState, Person, Trip } from '../shared/types.ts';
 import type { TripStore } from './store.ts';
 
@@ -187,6 +187,39 @@ export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: Ap
     { schema: { params: idParam, querystring: byQuery } },
     async (req, reply) => {
       const found = await store.deleteHotel(req.params.id, req.query.by);
+      return found ? reply.code(204).send() : reply.code(404).send({ error: 'not found' });
+    },
+  );
+
+  // ---- Edits to the workbook's day text ------------------------------------------------
+
+  const dateParam = { type: 'object', required: ['date'], properties: { date: { type: 'string', maxLength: 10 } } } as const;
+
+  app.put<{ Params: { date: string }; Body: { text: string | null; by: Person } }>(
+    '/api/days/:date',
+    {
+      schema: {
+        params: dateParam,
+        body: {
+          type: 'object',
+          required: ['text', 'by'],
+          additionalProperties: false,
+          properties: { text: { type: ['string', 'null'], maxLength: 6000 }, by },
+        },
+      },
+    },
+    async (req, reply) => {
+      const error = checkDayText(req.params.date, req.body.text, trip.itinerary);
+      if (error) return reply.code(400).send({ error });
+      return store.setDayOverride(req.params.date, req.body.text, req.body.by);
+    },
+  );
+
+  app.delete<{ Params: { date: string }; Querystring: { by: Person } }>(
+    '/api/days/:date',
+    { schema: { params: dateParam, querystring: byQuery } },
+    async (req, reply) => {
+      const found = await store.clearDayOverride(req.params.date, req.query.by);
       return found ? reply.code(204).send() : reply.code(404).send({ error: 'not found' });
     },
   );

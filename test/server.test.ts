@@ -23,7 +23,7 @@ if (pgUrl)
     async () => {
       const c = new pg.Client({ connectionString: pgUrl });
       await c.connect();
-      await c.query('DROP TABLE IF EXISTS status, status_log, schedule, hotels, change_log;');
+      await c.query('DROP TABLE IF EXISTS status, status_log, schedule, hotels, day_overrides, change_log;');
       await c.end();
       return TripStore.postgres(pgUrl);
     },
@@ -130,6 +130,43 @@ describe.each(backends)('api with %s store', (_name, open) => {
   });
 });
 
+describe.each(backends)('day text edits with %s store', (_name, open) => {
+  let store: TripStore;
+  let app: ReturnType<typeof buildApp>;
+  beforeEach(async () => {
+    store = await open();
+    app = buildApp({ trip, store });
+  });
+  afterEach(async () => {
+    await app.close();
+    await store.close();
+  });
+  const withText = trip.itinerary.days.find((d) => d.activity && d.date)!.date!;
+  const withoutText = trip.itinerary.days.find((d) => !d.activity && d.date)!.date!;
+  const put = (date: string, payload: object) => app.inject({ method: 'PUT', url: `/api/days/${date}`, payload });
+  const days = async () => (await app.inject('/api/state')).json().days;
+
+  it('edits, removes and restores the workbook text of a day', async () => {
+    const edit = await put(withText, { text: '  טקסט חדש  ', by: 'עדי' });
+    expect(edit.statusCode).toBe(200);
+    expect((await days())[withText]).toMatchObject({ text: 'טקסט חדש', by: 'עדי' });
+
+    expect((await put(withText, { text: null, by: 'טל' })).statusCode).toBe(200);
+    expect((await days())[withText]).toMatchObject({ text: null, by: 'טל' });
+
+    const restore = await app.inject({ method: 'DELETE', url: `/api/days/${withText}?by=${encodeURIComponent('טל')}` });
+    expect(restore.statusCode).toBe(204);
+    expect(await days()).toEqual({});
+  });
+
+  it('rejects edits to days without workbook text, unknown days and empty text', async () => {
+    expect((await put(withoutText, { text: 'x', by: 'טל' })).statusCode).toBe(400);
+    expect((await put('2030-01-01', { text: 'x', by: 'טל' })).statusCode).toBe(400);
+    expect((await put(withText, { text: '   ', by: 'טל' })).statusCode).toBe(400);
+    expect((await app.inject({ method: 'DELETE', url: `/api/days/${withText}?by=${encodeURIComponent('טל')}` })).statusCode).toBe(404);
+  });
+});
+
 describe('upgrading an existing database', () => {
   it('keeps Booked/Paid marks saved by the previous version', async () => {
     const path = join(mkdtempSync(join(tmpdir(), 'trip-')), 'state.db');
@@ -143,6 +180,7 @@ describe('upgrading an existing database', () => {
       status: { 'maguro mart': { state: 'paid', by: 'עדי', at: '2026-11-02T10:00:00.000Z' } },
       schedule: [],
       hotels: [],
+      days: {},
     });
     await store.close();
   });

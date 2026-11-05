@@ -745,3 +745,77 @@ body.no-scroll {
   margin-inline-start: 8px;
   vertical-align: middle;
 }
+
+/* ---- itinerary edit mode ---- */
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.icon-btn--on {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .icon-btn--on {
+    background: #eceef3;
+    color: #111318;
+  }
+}
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.icon-btn--small {
+  width: 34px;
+  height: 34px;
+  font-size: 0.95rem;
+}
+.editable {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.editable__body {
+  flex: 1;
+  min-width: 0;
+}
+.editable__tools,
+.entry__tools {
+  display: flex;
+  gap: 6px;
+  flex: none;
+}
+.editable__tools {
+  flex-direction: column;
+  margin-top: 4px;
+}
+.day__act--removed {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+.edited {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.entry {
+  cursor: default;
+  align-items: center;
+}
+.add-icon {
+  margin-top: 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.original {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.original > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
