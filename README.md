@@ -18,6 +18,8 @@ to the workbook):
   the workbook file is never changed. Either of us can change anything.
 - **Done / missed** — a box next to every place and every schedule item: tap cycles
   ☐ → ✓ done → ✕ missed → ☐. Neighborhood cards on the city page show ✓/✕ counts.
+  Whole areas (next to each neighborhood card and in its header) and whole days (under the date
+  in לו״ז) have their own box; it does not change the marks inside them.
   Place marks are keyed by the workbook row, so re-importing a changed workbook can move them.
 - **Hotels** — per place (each continuous stay in the itinerary, so Tokyo has two), from the
   🏨 מלונות tab or the top of a city page: name, whole stay or check-in day + nights, note/link,

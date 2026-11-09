@@ -81,10 +81,14 @@ export function PlanView() {
               const text = override ? override.text : d.activity;
               const dayBusy = busy === `day-${d.date}`;
               return (
-                <div class={`day ${d.date === today ? 'day--today' : ''}`} id={d.date ? `day-${d.date}` : undefined}>
+                <div
+                  class={`day ${d.date === today ? 'day--today' : ''} ${d.date ? checkClass(checks[checkKey.wholeDay(d.date)]?.state) : ''}`}
+                  id={d.date ? `day-${d.date}` : undefined}
+                >
                   <div class="day__when">
                     <strong>{formatDate(d.date)}</strong>
                     <span>{d.day}</span>
+                    {d.date && <CheckBox checkKey={checkKey.wholeDay(d.date)} name={`${d.day} (${formatDate(d.date)}) כל היום`} />}
                   </div>
                   <div class="day__what">
                     <div class="day__loc">{d.location}</div>

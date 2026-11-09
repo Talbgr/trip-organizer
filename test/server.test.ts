@@ -184,11 +184,18 @@ describe.each(backends)('done / missed marks with %s store', (_name, open) => {
   const checks = async () => (await app.inject('/api/state')).json().checks;
 
   it('marks places, days and entries done or missed, and clears them', async () => {
-    for (const [key, state] of [[`item:${itemId}`, 'done'], [`day:${date}`, 'missed'], ['entry:0b8f8a4e-1d2c-4b7a-9f3e-123456789abc', 'done']]) {
+    const areaId = trip.cities.find((c) => c.id === 'osaka')!.neighborhoods[0]!.id;
+    for (const [key, state] of [
+      [`item:${itemId}`, 'done'],
+      [`day:${date}`, 'missed'],
+      ['entry:0b8f8a4e-1d2c-4b7a-9f3e-123456789abc', 'done'],
+      [`area:${areaId}`, 'done'],
+      [`wholeday:${date}`, 'missed'],
+    ]) {
       const res = await app.inject({ method: 'PUT', url: url(key!), payload: { state, by: 'עדי' } });
       expect(res.statusCode).toBe(200);
     }
-    expect(Object.keys(await checks())).toHaveLength(3);
+    expect(Object.keys(await checks())).toHaveLength(5);
     expect((await checks())[`day:${date}`]).toMatchObject({ state: 'missed', by: 'עדי' });
 
     await app.inject({ method: 'PUT', url: url(`day:${date}`), payload: { state: 'done', by: 'טל' } });
@@ -205,6 +212,8 @@ describe.each(backends)('done / missed marks with %s store', (_name, open) => {
     expect((await put('day:2030-01-01')).statusCode).toBe(404);
     expect((await put('entry:not-a-uuid')).statusCode).toBe(404);
     expect((await put('whatever')).statusCode).toBe(404);
+    expect((await put('area:nowhere')).statusCode).toBe(404);
+    expect((await put('wholeday:2030-01-01')).statusCode).toBe(404);
     expect((await put(`item:${itemId}`, 'maybe')).statusCode).toBe(400);
   });
 });

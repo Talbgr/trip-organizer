@@ -3,6 +3,7 @@ import { href } from '../router.ts';
 import { useApp } from '../state.tsx';
 import { checkKey } from '../../../shared/places.ts';
 import { CATEGORY_TABS, textOn } from '../ui.ts';
+import { CheckBox, checkClass } from './CheckBox.tsx';
 import { CityHotels } from './Hotels.tsx';
 
 export function CityTabs({ current }: { current: string }) {
@@ -57,7 +58,10 @@ function NeighborhoodCard({ n }: { n: Neighborhood }) {
     .flatMap((s) => s.items)
     .filter((i) => i.marking === 'attention' && i.reminderKey && !status[i.reminderKey]).length;
   const subtitle = n.sections.find((s) => s.category === 'uncategorized' && s.subtitle)?.subtitle;
+  const areaKey = checkKey.area(n.id);
   return (
+    <div class={`ncard-wrap ${checkClass(checks[areaKey]?.state)}`}>
+    <CheckBox checkKey={areaKey} name={n.title} />
     <a class="ncard" href={href.neighborhood(n.id)} style={{ '--accent': n.color ?? 'var(--muted)' }}>
       <span class="ncard__swatch" style={{ background: n.color ?? 'transparent', color: textOn(n.color) }} />
       <span class="ncard__body">
@@ -87,5 +91,6 @@ function NeighborhoodCard({ n }: { n: Neighborhood }) {
         </span>
       )}
     </a>
+    </div>
   );
 }

@@ -886,3 +886,37 @@ body.no-scroll {
 .progress--missed {
   color: var(--attention);
 }
+
+/* ---- whole area / whole day boxes ---- */
+.ncard-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ncard-wrap > .ncard {
+  flex: 1;
+  min-width: 0;
+}
+.ncard-wrap.is-done > .ncard,
+.ncard-wrap.is-missed > .ncard {
+  opacity: 0.55;
+}
+.ncard-wrap.is-missed .ncard__title {
+  text-decoration: line-through;
+}
+.nhead__check {
+  margin-inline-start: auto;
+}
+.nhead .check {
+  border-color: currentColor;
+}
+.day__when .check {
+  margin-top: 8px;
+}
+.day.is-done .day__loc,
+.day.is-missed .day__loc {
+  opacity: 0.5;
+}
+.day.is-missed .day__loc {
+  text-decoration: line-through;
+}

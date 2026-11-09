@@ -2,6 +2,8 @@ import { useEffect, useState } from 'preact/hooks';
 import { CATEGORY_ORDER, type CategoryId, type City, type Neighborhood } from '../../../shared/types.ts';
 import { href } from '../router.ts';
 import { CATEGORY_TABS, textOn } from '../ui.ts';
+import { checkKey } from '../../../shared/places.ts';
+import { CheckBox } from './CheckBox.tsx';
 import { ItemCard } from './ItemCard.tsx';
 
 export function NeighborhoodView({ city, n, initial }: { city: City; n: Neighborhood; initial: string | null }) {
@@ -28,6 +30,9 @@ export function NeighborhoodView({ city, n, initial }: { city: City; n: Neighbor
             {n.part && ` · ${n.part.replace(`${city.name} `, '')}`}
           </div>
           <h1 class="nhead__title">{n.title}</h1>
+        </div>
+        <div class="nhead__check">
+          <CheckBox checkKey={checkKey.area(n.id)} name={n.title} />
         </div>
       </header>
 

@@ -100,12 +100,17 @@ export function checkDayText(date: string, text: string | null, itinerary: Itine
  * Keys for done/missed marks:
  *  - `item:<item id>`   a place in a neighborhood or the general table (id = table + row);
  *  - `day:<yyyy-mm-dd>` the workbook's text for a day in the itinerary;
- *  - `entry:<uuid>`     a schedule entry added in the app.
+ *  - `entry:<uuid>`     a schedule entry added in the app;
+ *  - `area:<neighborhood id>` a whole neighborhood / area;
+ *  - `wholeday:<yyyy-mm-dd>`  a whole day in the itinerary.
+ * Marks are independent: marking an area or a day does not change the marks inside it.
  */
 export const checkKey = {
   item: (id: string) => `item:${id}`,
   day: (date: string) => `day:${date}`,
   entry: (id: string) => `entry:${id}`,
+  area: (neighborhoodId: string) => `area:${neighborhoodId}`,
+  wholeDay: (date: string) => `wholeday:${date}`,
 };
 
 const ENTRY_KEY_RE = /^entry:[0-9a-f-]{36}$/;
@@ -121,5 +126,7 @@ export function isValidCheckKey(key: string, trip: Trip): boolean {
     return items.some((i) => i.id === id);
   }
   if (key.startsWith('day:')) return trip.itinerary.days.some((d) => d.date === key.slice(4));
+  if (key.startsWith('wholeday:')) return trip.itinerary.days.some((d) => d.date === key.slice(9));
+  if (key.startsWith('area:')) return trip.cities.some((c) => c.neighborhoods.some((n) => n.id === key.slice(5)));
   return ENTRY_KEY_RE.test(key);
 }
