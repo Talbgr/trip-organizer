@@ -1,7 +1,7 @@
 import { createContext, type ComponentChildren } from 'preact';
-import { useCallback, useContext, useEffect, useMemo, useState } from 'preact/hooks';
-import { placesOf, type HotelInput, type Place, type ScheduleInput } from '../../shared/places.ts';
-import type { CheckEntry, DayOverride, HandledState, HotelEntry, Person, Reminder, ScheduleEntry, StatusMap, Trip, UserState } from '../../shared/types.ts';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { applyCheck, checkChildren, checkParents, placesOf, type HotelInput, type Place, type ScheduleInput } from '../../shared/places.ts';
+import type { CheckEntry, CheckState, DayOverride, HandledState, HotelEntry, Person, Reminder, ScheduleEntry, StatusMap, Trip, UserState } from '../../shared/types.ts';
 import { api, ApiError, EMPTY_STATE, loadState, rememberState } from './api.ts';
 
 const PERSON_KEY = 'trip-person';
@@ -68,9 +68,27 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
   const [error, setError] = useState<string | null>(null);
   const places = useMemo(() => placesOf(trip.itinerary), [trip]);
 
+  // Done/missed taps: shown at once (optimistic), sent to the server one at a time in tap order,
+  // and the server's full answer is applied only when no other tap is still waiting — so an
+  // older answer can never overwrite a newer tap, and the screen ends up matching the server.
+  const checksRef = useRef<Record<string, CheckEntry>>({});
+  const checkQueue = useRef<Promise<void>>(Promise.resolve());
+  const pendingChecks = useRef(0);
+  const setChecks = useCallback((checks: Record<string, CheckEntry>) => {
+    checksRef.current = checks;
+    setUser((u) => {
+      const next = { ...u, checks };
+      rememberState(next);
+      return next;
+    });
+  }, []);
+
   const refresh = useCallback(async () => {
     const { state, fresh } = await loadState();
-    setUser(state);
+    // While taps are on their way, keep what the screen shows; their answers bring the server's view.
+    const checks = pendingChecks.current > 0 ? checksRef.current : state.checks;
+    checksRef.current = checks;
+    setUser({ ...state, checks });
     setOnline(fresh && navigator.onLine);
   }, []);
 
@@ -200,19 +218,41 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
           };
         });
       },
-      cycleCheck: async (key) => {
-        const current = user.checks[key]?.state;
-        await run(`check-${key}`, async (by) => {
-          const { checks } =
-            current === 'missed' ? await api.clearCheck(key, by) : await api.setCheck(key, current === 'done' ? 'missed' : 'done', by);
-          return (u) => ({ ...u, checks });
+      cycleCheck: (key) => {
+        if (!person) return Promise.resolve();
+        const by = person;
+        const current = checksRef.current[key]?.state;
+        const target: CheckState | null = current === 'missed' ? null : current === 'done' ? 'missed' : 'done';
+        // Show the tap's whole effect right away, with the same rules the server applies.
+        const container = key.startsWith('area:') || key.startsWith('wholeday:');
+        const related = container
+          ? { children: checkChildren(key, trip, user.schedule, user.days) }
+          : { parents: checkParents(key, trip, user.schedule) };
+        setChecks(applyCheck(checksRef.current, key, target, by, new Date().toISOString(), related));
+        pendingChecks.current++;
+        const job = checkQueue.current.then(async () => {
+          let failed = false;
+          try {
+            const { checks } = target ? await api.setCheck(key, target, by) : await api.clearCheck(key, by);
+            if (pendingChecks.current === 1) setChecks(checks); // the latest tap: its answer is current
+          } catch (err) {
+            failed = true;
+            setError(err instanceof ApiError ? err.message : 'משהו השתבש — לא נשמר.');
+            if (!navigator.onLine) setOnline(false);
+          } finally {
+            pendingChecks.current--;
+          }
+          // A failed tap was shown optimistically: put the screen back in line with the server.
+          if (failed && pendingChecks.current === 0) await refresh();
         });
+        checkQueue.current = job;
+        return job;
       },
       busy,
       error,
       dismissError: () => setError(null),
     };
-  }, [trip, places, user, online, person, setPerson, run, busy, error]);
+  }, [trip, places, user, online, person, setPerson, run, busy, error, setChecks, refresh]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

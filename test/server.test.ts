@@ -8,7 +8,7 @@ import Database from 'better-sqlite3';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { placesOf } from '../shared/places.ts';
+import { applyCheck, checkChildren, checkParents, placesOf } from '../shared/places.ts';
 import { TripStore } from '../server/store.ts';
 
 const trip = JSON.parse(readFileSync(resolve(__dirname, '../data/trip.json'), 'utf8')) as Trip;
@@ -227,6 +227,33 @@ describe.each(backends)('done / missed marks with %s store', (_name, open) => {
     expect(Object.keys(cleared).sort()).toEqual([items[0]!, items[1]!].sort());
   });
 
+  it('clearing a box inside an area clears the area, and the next area tap refills it', async () => {
+    const shinjuku = trip.cities[0]!.neighborhoods.find((n) => n.title === 'שינג׳וקו')!;
+    const area = `area:${shinjuku.id}`;
+    const items = shinjuku.sections.flatMap((s) => s.items).map((i) => `item:${i.id}`);
+    const put = (key: string, state: string) => app.inject({ method: 'PUT', url: url(key), payload: { state, by: 'טל' } });
+    const del = (key: string) => app.inject({ method: 'DELETE', url: `${url(key)}?by=${encodeURIComponent('טל')}` });
+    await put(area, 'done');
+    await put(items[2]!, 'missed'); // still marked: the area stays
+    expect((await checks())[area]).toMatchObject({ state: 'done' });
+    const afterClear = (await del(items[2]!)).json().checks; // cleared by hand
+    expect(afterClear[area]).toBeUndefined();
+    expect(afterClear[items[2]!]).toBeUndefined();
+    expect(afterClear[items[3]!]).toMatchObject({ state: 'done', auto: area }); // the rest keep their marks
+    const refilled = (await put(area, 'done')).json().checks;
+    expect(refilled[items[2]!]).toMatchObject({ state: 'done', auto: area });
+    expect(items.every((k) => refilled[k]?.state === 'done')).toBe(true);
+  });
+
+  it('clearing a day text or an entry clears its whole-day box', async () => {
+    const day = trip.itinerary.days.find((d) => d.activity && d.date)!.date!;
+    const entry = (await app.inject({ method: 'POST', url: '/api/schedule', payload: { date: day, time: null, text: 'y', by: 'טל' } })).json();
+    await app.inject({ method: 'PUT', url: url(`wholeday:${day}`), payload: { state: 'done', by: 'טל' } });
+    const res = await app.inject({ method: 'DELETE', url: `${url(`entry:${entry.id}`)}?by=${encodeURIComponent('טל')}` });
+    expect(res.json().checks[`wholeday:${day}`]).toBeUndefined();
+    expect(res.json().checks[`day:${day}`]).toMatchObject({ state: 'done' });
+  });
+
   it('fills a whole day: its workbook text and the entries added to it', async () => {
     const day = trip.itinerary.days.find((d) => d.activity && d.date)!.date!;
     const entry = (await app.inject({ method: 'POST', url: '/api/schedule', payload: { date: day, time: null, text: 'x', by: 'טל' } })).json();
@@ -234,6 +261,27 @@ describe.each(backends)('done / missed marks with %s store', (_name, open) => {
     const checks = res.json().checks;
     expect(checks[`day:${day}`]).toMatchObject({ state: 'done', auto: `wholeday:${day}` });
     expect(checks[`entry:${entry.id}`]).toMatchObject({ state: 'done', auto: `wholeday:${day}` });
+  });
+
+  it("the app's local rules give the same marks as the server for a sequence of taps", async () => {
+    const shinjuku = trip.cities[0]!.neighborhoods.find((n) => n.title === 'שינג׳וקו')!;
+    const area = `area:${shinjuku.id}`;
+    const items = shinjuku.sections.flatMap((s) => s.items).map((i) => `item:${i.id}`);
+    const taps: Array<[string, 'done' | 'missed' | null]> = [
+      [items[1]!, 'missed'], [area, 'done'], [items[2]!, 'missed'], [items[2]!, null], [area, 'done'], [area, 'missed'], [items[3]!, 'done'], [area, null],
+    ];
+    let local: Record<string, unknown> = {};
+    let remote: Record<string, { state: string; auto?: string | null }> = {};
+    for (const [key, state] of taps) {
+      const related = key.startsWith('area:') ? { children: checkChildren(key, trip, [], {}) } : { parents: checkParents(key, trip, []) };
+      local = applyCheck(local as never, key, state, 'טל', 'now', related);
+      remote = (state
+        ? await app.inject({ method: 'PUT', url: url(key), payload: { state, by: 'טל' } })
+        : await app.inject({ method: 'DELETE', url: `${url(key)}?by=${encodeURIComponent('טל')}` })
+      ).json().checks;
+      const shape = (m: Record<string, any>) => Object.fromEntries(Object.entries(m).map(([k, v]) => [k, `${v.state}/${v.auto ?? 'hand'}`]).sort());
+      expect(shape(local as never)).toEqual(shape(remote));
+    }
   });
 
   it('rejects unknown items and bad states', async () => {
@@ -257,7 +305,7 @@ describe('upgrading an existing database', () => {
     old.close();
     const store = TripStore.sqlite(path);
     expect((await store.state()).checks).toEqual({ 'day:2026-11-04': { state: 'done', by: 'טל', at: '2026-11-04T10:00:00.000Z', auto: null } });
-    await store.markCheck('wholeday:2026-11-04', 'done', 'עדי', ['day:2026-11-04']);
+    await store.markCheck('wholeday:2026-11-04', 'done', 'עדי', { children: ['day:2026-11-04'] });
     expect((await store.state()).checks['day:2026-11-04']).toMatchObject({ state: 'done', by: 'טל', auto: null });
     await store.close();
   });

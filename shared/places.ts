@@ -2,7 +2,7 @@
 // appears twice (3.11–7.11 and 18.11–26.11), so it is two places. Hotels added in the
 // app belong to a place; a hotel's nights are dates inside that place's run.
 
-import type { DayOverride, HotelEntry, HotelStay, Itinerary, ScheduleEntry, Trip } from './types.ts';
+import type { CheckEntry, CheckState, DayOverride, HotelEntry, HotelStay, Itinerary, Person, ScheduleEntry, Trip } from './types.ts';
 
 export interface Place {
   /** `<location>@<first date>` — stable as long as the workbook keeps that run. */
@@ -149,4 +149,53 @@ export function checkChildren(key: string, trip: Trip, schedule: ScheduleEntry[]
     return [...(hasText ? [checkKey.day(date)] : []), ...schedule.filter((e) => e.date === date).map((e) => checkKey.entry(e.id))];
   }
   return [];
+}
+
+/**
+ * The whole-area / whole-day boxes that contain `key`: a place's area, the whole day of a day's
+ * text or of an added entry. Clearing a box by hand clears these, since they no longer cover
+ * everything inside them (and the next tap on them fills it again).
+ */
+export function checkParents(key: string, trip: Trip, schedule: ScheduleEntry[]): string[] {
+  if (key.startsWith('item:')) {
+    const id = key.slice(5);
+    return trip.cities
+      .flatMap((c) => c.neighborhoods)
+      .filter((n) => n.sections.some((s) => s.items.some((i) => i.id === id)))
+      .map((n) => checkKey.area(n.id));
+  }
+  if (key.startsWith('day:')) return [checkKey.wholeDay(key.slice(4))];
+  if (key.startsWith('entry:')) {
+    const entry = schedule.find((e) => e.id === key.slice(6));
+    return entry ? [checkKey.wholeDay(entry.date)] : [];
+  }
+  return [];
+}
+
+/**
+ * The same rules as the server's markCheck, applied to a copy of the marks — used by the app to
+ * show a tap's full effect immediately: the box itself is marked by hand; empty boxes inside a
+ * whole area/day get the same mark and ones it filled before follow it; boxes marked by hand are
+ * kept; clearing a box also clears the whole area/day boxes around it.
+ */
+export function applyCheck(
+  checks: Record<string, CheckEntry>,
+  key: string,
+  state: CheckState | null,
+  by: Person,
+  at: string,
+  { children = [], parents = [] }: { children?: string[]; parents?: string[] } = {},
+): Record<string, CheckEntry> {
+  const next = { ...checks };
+  if (state === null) {
+    delete next[key];
+    for (const p of parents) delete next[p];
+  } else next[key] = { state, by, at, auto: null };
+  for (const child of children) {
+    const existing = next[child];
+    if (existing && existing.auto !== key) continue;
+    if (state === null) delete next[child];
+    else next[child] = { state, by, at, auto: key };
+  }
+  return next;
 }

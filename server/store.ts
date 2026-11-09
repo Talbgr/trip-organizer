@@ -439,12 +439,22 @@ export class TripStore {
    * Sets (`state`) or clears (`null`) the mark on `key`, as a mark made by hand.
    * `children` are the boxes inside a whole area / whole day: empty ones are filled with the
    * same mark, ones this box filled before follow it (and are cleared with it), and ones marked
-   * by hand are left alone. Returns all marks after the change.
+   * by hand are left alone. `parents` are the whole-area / whole-day boxes containing `key`:
+   * clearing `key` clears them too. Returns all marks after the change.
    */
-  async markCheck(key: string, state: CheckState | null, by: Person, children: string[] = [], now = new Date()): Promise<Record<string, CheckEntry>> {
+  async markCheck(
+    key: string,
+    state: CheckState | null,
+    by: Person,
+    { children = [], parents = [] }: { children?: string[]; parents?: string[] } = {},
+    now = new Date(),
+  ): Promise<Record<string, CheckEntry>> {
     const at = now.toISOString();
     await this.db.tx(async (db) => {
-      if (state === null) await db.run('DELETE FROM checks WHERE key = ?', [key]);
+      if (state === null) {
+        await db.run('DELETE FROM checks WHERE key = ?', [key]);
+        for (const parent of parents) await db.run('DELETE FROM checks WHERE key = ?', [parent]);
+      }
       else
         await db.run(
           'INSERT INTO checks (key, state, by, at, auto) VALUES (?, ?, ?, ?, NULL) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at, auto = NULL',
@@ -463,7 +473,7 @@ export class TripStore {
           );
         if (row || state !== null) touched.push(child);
       }
-      await this.log(db, 'check', key, state ?? 'clear', { state, children: touched }, by, at);
+      await this.log(db, 'check', key, state ?? 'clear', { state, children: touched, ...(state === null && parents.length ? { parents } : {}) }, by, at);
     });
     return this.listChecks();
   }

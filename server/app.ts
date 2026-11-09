@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import Fastify, { type FastifyInstance } from 'fastify';
 import fastifyStatic from '@fastify/static';
-import { checkChildren, checkDayText, checkHotel, checkSchedule, isValidCheckKey, placesOf, type HotelInput, type ScheduleInput } from '../shared/places.ts';
+import { checkChildren, checkDayText, checkParents, checkHotel, checkSchedule, isValidCheckKey, placesOf, type HotelInput, type ScheduleInput } from '../shared/places.ts';
 import type { CheckState, HandledState, Person, Trip } from '../shared/types.ts';
 import type { TripStore } from './store.ts';
 
@@ -233,10 +233,13 @@ export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: Ap
 
   const keyParam = { type: 'object', required: ['key'], properties: { key: { type: 'string', maxLength: 120 } } } as const;
   /** Boxes inside a whole-area / whole-day box (looked up only for those keys). */
-  const childrenOf = async (key: string) =>
-    key.startsWith('area:') || key.startsWith('wholeday:')
-      ? checkChildren(key, trip, await store.listSchedule(), await store.listDayOverrides())
-      : [];
+  const related = async (key: string) => {
+    const container = key.startsWith('area:') || key.startsWith('wholeday:');
+    const schedule = key.startsWith('area:') ? [] : await store.listSchedule();
+    return container
+      ? { children: checkChildren(key, trip, schedule, await store.listDayOverrides()) }
+      : { parents: checkParents(key, trip, schedule) };
+  };
 
   app.put<{ Params: { key: string }; Body: { state: CheckState; by: Person } }>(
     '/api/checks/:key',
@@ -253,7 +256,7 @@ export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: Ap
     },
     async (req, reply) => {
       if (!isValidCheckKey(req.params.key, trip)) return reply.code(404).send({ error: 'unknown item' });
-      return { checks: await store.markCheck(req.params.key, req.body.state, req.body.by, await childrenOf(req.params.key)) };
+      return { checks: await store.markCheck(req.params.key, req.body.state, req.body.by, await related(req.params.key)) };
     },
   );
 
@@ -262,7 +265,7 @@ export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: Ap
     { schema: { params: keyParam, querystring: byQuery } },
     async (req, reply) => {
       if (!isValidCheckKey(req.params.key, trip)) return reply.code(404).send({ error: 'unknown item' });
-      return { checks: await store.markCheck(req.params.key, null, req.query.by, await childrenOf(req.params.key)) };
+      return { checks: await store.markCheck(req.params.key, null, req.query.by, await related(req.params.key)) };
     },
   );
 
