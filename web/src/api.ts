@@ -1,5 +1,5 @@
 import type { HotelInput, ScheduleInput } from '../../shared/places.ts';
-import type { DayOverride, HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, Trip, UserState } from '../../shared/types.ts';
+import type { CheckEntry, CheckState, DayOverride, HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, Trip, UserState } from '../../shared/types.ts';
 
 // The service worker keeps the last good copies of /api/trip and /api/state, so the app
 // keeps showing everything offline. localStorage is a second fallback for browsers where
@@ -38,7 +38,7 @@ export async function loadTrip(): Promise<Trip> {
   }
 }
 
-export const EMPTY_STATE: UserState = { status: {}, schedule: [], hotels: [], days: {} };
+export const EMPTY_STATE: UserState = { status: {}, schedule: [], hotels: [], days: {}, checks: {} };
 /** Fills fields that older servers / older cached copies do not have. */
 const complete = (s: Partial<UserState> | null): UserState => ({ ...EMPTY_STATE, ...(s ?? {}) });
 
@@ -99,4 +99,7 @@ export const api = {
 
   setDayText: (date: string, text: string | null, by: Person) => send<DayOverride>('PUT', `/api/days/${date}`, { text, by }),
   restoreDay: (date: string, by: Person) => send<void>('DELETE', `/api/days/${date}${q(by)}`),
+
+  setCheck: (key: string, state: CheckState, by: Person) => send<CheckEntry>('PUT', `/api/checks/${encodeURIComponent(key)}`, { state, by }),
+  clearCheck: (key: string, by: Person) => send<void>('DELETE', `/api/checks/${encodeURIComponent(key)}${q(by)}`),
 };

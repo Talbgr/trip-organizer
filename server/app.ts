@@ -2,8 +2,8 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import Fastify, { type FastifyInstance } from 'fastify';
 import fastifyStatic from '@fastify/static';
-import { checkDayText, checkHotel, checkSchedule, placesOf, type HotelInput, type ScheduleInput } from '../shared/places.ts';
-import type { HandledState, Person, Trip } from '../shared/types.ts';
+import { checkDayText, checkHotel, checkSchedule, isValidCheckKey, placesOf, type HotelInput, type ScheduleInput } from '../shared/places.ts';
+import type { CheckState, HandledState, Person, Trip } from '../shared/types.ts';
 import type { TripStore } from './store.ts';
 
 export interface AppOptions {
@@ -221,6 +221,39 @@ export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: Ap
     async (req, reply) => {
       const found = await store.clearDayOverride(req.params.date, req.query.by);
       return found ? reply.code(204).send() : reply.code(404).send({ error: 'not found' });
+    },
+  );
+
+  // ---- Done / missed marks ---------------------------------------------------------------
+
+  const keyParam = { type: 'object', required: ['key'], properties: { key: { type: 'string', maxLength: 120 } } } as const;
+
+  app.put<{ Params: { key: string }; Body: { state: CheckState; by: Person } }>(
+    '/api/checks/:key',
+    {
+      schema: {
+        params: keyParam,
+        body: {
+          type: 'object',
+          required: ['state', 'by'],
+          additionalProperties: false,
+          properties: { state: { type: 'string', enum: ['done', 'missed'] }, by },
+        },
+      },
+    },
+    async (req, reply) => {
+      if (!isValidCheckKey(req.params.key, trip)) return reply.code(404).send({ error: 'unknown item' });
+      return store.setCheck(req.params.key, req.body.state, req.body.by);
+    },
+  );
+
+  app.delete<{ Params: { key: string }; Querystring: { by: Person } }>(
+    '/api/checks/:key',
+    { schema: { params: keyParam, querystring: byQuery } },
+    async (req, reply) => {
+      if (!isValidCheckKey(req.params.key, trip)) return reply.code(404).send({ error: 'unknown item' });
+      await store.clearCheck(req.params.key, req.query.by);
+      return reply.code(204).send();
     },
   );
 

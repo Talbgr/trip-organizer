@@ -15,7 +15,7 @@ import { dirname } from 'node:path';
 import Database from 'better-sqlite3';
 import pg from 'pg';
 import type { HotelInput, ScheduleInput } from '../shared/places.ts';
-import type { DayOverride, HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, StatusMap, UserState } from '../shared/types.ts';
+import type { CheckEntry, CheckState, DayOverride, HandledState, HotelEntry, Person, ScheduleEntry, StatusEntry, StatusMap, UserState } from '../shared/types.ts';
 
 type Params = Array<string | number | null>;
 
@@ -70,6 +70,12 @@ const schema = (autoId: string) => `
     text TEXT,             -- NULL = the day's workbook text was removed
     by   TEXT NOT NULL,
     at   TEXT NOT NULL
+  );
+  CREATE TABLE IF NOT EXISTS checks (
+    key   TEXT PRIMARY KEY,
+    state TEXT NOT NULL CHECK (state IN ('done', 'missed')),
+    by    TEXT NOT NULL,
+    at    TEXT NOT NULL
   );
   CREATE TABLE IF NOT EXISTS change_log (
     id        ${autoId},
@@ -416,16 +422,43 @@ export class TripStore {
     return found;
   }
 
+  // ---- Done / missed marks ---------------------------------------------------------------
+
+  async listChecks(): Promise<Record<string, CheckEntry>> {
+    const rows = await this.db.all<CheckEntry & { key: string }>('SELECT key, state, by, at FROM checks');
+    return Object.fromEntries(rows.map(({ key, state, by, at }) => [key, { state, by, at }]));
+  }
+
+  async setCheck(key: string, state: CheckState, by: Person, now = new Date()): Promise<CheckEntry> {
+    const entry: CheckEntry = { state, by, at: now.toISOString() };
+    await this.db.tx(async (db) => {
+      await db.run(
+        'INSERT INTO checks (key, state, by, at) VALUES (?, ?, ?, ?) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at',
+        [key, state, by, entry.at],
+      );
+      await this.log(db, 'check', key, state, entry, by, entry.at);
+    });
+    return entry;
+  }
+
+  async clearCheck(key: string, by: Person, now = new Date()): Promise<void> {
+    await this.db.tx(async (db) => {
+      await db.run('DELETE FROM checks WHERE key = ?', [key]);
+      await this.log(db, 'check', key, 'clear', {}, by, now.toISOString());
+    });
+  }
+
   // ---- Shared --------------------------------------------------------------------------
 
   async state(): Promise<UserState> {
-    const [status, schedule, hotels, days] = await Promise.all([
+    const [status, schedule, hotels, days, checks] = await Promise.all([
       this.statusAll(),
       this.listSchedule(),
       this.listHotels(),
       this.listDayOverrides(),
+      this.listChecks(),
     ]);
-    return { status, schedule, hotels, days };
+    return { status, schedule, hotels, days, checks };
   }
 
   /** Whether the store answers, with the driver's error message when it does not (never contains secrets). */

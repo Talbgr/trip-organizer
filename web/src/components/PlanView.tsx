@@ -1,10 +1,11 @@
 import { useState } from 'preact/hooks';
-import { checkDayText, hotelDates } from '../../../shared/places.ts';
+import { checkDayText, checkKey, hotelDates } from '../../../shared/places.ts';
 import type { ItineraryDay, ScheduleEntry } from '../../../shared/types.ts';
 import { useApp } from '../state.tsx';
 import { formatDate, formatWhen, localToday, textOn } from '../ui.ts';
 import { ItemCard } from './ItemCard.tsx';
 import { ScheduleEditor } from './ScheduleEditor.tsx';
+import { CheckBox, checkClass } from './CheckBox.tsx';
 import { Sheet } from './Sheet.tsx';
 
 /** Timed entries first, by time; then untimed ones in the order they were added. */
@@ -17,7 +18,7 @@ function byTime(a: ScheduleEntry, b: ScheduleEntry): number {
 
 /** The day-by-day sheet, grouped by hotel stay, plus what we added or changed in the app. */
 export function PlanView() {
-  const { trip, schedule, hotels, places, days, online, person, deleteSchedule, saveDayText, restoreDay, busy } = useApp();
+  const { trip, schedule, hotels, places, days, checks, online, person, deleteSchedule, saveDayText, restoreDay, busy } = useApp();
   const { itinerary } = trip;
   const [editMode, setEditMode] = useState(false);
   const [editing, setEditing] = useState<{ date: string; entry: ScheduleEntry | null } | null>(null);
@@ -88,7 +89,8 @@ export function PlanView() {
                   <div class="day__what">
                     <div class="day__loc">{d.location}</div>
                     {d.activity && (text || editMode) && (
-                      <div class="editable">
+                      <div class={`editable ${text ? checkClass(checks[checkKey.day(d.date!)]?.state) : ''}`}>
+                        {text && d.date && <CheckBox checkKey={checkKey.day(d.date)} name={`${formatDate(d.date)} ${d.location}`} />}
                         <div class="editable__body">
                           {text ? (
                             <p class="day__act" dir="auto">
@@ -138,7 +140,8 @@ export function PlanView() {
                       </div>
                     ))}
                     {entries.map((e) => (
-                      <div class="entry">
+                      <div class={`entry ${checkClass(checks[checkKey.entry(e.id)]?.state)}`}>
+                        <CheckBox checkKey={checkKey.entry(e.id)} name={e.text} />
                         {e.time && <span class="entry__time">{e.time}</span>}
                         <span class="entry__text" dir="auto">
                           {e.text}

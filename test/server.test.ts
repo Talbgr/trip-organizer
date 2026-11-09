@@ -23,7 +23,7 @@ if (pgUrl)
     async () => {
       const c = new pg.Client({ connectionString: pgUrl });
       await c.connect();
-      await c.query('DROP TABLE IF EXISTS status, status_log, schedule, hotels, day_overrides, change_log;');
+      await c.query('DROP TABLE IF EXISTS status, status_log, schedule, hotels, day_overrides, checks, change_log;');
       await c.end();
       return TripStore.postgres(pgUrl);
     },
@@ -167,6 +167,48 @@ describe.each(backends)('day text edits with %s store', (_name, open) => {
   });
 });
 
+describe.each(backends)('done / missed marks with %s store', (_name, open) => {
+  let store: TripStore;
+  let app: ReturnType<typeof buildApp>;
+  beforeEach(async () => {
+    store = await open();
+    app = buildApp({ trip, store });
+  });
+  afterEach(async () => {
+    await app.close();
+    await store.close();
+  });
+  const itemId = trip.cities[0]!.neighborhoods[0]!.sections[0]!.items[0]!.id;
+  const date = trip.itinerary.days[3]!.date!;
+  const url = (key: string) => `/api/checks/${encodeURIComponent(key)}`;
+  const checks = async () => (await app.inject('/api/state')).json().checks;
+
+  it('marks places, days and entries done or missed, and clears them', async () => {
+    for (const [key, state] of [[`item:${itemId}`, 'done'], [`day:${date}`, 'missed'], ['entry:0b8f8a4e-1d2c-4b7a-9f3e-123456789abc', 'done']]) {
+      const res = await app.inject({ method: 'PUT', url: url(key!), payload: { state, by: 'עדי' } });
+      expect(res.statusCode).toBe(200);
+    }
+    expect(Object.keys(await checks())).toHaveLength(3);
+    expect((await checks())[`day:${date}`]).toMatchObject({ state: 'missed', by: 'עדי' });
+
+    await app.inject({ method: 'PUT', url: url(`day:${date}`), payload: { state: 'done', by: 'טל' } });
+    expect((await checks())[`day:${date}`]).toMatchObject({ state: 'done', by: 'טל' });
+
+    const del = await app.inject({ method: 'DELETE', url: `${url(`item:${itemId}`)}?by=${encodeURIComponent('טל')}` });
+    expect(del.statusCode).toBe(204);
+    expect((await checks())[`item:${itemId}`]).toBeUndefined();
+  });
+
+  it('rejects unknown items and bad states', async () => {
+    const put = (key: string, state = 'done') => app.inject({ method: 'PUT', url: url(key), payload: { state, by: 'טל' } });
+    expect((await put('item:t999:r1')).statusCode).toBe(404);
+    expect((await put('day:2030-01-01')).statusCode).toBe(404);
+    expect((await put('entry:not-a-uuid')).statusCode).toBe(404);
+    expect((await put('whatever')).statusCode).toBe(404);
+    expect((await put(`item:${itemId}`, 'maybe')).statusCode).toBe(400);
+  });
+});
+
 describe('upgrading an existing database', () => {
   it('keeps Booked/Paid marks saved by the previous version', async () => {
     const path = join(mkdtempSync(join(tmpdir(), 'trip-')), 'state.db');
@@ -181,6 +223,7 @@ describe('upgrading an existing database', () => {
       schedule: [],
       hotels: [],
       days: {},
+      checks: {},
     });
     await store.close();
   });

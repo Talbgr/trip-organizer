@@ -158,10 +158,20 @@ export interface DayOverride {
   at: string;
 }
 
+/** Done / missed mark on a place or a schedule item. */
+export type CheckState = 'done' | 'missed';
+export interface CheckEntry {
+  state: CheckState;
+  by: Person;
+  at: string;
+}
+
 export interface UserState {
   status: StatusMap;
   schedule: ScheduleEntry[];
   hotels: HotelEntry[];
   /** Keyed by ISO date. */
   days: Record<string, DayOverride>;
+  /** Keyed by checkKey (see shared/places.ts). */
+  checks: Record<string, CheckEntry>;
 }

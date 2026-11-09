@@ -2,20 +2,24 @@ import type { Item } from '../../../shared/types.ts';
 import { STATE_LABELS } from '../../../shared/labels.ts';
 import { useApp } from '../state.tsx';
 import { formatWhen } from '../ui.ts';
+import { checkKey } from '../../../shared/places.ts';
+import { CheckBox, checkClass } from './CheckBox.tsx';
 import { NavButton } from './NavButton.tsx';
 
 export function ItemCard({ item, cityId }: { item: Item; cityId: string | null }) {
-  const { status } = useApp();
+  const { status, checks } = useApp();
   const handled = item.reminderKey ? status[item.reminderKey] : undefined;
+  const key = checkKey.item(item.id);
   const needsAttention = item.marking === 'attention' && !handled;
   const title = item.name || item.description;
   const description = item.name ? item.description : '';
-  const cls = ['item', needsAttention && 'item--attention', (handled || item.marking === 'booked') && 'item--done']
+  const cls = ['item', needsAttention && 'item--attention', (handled || item.marking === 'booked') && 'item--done', checkClass(checks[key]?.state)]
     .filter(Boolean)
     .join(' ');
 
   return (
     <article class={cls}>
+      <CheckBox checkKey={key} name={title} />
       <div class="item__main">
         <h3 class="item__name" dir="auto">
           {title}

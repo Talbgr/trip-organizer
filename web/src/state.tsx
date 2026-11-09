@@ -1,7 +1,7 @@
 import { createContext, type ComponentChildren } from 'preact';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'preact/hooks';
 import { placesOf, type HotelInput, type Place, type ScheduleInput } from '../../shared/places.ts';
-import type { DayOverride, HandledState, HotelEntry, Person, Reminder, ScheduleEntry, StatusMap, Trip, UserState } from '../../shared/types.ts';
+import type { CheckEntry, DayOverride, HandledState, HotelEntry, Person, Reminder, ScheduleEntry, StatusMap, Trip, UserState } from '../../shared/types.ts';
 import { api, ApiError, EMPTY_STATE, loadState, rememberState } from './api.ts';
 
 const PERSON_KEY = 'trip-person';
@@ -15,6 +15,8 @@ export interface AppState {
   hotels: HotelEntry[];
   /** Edits to the workbook's day text, keyed by ISO date. */
   days: Record<string, DayOverride>;
+  /** Done / missed marks, keyed by checkKey. */
+  checks: Record<string, CheckEntry>;
   online: boolean;
   person: Person | null;
   setPerson(p: Person): void;
@@ -33,6 +35,8 @@ export interface AppState {
   /** Replace (text) or remove (null) the workbook's text for a day. */
   saveDayText(date: string, text: string | null): Promise<boolean>;
   restoreDay(date: string): Promise<void>;
+  /** ☐ → ✅ done → ❌ missed → ☐ */
+  cycleCheck(key: string): Promise<void>;
   /** Key of the thing being saved right now (reminder key or entry id), to disable its buttons. */
   busy: string | null;
   error: string | null;
@@ -130,6 +134,7 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
       schedule: user.schedule,
       hotels: user.hotels,
       days: user.days,
+      checks: user.checks,
       online,
       person,
       setPerson,
@@ -193,6 +198,21 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
             delete days[date];
             return { ...u, days };
           };
+        });
+      },
+      cycleCheck: async (key) => {
+        const current = user.checks[key]?.state;
+        await run(`check-${key}`, async (by) => {
+          if (current === 'missed') {
+            await api.clearCheck(key, by);
+            return (u) => {
+              const checks = { ...u.checks };
+              delete checks[key];
+              return { ...u, checks };
+            };
+          }
+          const entry = await api.setCheck(key, current === 'done' ? 'missed' : 'done', by);
+          return (u) => ({ ...u, checks: { ...u.checks, [key]: entry } });
         });
       },
       busy,

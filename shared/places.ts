@@ -2,7 +2,7 @@
 // appears twice (3.11–7.11 and 18.11–26.11), so it is two places. Hotels added in the
 // app belong to a place; a hotel's nights are dates inside that place's run.
 
-import type { HotelEntry, HotelStay, Itinerary, ScheduleEntry } from './types.ts';
+import type { HotelEntry, HotelStay, Itinerary, ScheduleEntry, Trip } from './types.ts';
 
 export interface Place {
   /** `<location>@<first date>` — stable as long as the workbook keeps that run. */
@@ -94,4 +94,32 @@ export function checkDayText(date: string, text: string | null, itinerary: Itine
   if (!text.trim()) return 'הטקסט ריק — למחיקה יש כפתור נפרד';
   if (text.length > LIMITS.dayText) return `עד ${LIMITS.dayText} תווים`;
   return null;
+}
+
+/**
+ * Keys for done/missed marks:
+ *  - `item:<item id>`   a place in a neighborhood or the general table (id = table + row);
+ *  - `day:<yyyy-mm-dd>` the workbook's text for a day in the itinerary;
+ *  - `entry:<uuid>`     a schedule entry added in the app.
+ */
+export const checkKey = {
+  item: (id: string) => `item:${id}`,
+  day: (date: string) => `day:${date}`,
+  entry: (id: string) => `entry:${id}`,
+};
+
+const ENTRY_KEY_RE = /^entry:[0-9a-f-]{36}$/;
+
+/** Whether `key` names something that exists in the trip (entries: a well-formed id). */
+export function isValidCheckKey(key: string, trip: Trip): boolean {
+  if (key.startsWith('item:')) {
+    const id = key.slice(5);
+    const items = [
+      ...trip.cities.flatMap((c) => c.neighborhoods.flatMap((n) => n.sections.flatMap((s) => s.items))),
+      ...trip.general.sections.flatMap((s) => s.rows),
+    ];
+    return items.some((i) => i.id === id);
+  }
+  if (key.startsWith('day:')) return trip.itinerary.days.some((d) => d.date === key.slice(4));
+  return ENTRY_KEY_RE.test(key);
 }

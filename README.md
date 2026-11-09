@@ -16,6 +16,9 @@ to the workbook):
   (free text, optional time), ✎ / 🗑 edit or delete entries, and the workbook's own text for a
   day can be edited (✎), removed (🗑) and restored (↺). Workbook edits are stored as overrides;
   the workbook file is never changed. Either of us can change anything.
+- **Done / missed** — a box next to every place and every schedule item: tap cycles
+  ☐ → ✓ done → ✕ missed → ☐. Neighborhood cards on the city page show ✓/✕ counts.
+  Place marks are keyed by the workbook row, so re-importing a changed workbook can move them.
 - **Hotels** — per place (each continuous stay in the itinerary, so Tokyo has two), from the
   🏨 מלונות tab or the top of a city page: name, whole stay or check-in day + nights, note/link,
   paid. Unpaid hotels show in להזמין/לשלם and in the opening pop-up; added hotels also

@@ -819,3 +819,70 @@ body.no-scroll {
   cursor: pointer;
   font-weight: 600;
 }
+
+/* ---- done / missed checkboxes ---- */
+.check {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 2px solid var(--muted);
+  background: var(--card);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 1px;
+}
+.check--done {
+  background: var(--ok);
+  border-color: var(--ok);
+  color: #fff;
+}
+.check--missed {
+  background: var(--attention);
+  border-color: var(--attention);
+  color: #fff;
+}
+.check:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.item {
+  align-items: flex-start;
+}
+.is-done .item__main,
+.is-done .editable__body,
+.is-done .entry__text,
+.is-done .entry__time,
+.is-missed .item__main,
+.is-missed .editable__body,
+.is-missed .entry__text,
+.is-missed .entry__time {
+  opacity: 0.5;
+}
+.is-missed .item__name,
+.is-missed .day__act,
+.is-missed .entry__text {
+  text-decoration: line-through;
+}
+.entry .check {
+  width: 26px;
+  height: 26px;
+  font-size: 0.9rem;
+}
+.ncard__progress {
+  display: flex;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.progress--done {
+  color: var(--ok);
+}
+.progress--missed {
+  color: var(--attention);
+}

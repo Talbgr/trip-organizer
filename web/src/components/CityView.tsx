@@ -1,6 +1,7 @@
 import { CATEGORY_ORDER, type City, type Neighborhood } from '../../../shared/types.ts';
 import { href } from '../router.ts';
 import { useApp } from '../state.tsx';
+import { checkKey } from '../../../shared/places.ts';
 import { CATEGORY_TABS, textOn } from '../ui.ts';
 import { CityHotels } from './Hotels.tsx';
 
@@ -44,7 +45,10 @@ export function CityView({ city }: { city: City }) {
 }
 
 function NeighborhoodCard({ n }: { n: Neighborhood }) {
-  const { status } = useApp();
+  const { status, checks } = useApp();
+  const items = n.sections.flatMap((s) => s.items);
+  const done = items.filter((i) => checks[checkKey.item(i.id)]?.state === 'done').length;
+  const missed = items.filter((i) => checks[checkKey.item(i.id)]?.state === 'missed').length;
   const counts = CATEGORY_ORDER.map((cat) => ({
     cat,
     count: n.sections.filter((s) => s.category === cat).reduce((k, s) => k + s.items.length, 0),
@@ -70,6 +74,12 @@ function NeighborhoodCard({ n }: { n: Neighborhood }) {
             </span>
           ))}
         </span>
+        {(done > 0 || missed > 0) && (
+          <span class="ncard__progress" aria-label={`בוצעו ${done}, פוספסו ${missed}, מתוך ${items.length}`}>
+            {done > 0 && <span class="progress progress--done">✓ {done}</span>}
+            {missed > 0 && <span class="progress progress--missed">✕ {missed}</span>}
+          </span>
+        )}
       </span>
       {attention > 0 && (
         <span class="dot" aria-label={`${attention} לטיפול`}>
