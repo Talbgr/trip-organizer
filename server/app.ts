@@ -71,7 +71,12 @@ export function buildApp({ trip, store, storeInfo, webRoot, logger = false }: Ap
   // a database problem; the store's own state is reported alongside for diagnosis.
   app.get('/healthz', async () => {
     const s = await store.ping();
-    return { ok: true, store: { ...storeInfo, ok: s.ok, ...(s.error ? { error: s.error } : {}) } };
+    return {
+      ok: true,
+      // Railway sets this to the deployed commit; shows whether the latest push is live.
+      version: process.env.RAILWAY_GIT_COMMIT_SHA?.slice(0, 7) ?? 'dev',
+      store: { ...storeInfo, ok: s.ok, ...(s.error ? { error: s.error } : {}) },
+    };
   });
 
   app.get('/api/trip', async (req, reply) => {
