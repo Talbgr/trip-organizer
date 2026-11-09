@@ -2,7 +2,7 @@
 // appears twice (3.11–7.11 and 18.11–26.11), so it is two places. Hotels added in the
 // app belong to a place; a hotel's nights are dates inside that place's run.
 
-import type { HotelEntry, HotelStay, Itinerary, ScheduleEntry, Trip } from './types.ts';
+import type { DayOverride, HotelEntry, HotelStay, Itinerary, ScheduleEntry, Trip } from './types.ts';
 
 export interface Place {
   /** `<location>@<first date>` — stable as long as the workbook keeps that run. */
@@ -103,7 +103,7 @@ export function checkDayText(date: string, text: string | null, itinerary: Itine
  *  - `entry:<uuid>`     a schedule entry added in the app;
  *  - `area:<neighborhood id>` a whole neighborhood / area;
  *  - `wholeday:<yyyy-mm-dd>`  a whole day in the itinerary.
- * Marks are independent: marking an area or a day does not change the marks inside it.
+ * Marking an area or a day fills the empty boxes inside it (see checkChildren / markCheck).
  */
 export const checkKey = {
   item: (id: string) => `item:${id}`,
@@ -129,4 +129,24 @@ export function isValidCheckKey(key: string, trip: Trip): boolean {
   if (key.startsWith('wholeday:')) return trip.itinerary.days.some((d) => d.date === key.slice(9));
   if (key.startsWith('area:')) return trip.cities.some((c) => c.neighborhoods.some((n) => n.id === key.slice(5)));
   return ENTRY_KEY_RE.test(key);
+}
+
+/**
+ * The boxes inside a whole-area / whole-day box: an area's places; a day's workbook text
+ * (unless it was removed in the app) and the entries added to that day. Empty for other keys.
+ */
+export function checkChildren(key: string, trip: Trip, schedule: ScheduleEntry[], days: Record<string, DayOverride>): string[] {
+  if (key.startsWith('area:')) {
+    const id = key.slice(5);
+    const n = trip.cities.flatMap((c) => c.neighborhoods).find((x) => x.id === id);
+    return n ? n.sections.flatMap((s) => s.items.map((i) => checkKey.item(i.id))) : [];
+  }
+  if (key.startsWith('wholeday:')) {
+    const date = key.slice(9);
+    const day = trip.itinerary.days.find((d) => d.date === date);
+    if (!day) return [];
+    const hasText = day.activity && !(days[date] && days[date]!.text === null);
+    return [...(hasText ? [checkKey.day(date)] : []), ...schedule.filter((e) => e.date === date).map((e) => checkKey.entry(e.id))];
+  }
+  return [];
 }

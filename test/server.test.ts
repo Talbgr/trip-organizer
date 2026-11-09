@@ -195,15 +195,45 @@ describe.each(backends)('done / missed marks with %s store', (_name, open) => {
       const res = await app.inject({ method: 'PUT', url: url(key!), payload: { state, by: 'עדי' } });
       expect(res.statusCode).toBe(200);
     }
-    expect(Object.keys(await checks())).toHaveLength(5);
+    const all = await checks();
+    for (const k of [`item:${itemId}`, `day:${date}`, 'entry:0b8f8a4e-1d2c-4b7a-9f3e-123456789abc', `area:${areaId}`, `wholeday:${date}`])
+      expect(all[k]).toBeDefined();
     expect((await checks())[`day:${date}`]).toMatchObject({ state: 'missed', by: 'עדי' });
 
     await app.inject({ method: 'PUT', url: url(`day:${date}`), payload: { state: 'done', by: 'טל' } });
     expect((await checks())[`day:${date}`]).toMatchObject({ state: 'done', by: 'טל' });
 
     const del = await app.inject({ method: 'DELETE', url: `${url(`item:${itemId}`)}?by=${encodeURIComponent('טל')}` });
-    expect(del.statusCode).toBe(204);
+    expect(del.statusCode).toBe(200);
     expect((await checks())[`item:${itemId}`]).toBeUndefined();
+  });
+
+  it('fills the empty boxes of an area, follows with them, and leaves hand-made marks alone', async () => {
+    const shinjuku = trip.cities[0]!.neighborhoods.find((n) => n.title === 'שינג׳וקו')!;
+    const items = shinjuku.sections.flatMap((s) => s.items).map((i) => `item:${i.id}`);
+    const put = (key: string, state: string, by = 'טל') => app.inject({ method: 'PUT', url: url(key), payload: { state, by } });
+    await put(items[0]!, 'missed', 'עדי'); // marked by hand beforehand
+
+    const done = (await put(`area:${shinjuku.id}`, 'done')).json().checks;
+    expect(done[items[0]!]).toMatchObject({ state: 'missed', auto: null });
+    for (const k of items.slice(1)) expect(done[k]).toMatchObject({ state: 'done', auto: `area:${shinjuku.id}` });
+
+    await put(items[1]!, 'missed'); // tapping a filled box makes it hand-made
+    const missed = (await put(`area:${shinjuku.id}`, 'missed')).json().checks;
+    expect(missed[items[1]!]).toMatchObject({ state: 'missed', auto: null });
+    expect(missed[items[2]!]).toMatchObject({ state: 'missed', auto: `area:${shinjuku.id}` });
+
+    const cleared = (await app.inject({ method: 'DELETE', url: `${url(`area:${shinjuku.id}`)}?by=${encodeURIComponent('טל')}` })).json().checks;
+    expect(Object.keys(cleared).sort()).toEqual([items[0]!, items[1]!].sort());
+  });
+
+  it('fills a whole day: its workbook text and the entries added to it', async () => {
+    const day = trip.itinerary.days.find((d) => d.activity && d.date)!.date!;
+    const entry = (await app.inject({ method: 'POST', url: '/api/schedule', payload: { date: day, time: null, text: 'x', by: 'טל' } })).json();
+    const res = await app.inject({ method: 'PUT', url: url(`wholeday:${day}`), payload: { state: 'done', by: 'עדי' } });
+    const checks = res.json().checks;
+    expect(checks[`day:${day}`]).toMatchObject({ state: 'done', auto: `wholeday:${day}` });
+    expect(checks[`entry:${entry.id}`]).toMatchObject({ state: 'done', auto: `wholeday:${day}` });
   });
 
   it('rejects unknown items and bad states', async () => {
@@ -219,6 +249,19 @@ describe.each(backends)('done / missed marks with %s store', (_name, open) => {
 });
 
 describe('upgrading an existing database', () => {
+  it('adds the auto column to a checks table from the previous version', async () => {
+    const path = join(mkdtempSync(join(tmpdir(), 'trip-')), 'state.db');
+    const old = new Database(path);
+    old.exec(`CREATE TABLE checks (key TEXT PRIMARY KEY, state TEXT NOT NULL, by TEXT NOT NULL, at TEXT NOT NULL);
+              INSERT INTO checks VALUES ('day:2026-11-04', 'done', 'טל', '2026-11-04T10:00:00.000Z');`);
+    old.close();
+    const store = TripStore.sqlite(path);
+    expect((await store.state()).checks).toEqual({ 'day:2026-11-04': { state: 'done', by: 'טל', at: '2026-11-04T10:00:00.000Z', auto: null } });
+    await store.markCheck('wholeday:2026-11-04', 'done', 'עדי', ['day:2026-11-04']);
+    expect((await store.state()).checks['day:2026-11-04']).toMatchObject({ state: 'done', by: 'טל', auto: null });
+    await store.close();
+  });
+
   it('keeps Booked/Paid marks saved by the previous version', async () => {
     const path = join(mkdtempSync(join(tmpdir(), 'trip-')), 'state.db');
     const old = new Database(path);

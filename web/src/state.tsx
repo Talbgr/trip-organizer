@@ -203,16 +203,9 @@ export function AppProvider({ trip, children }: { trip: Trip; children: Componen
       cycleCheck: async (key) => {
         const current = user.checks[key]?.state;
         await run(`check-${key}`, async (by) => {
-          if (current === 'missed') {
-            await api.clearCheck(key, by);
-            return (u) => {
-              const checks = { ...u.checks };
-              delete checks[key];
-              return { ...u, checks };
-            };
-          }
-          const entry = await api.setCheck(key, current === 'done' ? 'missed' : 'done', by);
-          return (u) => ({ ...u, checks: { ...u.checks, [key]: entry } });
+          const { checks } =
+            current === 'missed' ? await api.clearCheck(key, by) : await api.setCheck(key, current === 'done' ? 'missed' : 'done', by);
+          return (u) => ({ ...u, checks });
         });
       },
       busy,

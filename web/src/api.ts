@@ -100,6 +100,9 @@ export const api = {
   setDayText: (date: string, text: string | null, by: Person) => send<DayOverride>('PUT', `/api/days/${date}`, { text, by }),
   restoreDay: (date: string, by: Person) => send<void>('DELETE', `/api/days/${date}${q(by)}`),
 
-  setCheck: (key: string, state: CheckState, by: Person) => send<CheckEntry>('PUT', `/api/checks/${encodeURIComponent(key)}`, { state, by }),
-  clearCheck: (key: string, by: Person) => send<void>('DELETE', `/api/checks/${encodeURIComponent(key)}${q(by)}`),
+  /** Both return every mark after the change (a whole-area / whole-day box changes several). */
+  setCheck: (key: string, state: CheckState, by: Person) =>
+    send<{ checks: Record<string, CheckEntry> }>('PUT', `/api/checks/${encodeURIComponent(key)}`, { state, by }),
+  clearCheck: (key: string, by: Person) =>
+    send<{ checks: Record<string, CheckEntry> }>('DELETE', `/api/checks/${encodeURIComponent(key)}${q(by)}`),
 };

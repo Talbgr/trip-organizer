@@ -75,7 +75,8 @@ const schema = (autoId: string) => `
     key   TEXT PRIMARY KEY,
     state TEXT NOT NULL CHECK (state IN ('done', 'missed')),
     by    TEXT NOT NULL,
-    at    TEXT NOT NULL
+    at    TEXT NOT NULL,
+    auto  TEXT             -- set when filled by a whole-area / whole-day box: that box's key
   );
   CREATE TABLE IF NOT EXISTS change_log (
     id        ${autoId},
@@ -98,6 +99,9 @@ class SqliteDb implements Db {
     this.db.pragma('journal_mode = WAL');
     this.db.pragma('busy_timeout = 5000');
     this.db.exec(schema('INTEGER PRIMARY KEY AUTOINCREMENT'));
+    // Databases created before the whole-area / whole-day boxes lack checks.auto.
+    const cols = this.db.prepare('PRAGMA table_info(checks)').all() as Array<{ name: string }>;
+    if (!cols.some((c) => c.name === 'auto')) this.db.exec('ALTER TABLE checks ADD COLUMN auto TEXT');
   }
   async all<T>(sql: string, params: Params = []): Promise<T[]> {
     return this.db.prepare(sql).all(...params) as T[];
@@ -144,6 +148,8 @@ class PgDb implements Db {
   private ready(): Promise<void> {
     this.migrated ??= this.pool
       .query(schema('BIGSERIAL PRIMARY KEY'))
+      // Databases created before the whole-area / whole-day boxes lack checks.auto.
+      .then(() => this.pool.query('ALTER TABLE checks ADD COLUMN IF NOT EXISTS auto TEXT'))
       .then(() => undefined)
       .catch((err: unknown) => {
         this.migrated = null;
@@ -425,27 +431,41 @@ export class TripStore {
   // ---- Done / missed marks ---------------------------------------------------------------
 
   async listChecks(): Promise<Record<string, CheckEntry>> {
-    const rows = await this.db.all<CheckEntry & { key: string }>('SELECT key, state, by, at FROM checks');
-    return Object.fromEntries(rows.map(({ key, state, by, at }) => [key, { state, by, at }]));
+    const rows = await this.db.all<CheckEntry & { key: string }>('SELECT key, state, by, at, auto FROM checks');
+    return Object.fromEntries(rows.map(({ key, state, by, at, auto }) => [key, { state, by, at, auto: auto ?? null }]));
   }
 
-  async setCheck(key: string, state: CheckState, by: Person, now = new Date()): Promise<CheckEntry> {
-    const entry: CheckEntry = { state, by, at: now.toISOString() };
+  /**
+   * Sets (`state`) or clears (`null`) the mark on `key`, as a mark made by hand.
+   * `children` are the boxes inside a whole area / whole day: empty ones are filled with the
+   * same mark, ones this box filled before follow it (and are cleared with it), and ones marked
+   * by hand are left alone. Returns all marks after the change.
+   */
+  async markCheck(key: string, state: CheckState | null, by: Person, children: string[] = [], now = new Date()): Promise<Record<string, CheckEntry>> {
+    const at = now.toISOString();
     await this.db.tx(async (db) => {
-      await db.run(
-        'INSERT INTO checks (key, state, by, at) VALUES (?, ?, ?, ?) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at',
-        [key, state, by, entry.at],
-      );
-      await this.log(db, 'check', key, state, entry, by, entry.at);
+      if (state === null) await db.run('DELETE FROM checks WHERE key = ?', [key]);
+      else
+        await db.run(
+          'INSERT INTO checks (key, state, by, at, auto) VALUES (?, ?, ?, ?, NULL) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at, auto = NULL',
+          [key, state, by, at],
+        );
+      const touched: string[] = [];
+      for (const child of children) {
+        const [row] = await db.all<{ auto: string | null }>('SELECT auto FROM checks WHERE key = ?', [child]);
+        if (row && row.auto !== key) continue; // marked by hand (or by another box): leave it
+        if (state === null) {
+          if (row) await db.run('DELETE FROM checks WHERE key = ?', [child]);
+        } else
+          await db.run(
+            'INSERT INTO checks (key, state, by, at, auto) VALUES (?, ?, ?, ?, ?) ON CONFLICT (key) DO UPDATE SET state = excluded.state, by = excluded.by, at = excluded.at, auto = excluded.auto',
+            [child, state, by, at, key],
+          );
+        if (row || state !== null) touched.push(child);
+      }
+      await this.log(db, 'check', key, state ?? 'clear', { state, children: touched }, by, at);
     });
-    return entry;
-  }
-
-  async clearCheck(key: string, by: Person, now = new Date()): Promise<void> {
-    await this.db.tx(async (db) => {
-      await db.run('DELETE FROM checks WHERE key = ?', [key]);
-      await this.log(db, 'check', key, 'clear', {}, by, now.toISOString());
-    });
+    return this.listChecks();
   }
 
   // ---- Shared --------------------------------------------------------------------------

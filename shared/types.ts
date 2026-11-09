@@ -164,6 +164,8 @@ export interface CheckEntry {
   state: CheckState;
   by: Person;
   at: string;
+  /** Key of the whole-area / whole-day box that filled this one, or null if marked by hand. */
+  auto?: string | null;
 }
 
 export interface UserState {
